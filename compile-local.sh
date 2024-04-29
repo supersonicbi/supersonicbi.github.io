@@ -1,3 +1,3 @@
-cd supersonic-ai 
+cd supersonicbi
 hugo server
 cd ../

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>快速开始 on Super Sonic</title>
-    <link>https://supersonic-ai.github.io/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</link>
+    <link>https://supersonicbi.github.io/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</link>
     <description>Recent content in 快速开始 on Super Sonic</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://supersonic-ai.github.io/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://supersonicbi.github.io/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

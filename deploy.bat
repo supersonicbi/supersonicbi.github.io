@@ -1,4 +1,4 @@
-cd supersonic-ai 
-hugo --theme=ace-documentation --baseURL="https://supersonic-ai.github.io/" --buildDrafts
+cd supersonicbi
+hugo --theme=ace-documentation --baseURL="https://supersonicbi.github.io/" --buildDrafts
 xcopy /QEY .\public\* ../
 cd ../
