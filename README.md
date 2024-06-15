@@ -8,4 +8,4 @@
 
 4.本地查看效果满意后，执行deploy.sh脚本，并提交Git
 
-5.Git会自动部署，等部署完毕，浏览器输入https://supersonicbi.github.io即可看到效果
+5.Git会自动部署，等部署完毕，浏览器输入https://supersonicbi.github.io 即可看到效果
