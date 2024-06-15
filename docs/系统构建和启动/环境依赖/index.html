@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python 服务 (如果需要用到LLM的能力, 需要启动python服务)
+Python版本: 3.9&#43; pip版本: 3.9&#43;
+其它需要用到的包(启动服务的时候, 会默认检测安装):
+langchain==0.0.207 openai==0.27.4 fastapi==0.95.1
+chromadb==0.3.21 tiktoken==0.3.3 uvicorn[standard]==0.21.1(windows: uvicorn==0.21.1)
+pandas==1.5.3
+注意事项:
+前往supersonic/chat/core/src/main/python/llm/run_config.py配置LLM key 服务host、port指定： 在supersonic/chat/core/src/main/python/llm/run_config.py中修改 python、pip环境指定： pip路径：在supersonic-common.sh中修改
+python路径：在supersonic-common.sh中修改 注意：0.7.4release版本：在supersonic/chat/core/src/main/python/bin/env.sh中修改
+默认pip路径为/usr/local/bin/pip3，python路径为/usr/local/bin/python3, 若不在这个路径,需要在修改成自己的路径
+Windows下需要将python和pip指令配置好环境变量
+后端服务
+JDK版本: 1.8&#43;
+前端服务
+Node版本: 16&#43; pnpm">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96/">
+  <meta property="og:site_name" content="SuperSonic">
+  <meta property="og:title" content="环境依赖">
+  <meta property="og:description" content="Python 服务 (如果需要用到LLM的能力, 需要启动python服务)
+Python版本: 3.9&#43; pip版本: 3.9&#43;
+其它需要用到的包(启动服务的时候, 会默认检测安装):
+langchain==0.0.207 openai==0.27.4 fastapi==0.95.1
+chromadb==0.3.21 tiktoken==0.3.3 uvicorn[standard]==0.21.1(windows: uvicorn==0.21.1)
+pandas==1.5.3
+注意事项:
+前往supersonic/chat/core/src/main/python/llm/run_config.py配置LLM key 服务host、port指定： 在supersonic/chat/core/src/main/python/llm/run_config.py中修改 python、pip环境指定： pip路径：在supersonic-common.sh中修改
+python路径：在supersonic-common.sh中修改 注意：0.7.4release版本：在supersonic/chat/core/src/main/python/bin/env.sh中修改
+默认pip路径为/usr/local/bin/pip3，python路径为/usr/local/bin/python3, 若不在这个路径,需要在修改成自己的路径
+Windows下需要将python和pip指令配置好环境变量
+后端服务
+JDK版本: 1.8&#43;
+前端服务
+Node版本: 16&#43; pnpm">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="docs">
+<title>环境依赖 | SuperSonic</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96/">
+<link rel="stylesheet" href="/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css" integrity="sha256-MJt&#43;0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.789f6c3c11721f98f065f8f67581e64bf2ecddd38f1e775c42c4b932d3f9c3a0.js" integrity="sha256-eJ9sPBFyH5jwZfj2dYHmS/Ls3dOPHndcQsS5MtP5w6A=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>SuperSonic</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" class="">设计思路</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>系统构建和启动</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96/" class="active">环境依赖</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/" class="">构建和启动</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/llm%E4%B8%8Etext2sql%E9%85%8D%E7%BD%AE/" class="">LLM与text2sql配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>产品使用手册</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E4%BA%A7%E5%93%81%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/%E6%9E%84%E5%BB%BA%E8%AF%AD%E4%B9%89%E6%A8%A1%E5%9E%8B/" class="">构建语义模型</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>实现解析</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>环境依赖</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Python 服务</strong> (如果需要用到LLM的能力, 需要启动python服务)</p>
+<p>     Python版本: 3.9+
+     pip版本: 3.9+</p>
+<p>其它需要用到的包(启动服务的时候, 会默认检测安装):</p>
+<p>langchain==0.0.207    openai==0.27.4    fastapi==0.95.1</p>
+<p>chromadb==0.3.21    tiktoken==0.3.3    uvicorn[standard]==0.21.1(windows: uvicorn==0.21.1)</p>
+<p>pandas==1.5.3</p>
+<p>注意事项:</p>
+<ol>
+<li>前往supersonic/chat/core/src/main/python/llm/run_config.py配置LLM key</li>
+<li>服务host、port指定：</li>
+</ol>
+<ul>
+<li>在supersonic/chat/core/src/main/python/llm/run_config.py中修改</li>
+</ul>
+<ol start="3">
+<li>python、pip环境指定：</li>
+</ol>
+<ul>
+<li>
+<p>pip路径：在supersonic-common.sh中修改</p>
+</li>
+<li>
+<p>python路径：在supersonic-common.sh中修改
+注意：0.7.4release版本：在supersonic/chat/core/src/main/python/bin/env.sh中修改</p>
+</li>
+<li>
+<p>默认pip路径为/usr/local/bin/pip3，python路径为/usr/local/bin/python3, 若不在这个路径,需要在修改成自己的路径</p>
+</li>
+<li>
+<p>Windows下需要将python和pip指令配置好环境变量</p>
+</li>
+</ul>
+<p><strong>后端服务</strong></p>
+<p>     JDK版本: 1.8+</p>
+<p><strong>前端服务</strong></p>
+<p>     <a href="https://nodejs.org/">Node</a>版本: 16+
+     <a href="https://pnpm.io/">pnpm</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
