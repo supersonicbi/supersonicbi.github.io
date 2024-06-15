@@ -1,3 +1,3 @@
 cd supersonic_doc
-hugo server
+hugo server --minify --theme hugo-book
 cd ../
