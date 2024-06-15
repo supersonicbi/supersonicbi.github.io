@@ -1,3 +1,3 @@
-cd supersonicbi
+cd supersonic_doc
 hugo server
 cd ../
