@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="279249a5-533d-47e8-8159-ed87ef9666d8" name="Changes" comment="change theme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile-local.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile-local.sh" afterDir="false" />
+    <list default="true" id="279249a5-533d-47e8-8159-ed87ef9666d8" name="Changes" comment="remove supersonic_doc sub module">
+      <change beforePath="$PROJECT_DIR$/supersonic_doc~HEAD" beforeDir="false" afterPath="$PROJECT_DIR$/supersonic_doc~HEAD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,20 +37,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/project/supersonicbi.github.io/supersonic_doc/content/posts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/supersonicbi.github.io/supersonic_doc/content/posts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\supersonicbi.github.io\supersonic_doc\content\posts" />
@@ -72,16 +72,23 @@
       <option name="presentableId" value="Default" />
       <updated>1718420625549</updated>
       <workItem from="1718420631794" duration="925000" />
-      <workItem from="1718422997039" duration="7642000" />
+      <workItem from="1718422997039" duration="6479000" />
     </task>
-    <task id="LOCAL-00001" summary="change theme">
-      <created>1718429694251</created>
+    <task id="LOCAL-00001" summary="revert update compile-local.sh">
+      <created>1718431833469</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1718429694251</updated>
+      <updated>1718431833469</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="remove supersonic_doc sub module">
+      <created>1718432257922</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718432257922</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +106,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change theme" />
-    <option name="LAST_COMMIT_MESSAGE" value="change theme" />
+    <MESSAGE value="revert update compile-local.sh" />
+    <MESSAGE value="remove supersonic_doc sub module" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove supersonic_doc sub module" />
   </component>
 </project>
