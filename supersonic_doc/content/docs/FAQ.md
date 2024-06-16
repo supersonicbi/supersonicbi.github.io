@@ -3,10 +3,20 @@ title = "FAQ"
 weight = 6
 +++
 
-## 快速体验
+# FAQ
 
-SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：
+## 项目是否自带大模型服务？
 
-- 从[release page](https://github.com/tencentmusic/supersonic/releases)下载预先构建好的发行包
-- 运行 "assembly/bin/supersonic-daemon.sh start"启动standalone模式的Java服务
-- 在浏览器访问http://localhost:9080 开启探索
+A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。
+
+## 项目可以支持哪些大模型服务？
+
+A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。
+
+## 项目有没有体验的地址？
+
+A: Playground访问地址：[http://117.72.46.148:9080](http://117.72.46.148:9080)
+
+## 项目是否支持文本知识库？
+
+A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。

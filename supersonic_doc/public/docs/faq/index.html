@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 快速体验 # SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：
-从release page下载预先构建好的发行包 运行 &ldquo;assembly/bin/supersonic-daemon.sh start&quot;启动standalone模式的Java服务 在浏览器访问http://localhost:9080 开启探索 ">
+<meta name="description" content="FAQ # 项目是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。
+项目可以支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。
+项目有没有体验的地址？ # A: Playground访问地址：http://117.72.46.148:9080
+项目是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/faq/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="FAQ">
-  <meta property="og:description" content=" 快速体验 # SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：
-从release page下载预先构建好的发行包 运行 “assembly/bin/supersonic-daemon.sh start&#34;启动standalone模式的Java服务 在浏览器访问http://localhost:9080 开启探索 ">
+  <meta property="og:description" content="FAQ # 项目是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。
+项目可以支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。
+项目有没有体验的地址？ # A: Playground访问地址：http://117.72.46.148:9080
+项目是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -21,7 +25,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/faq/">
 <link rel="stylesheet" href="/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css" integrity="sha256-MJt&#43;0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.3341a57abb7f7444a4c805fef0ced3bef5c243491655a64c56ff13414f245f90.js" integrity="sha256-M0Glert/dESkyAX&#43;8M7TvvXCQ0kWVaZMVv8TQU8kX5A=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1a5ed817171e30b796f889c1bcba49f813306d2c5779506b5225efd572cc2e88.js" integrity="sha256-Gl7YFxceMLeW&#43;InBvLpJ&#43;BMwbSxXeVBrUiXv1XLMLog=" crossorigin="anonymous"></script>
 
   
 
@@ -116,7 +120,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E7%BC%96%E8%AF%91%E6%9E%84%E5%BB%BA/" class="">构建启动</a>
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E7%BC%96%E8%AF%91%E6%9E%84%E5%BB%BA/" class="">编译构建</a>
   
 
         </li>
@@ -293,7 +297,10 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#快速体验">快速体验</a></li>
+    <li><a href="#项目是否自带大模型服务">项目是否自带大模型服务？</a></li>
+    <li><a href="#项目可以支持哪些大模型服务">项目可以支持哪些大模型服务？</a></li>
+    <li><a href="#项目有没有体验的地址">项目有没有体验的地址？</a></li>
+    <li><a href="#项目是否支持文本知识库">项目是否支持文本知识库？</a></li>
   </ul>
 </nav>
 
@@ -306,16 +313,30 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="快速体验">
-  快速体验
-  <a class="anchor" href="#%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c">#</a>
+  <article class="markdown book-article"><h1 id="faq">
+  FAQ
+  <a class="anchor" href="#faq">#</a>
+</h1>
+<h2 id="项目是否自带大模型服务">
+  项目是否自带大模型服务？
+  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e6%98%af%e5%90%a6%e8%87%aa%e5%b8%a6%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%9c%8d%e5%8a%a1">#</a>
 </h2>
-<p>SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：</p>
-<ul>
-<li>从<a href="https://github.com/tencentmusic/supersonic/releases">release page</a>下载预先构建好的发行包</li>
-<li>运行 &ldquo;assembly/bin/supersonic-daemon.sh start&quot;启动standalone模式的Java服务</li>
-<li>在浏览器访问http://localhost:9080 开启探索</li>
-</ul>
+<p>A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。</p>
+<h2 id="项目可以支持哪些大模型服务">
+  项目可以支持哪些大模型服务？
+  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%8f%af%e4%bb%a5%e6%94%af%e6%8c%81%e5%93%aa%e4%ba%9b%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%9c%8d%e5%8a%a1">#</a>
+</h2>
+<p>A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。</p>
+<h2 id="项目有没有体验的地址">
+  项目有没有体验的地址？
+  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e6%9c%89%e6%b2%a1%e6%9c%89%e4%bd%93%e9%aa%8c%e7%9a%84%e5%9c%b0%e5%9d%80">#</a>
+</h2>
+<p>A: Playground访问地址：<a href="http://117.72.46.148:9080">http://117.72.46.148:9080</a></p>
+<h2 id="项目是否支持文本知识库">
+  项目是否支持文本知识库？
+  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81%e6%96%87%e6%9c%ac%e7%9f%a5%e8%af%86%e5%ba%93">#</a>
+</h2>
+<p>A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。</p>
 </article>
  
       
@@ -357,7 +378,10 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#快速体验">快速体验</a></li>
+    <li><a href="#项目是否自带大模型服务">项目是否自带大模型服务？</a></li>
+    <li><a href="#项目可以支持哪些大模型服务">项目可以支持哪些大模型服务？</a></li>
+    <li><a href="#项目有没有体验的地址">项目有没有体验的地址？</a></li>
+    <li><a href="#项目是否支持文本知识库">项目是否支持文本知识库？</a></li>
   </ul>
 </nav>
 
