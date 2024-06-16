@@ -2,21 +2,36 @@
 title = "LLM与text2sql配置"
 weight = 23
 +++
+语言模型的使用是SuperSonic的重要一环。能显著增强对用户的问题的理解能力，是通过对话形式与用户交互的基石之一。在本项目中对语言模型能力的应用主要在 LLM 和 Embedding 两方面, 且支持Java和Python两种访问语言模型的方式。
 
+首先，关于LLM的配置，我们专门在launchers/standalone/src/main/resources下创建了一个supersonic-env.sh文件，用于LLM的配置，通过在这里配置，Java和Python两种访问LLM的方式都能生效。
+<div align="center" >
+    <img src=https://github.com/tencentmusic/supersonic/assets/22031277/7beab043-532f-4a30-8ae2-45a2f6160f11  width="60%"  height="60%"/>
+    <p>图1-1 配置文件</p>
+</div>
+除了这里以外，Java和Python两种请求LLM的方式也都能分别配置LLM相关的配置。下面分别介绍这两种访问方式的配置。
 
-语言模型的使用是SuperSonic的重要一环。能显著增强对用户的问题的理解能力，是通过对话形式与用户交互的基石之一。在本项目中对语言模型能力的应用主要在 LLM 和 Embedding 两方面, 且支持Java和Python两种访问语言模型的方式, 下面分别介绍这两种访问方式的配置。
 ## JavaLLMProxy
-服务默认启动方式就为Java访问语言模型的方式, 语言模型相关配置可直接通过YAML文件来配置, 目前在配置中支持配置访问open-ai的key和LLM模型的名称
-{{< figure src=https://github.com/tencentmusic/supersonic/assets/22031277/adf3d3e0-da32-4d7c-9841-074e7fb6327d width=800px >}}
+服务默认启D动方式就为Java访问语言模型的方式，语言模型相关配置可直接通过YAML文件来配置，目前在配置中支持配置访问open-ai的key和LLM模型的名称
+<div align="center" >
+    <img src=https://github.com/tencentmusic/supersonic/assets/22031277/7a9da92e-84a4-4a4d-9b4c-108d0a6f2e88  width="60%"  height="60%"/>
+    <p>图2-1 配置文件</p>
+</div>
+
 ## PythonLLMProxy
 Python访问LLM的方式需要通过`sh assembly/bin/supersonic-daemon.sh start pyllm`来启动Python服务, 该命令同时也会启动Java服务, 但通过Python服务来访问LLM。
-Python服务默认使用的模型中，LLM选用闭源模型 gpt-3.5-turbo-16k，Embedding模型选用开源模型 GanymedeNil/text2vec-large-chinese。用户可以根据自己实际需求进行配置更改。
+Python服务默认使用的模型中，LLM选用闭源模型 gpt-3.5-turbo，Embedding模型选用开源模型 GanymedeNil/text2vec-large-chinese。用户可以根据自己实际需求进行配置更改。
 
 **配置方式**
-{{< figure src=https://github.com/tencentmusic/supersonic/assets/16960390/140e36e0-f91a-453a-b0d5-ec98a568531f width=800px >}}
+<div align="center" >
+    <img src=https://github.com/tencentmusic/supersonic/assets/22031277/254f53ab-7d7e-413f-a1e1-4bad80d91113  width="60%"  height="60%"/>
+    <p>图2-2 配置文件</p>
+</div>
+
+
 #### LLM模型的配置
-1. LLM模型相关的配置，在 supersonic/chat/core/src/main/python/config/run_config.ini 进行配置。
-2. LLM默认采用OpenAI的闭源模型 gpt-3.5-turbo-16k，用户可以根据自己的实际需要选择LLM模型的提供方，例如Azure、文心一言等。通过[LLMProvider]下的LLM_PROVIDER_NAME 变量进行配置。需要注意的是，现阶段支持配置的模型提供方必须能够被langchain所支持，提供方的名字可以在langchain文档中查询。
+1. LLM模型相关的配置，在 supersonic/headless/core/src/main/python/config/run_config.ini 进行配置。
+2. LLM默认采用OpenAI的闭源模型 gpt-3.5-turbo，用户可以根据自己的实际需要选择LLM模型的提供方，例如Azure、文心一言等。通过[LLMProvider]下的LLM_PROVIDER_NAME 变量进行配置。需要注意的是，现阶段支持配置的模型提供方必须能够被langchain所支持，提供方的名字可以在langchain文档中查询。
 3. LLM的相关变量在[LLMModel]下进行配置，例如openAI的模型，需要提供 MODEL_NAME、OPENAI_API_KEY、TEMPERATURE 等参数配置。不同的LLM提供方需要的配置各不相同，用户可以根据实际情况配置相关变量。
 
 #### Embedding模型配置
@@ -42,5 +57,5 @@ text2sql的功能实现，高度依赖对LLM的应用。通过LLM生成SQL的过
 
 #### text2sql运行中更新配置的脚本
 1. 如果在启动项目后，用户需要对text2sql功能的相关配置进行调试，可以在修改相关配置文件后，通过以下2种方式让配置在项目运行中让配置生效。
-   - 执行 supersonic-daemon.sh reload llmparser 
+   - 执行 supersonic-daemon.sh reload llmparser
    - 执行 python examples_reload_run.py
