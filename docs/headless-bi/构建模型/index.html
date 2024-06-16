@@ -43,7 +43,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B/">
 <link rel="stylesheet" href="/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css" integrity="sha256-MJt&#43;0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c98a6f26a03332aee9fa9ae9dee0d49b2a32e0d641bcbac02acf0af3d5b6ae6c.js" integrity="sha256-yYpvJqAzMq7p&#43;prp3uDUmyoy4NZBvLrAKs8K89W2rmw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.88a65a020d9dbed67f78a38357c0b8ba4db4e10ef357b0daa249d068568c4c29.js" integrity="sha256-iKZaAg2dvtZ/eKODV8C4uk204Q7zV7DaoknQaFaMTCk=" crossorigin="anonymous"></script>
 
   
 
@@ -320,8 +320,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#1-创建一个数据库链接"><strong>1. 创建一个数据库链接</strong></a></li>
         <li><a href="#2-创建一个主题域和模型集"><strong>2. 创建一个主题域和模型集</strong></a></li>
         <li><a href="#3-创建数据模型"><strong>3. 创建数据模型</strong></a></li>
-        <li><a href="#6-创建模型间连接"><strong>6. 创建模型间连接</strong></a></li>
-        <li><a href="#7-创建数据集"><strong>7. 创建数据集</strong></a></li>
+        <li><a href="#4-创建模型间连接"><strong>4. 创建模型间连接</strong></a></li>
+        <li><a href="#5-创建数据集"><strong>5. 创建数据集</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -398,16 +398,16 @@ https://github.com/alex-shpak/hugo-book
 <p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/214d89ce-8137-486e-b869-948f0605c811" alt="image" /></p>
 <p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/b68293d0-d52c-4319-a86d-11b34b0b2e68" alt="image" /></p>
 <p>到此为止, 我们就成功把超音数的访问统计数据建模成了相关的数据模型、维度和指标。</p>
-<h3 id="6-创建模型间连接">
-  <strong>6. 创建模型间连接</strong>
-  <a class="anchor" href="#6-%e5%88%9b%e5%bb%ba%e6%a8%a1%e5%9e%8b%e9%97%b4%e8%bf%9e%e6%8e%a5">#</a>
+<h3 id="4-创建模型间连接">
+  <strong>4. 创建模型间连接</strong>
+  <a class="anchor" href="#4-%e5%88%9b%e5%bb%ba%e6%a8%a1%e5%9e%8b%e9%97%b4%e8%bf%9e%e6%8e%a5">#</a>
 </h3>
 <p>可以看到，刚刚创建的这些指标和维度分散在不同的模型里，那么如果想要在一次查询里同时包含这些指标和维度，如&quot;按部门统计访问次数&quot;，应该还要继续如何配置呢？我们可以在模型列表右上角点击切换到画布模式，并创建模型间的连接关系，如下图:
 <img src="https://github.com/tencentmusic/supersonic/assets/22031277/0efcf4fe-42e7-4aa6-9117-9e2862c9462c" alt="image" /></p>
 <p>到目前为止，我们就创建好了指标维度，以及模型间的关联关系。但要想被上层应用使用到，这还不够，还需要进行最后一步，创建一个数据集。</p>
-<h3 id="7-创建数据集">
-  <strong>7. 创建数据集</strong>
-  <a class="anchor" href="#7-%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e9%9b%86">#</a>
+<h3 id="5-创建数据集">
+  <strong>5. 创建数据集</strong>
+  <a class="anchor" href="#5-%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e9%9b%86">#</a>
 </h3>
 <p>数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含多个模型的维度指标。对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可。</p>
 <p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/f3203106-83a3-403a-9961-b6eed9c7c1af" alt="image" />
@@ -461,8 +461,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#1-创建一个数据库链接"><strong>1. 创建一个数据库链接</strong></a></li>
         <li><a href="#2-创建一个主题域和模型集"><strong>2. 创建一个主题域和模型集</strong></a></li>
         <li><a href="#3-创建数据模型"><strong>3. 创建数据模型</strong></a></li>
-        <li><a href="#6-创建模型间连接"><strong>6. 创建模型间连接</strong></a></li>
-        <li><a href="#7-创建数据集"><strong>7. 创建数据集</strong></a></li>
+        <li><a href="#4-创建模型间连接"><strong>4. 创建模型间连接</strong></a></li>
+        <li><a href="#5-创建数据集"><strong>5. 创建数据集</strong></a></li>
       </ul>
     </li>
   </ul>
