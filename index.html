@@ -4,25 +4,23 @@
 	<meta name="generator" content="Hugo 0.125.3">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="项目介绍#通过SuperSonic的问答对话界面，用户能够使用自然语言查询数据，系统会选择合适的可视化图表呈现结果。SuperSonic不需要修改或复制数据，只需要在物理数据模型之上构建逻辑语义模型（定义指标/维度/实体/标签，以及它们的业务含义、相互关系等），即可开启数据问答体验。与此同时，SuperSonic被设计为可插拔的框架，采用Java SPI机制来扩展定制功能。
-SuperSonic融合Chat BI（powered by LLM）和Headless BI（powered by 语义层）打造新一代的BI平台。这种融合确保了Chat BI能够与传统BI一样访问统一化治理的语义数据模型。此外，两种BI新范式都从中获得收益：
-Chat BI的Text2SQL生成通过检索语义数据模型得到增强。 Headless BI的查询接口通过支持自然语言API得到拓展。 项目动机#大型语言模型（LLM）如ChatGPT的出现正在重塑信息检索的方式，引领数据分析领域的一种新范式，被称为Chat BI。为了实现Chat BI，学术界和工业界主要关注利用LLM的能力将自然语言转换为SQL，通常称为Text2SQL或NL2SQL。尽管一些方法显示出有希望的结果，但它们在大规模实际应用中的可靠性还不足。
-与此同时，另一种新兴范式被称为Headless BI，它专注于构建统一的语义数据模型，并引起了广泛的关注。Headless BI通过一个通用的语义层来实现，通过开放的API公开一致的数据语义。
-从我们的角度来看，Chat BI和Headless BI的融合有潜力在两个方面增强Text2SQL的能力：
-将数据语义（如业务术语、列值等）纳入提示词中，使LLM能够更好地理解语义，以减少幻觉。 将高级SQL语法（如连接、公式等）的生成从LLM卸载到语义层，以减少复杂度。 为了验证上述想法，我们开发了SuperSonic项目，并将其应用在实际的内部产品中。与此同时，我们将SuperSonic作为一个可扩展的框架开源，希望能够促进数据问答对话领域的进一步发展。
-开箱即用特性#内置Chat BI界面以便业务用户输入数据查询。 内置Headless BI界面以便分析工程师构建语义模型。 内置基于规则的语义解析器，在特定场景可以提升运行效率。 支持文本输入的联想和查询问题的推荐。 支持四级权限控制：主题域级、模型级、列级、行级。 关注社区进展#欢迎关注微信公众号，不定期更新项目发版计划与通知：">
+<meta name="description" content="项目介绍#SuperSonic是融合Headless BI和Chat BI的新一代数据分析平台，致力于通过自然语言对话来分析数据，与传统交互的分析产品组合，推动数据民主化。SuperSonic提供两套开箱即用的产品界面：
+Headless BI界面，用于构建语义数据模型，并设置数据访问权限。 Chat BI界面，用于输入自然语言，并获得可视化的数据结果。 BI新范式融合#当前，BI领域分别在应用架构和产品交互两个层面兴起新的范式：一方面，随着数据应用和产品的百花齐放，Headless BI架构范式致力于构建与治理统一的语义数据模型，通过语义层Open API开放给消费端查询调用，以此提升数据复用，解决口径差异。另一方面，随着以ChatGPT为代表的大语言模型横空出世，Chat BI交互范式致力于通过大模型将自然语言转换成SQL语言，以此降低数据分析门槛。
+SuperSonic主张通过两种BI新范式的融合，一方面让数据得到更好的治理与复用，另一方面让大模型更好地理解数据语义，最终使得两者皆受益：
+Headless BI的Query能力，通过自然语言API获得智能拓展。 Chat BI的Text2SQL能力，通过语义数据模型获得RAG增强。 项目社区建设#项目开源地址：https://github.com/tencentmusic/supersonic
+Playground地址：http://117.72.46.148:9080
+微信公众号，不定期更新项目发版计划与通知，进入公众号后可获取用户交流群二维码。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="项目介绍">
-  <meta property="og:description" content="项目介绍#通过SuperSonic的问答对话界面，用户能够使用自然语言查询数据，系统会选择合适的可视化图表呈现结果。SuperSonic不需要修改或复制数据，只需要在物理数据模型之上构建逻辑语义模型（定义指标/维度/实体/标签，以及它们的业务含义、相互关系等），即可开启数据问答体验。与此同时，SuperSonic被设计为可插拔的框架，采用Java SPI机制来扩展定制功能。
-SuperSonic融合Chat BI（powered by LLM）和Headless BI（powered by 语义层）打造新一代的BI平台。这种融合确保了Chat BI能够与传统BI一样访问统一化治理的语义数据模型。此外，两种BI新范式都从中获得收益：
-Chat BI的Text2SQL生成通过检索语义数据模型得到增强。 Headless BI的查询接口通过支持自然语言API得到拓展。 项目动机#大型语言模型（LLM）如ChatGPT的出现正在重塑信息检索的方式，引领数据分析领域的一种新范式，被称为Chat BI。为了实现Chat BI，学术界和工业界主要关注利用LLM的能力将自然语言转换为SQL，通常称为Text2SQL或NL2SQL。尽管一些方法显示出有希望的结果，但它们在大规模实际应用中的可靠性还不足。
-与此同时，另一种新兴范式被称为Headless BI，它专注于构建统一的语义数据模型，并引起了广泛的关注。Headless BI通过一个通用的语义层来实现，通过开放的API公开一致的数据语义。
-从我们的角度来看，Chat BI和Headless BI的融合有潜力在两个方面增强Text2SQL的能力：
-将数据语义（如业务术语、列值等）纳入提示词中，使LLM能够更好地理解语义，以减少幻觉。 将高级SQL语法（如连接、公式等）的生成从LLM卸载到语义层，以减少复杂度。 为了验证上述想法，我们开发了SuperSonic项目，并将其应用在实际的内部产品中。与此同时，我们将SuperSonic作为一个可扩展的框架开源，希望能够促进数据问答对话领域的进一步发展。
-开箱即用特性#内置Chat BI界面以便业务用户输入数据查询。 内置Headless BI界面以便分析工程师构建语义模型。 内置基于规则的语义解析器，在特定场景可以提升运行效率。 支持文本输入的联想和查询问题的推荐。 支持四级权限控制：主题域级、模型级、列级、行级。 关注社区进展#欢迎关注微信公众号，不定期更新项目发版计划与通知：">
+  <meta property="og:description" content="项目介绍#SuperSonic是融合Headless BI和Chat BI的新一代数据分析平台，致力于通过自然语言对话来分析数据，与传统交互的分析产品组合，推动数据民主化。SuperSonic提供两套开箱即用的产品界面：
+Headless BI界面，用于构建语义数据模型，并设置数据访问权限。 Chat BI界面，用于输入自然语言，并获得可视化的数据结果。 BI新范式融合#当前，BI领域分别在应用架构和产品交互两个层面兴起新的范式：一方面，随着数据应用和产品的百花齐放，Headless BI架构范式致力于构建与治理统一的语义数据模型，通过语义层Open API开放给消费端查询调用，以此提升数据复用，解决口径差异。另一方面，随着以ChatGPT为代表的大语言模型横空出世，Chat BI交互范式致力于通过大模型将自然语言转换成SQL语言，以此降低数据分析门槛。
+SuperSonic主张通过两种BI新范式的融合，一方面让数据得到更好的治理与复用，另一方面让大模型更好地理解数据语义，最终使得两者皆受益：
+Headless BI的Query能力，通过自然语言API获得智能拓展。 Chat BI的Text2SQL能力，通过语义数据模型获得RAG增强。 项目社区建设#项目开源地址：https://github.com/tencentmusic/supersonic
+Playground地址：http://117.72.46.148:9080
+微信公众号，不定期更新项目发版计划与通知，进入公众号后可获取用户交流群二维码。">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <title>项目介绍 | SuperSonic</title>
@@ -31,7 +29,7 @@ Chat BI的Text2SQL生成通过检索语义数据模型得到增强。 Headless B
 <link rel="canonical" href="https://supersonicbi.github.io/">
 <link rel="stylesheet" href="/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css" integrity="sha256-MJt&#43;0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.bb819be6a1636f274586bbc869d1ad755af8ad5967e7497768d57e10b5ef35ec.js" integrity="sha256-u4Gb5qFjbydFhrvIadGtdVr4rVln50l3aNV&#43;ELXvNew=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7183674033808c6e0ddc73a29549452070b9988922fea3f2e1650ecfb5a5a5a5.js" integrity="sha256-cYNnQDOAjG4N3HOilUlFIHC5mIki/qPy4WUOz7WlpaU=" crossorigin="anonymous"></script>
 
   
 
@@ -114,7 +112,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>系统构建和启动</span>
+    <span>系统部署</span>
   
 
           
@@ -127,7 +125,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96/" class="">环境依赖</a>
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E7%BC%96%E8%AF%91%E6%9E%84%E5%BB%BA/" class="">构建启动</a>
   
 
         </li>
@@ -140,20 +138,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/" class="">构建和启动</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E5%92%8C%E5%90%AF%E5%8A%A8/llm%E4%B8%8Etext2sql%E9%85%8D%E7%BD%AE/" class="">LLM与text2sql配置</a>
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/" class="">配置LLM</a>
   
 
         </li>
@@ -171,7 +156,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>产品使用手册</span>
+    <span>Chat BI</span>
   
 
           
@@ -184,7 +169,64 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E4%BA%A7%E5%93%81%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/%E6%9E%84%E5%BB%BA%E8%AF%AD%E4%B9%89%E6%A8%A1%E5%9E%8B/" class="">构建语义模型</a>
+    <a href="/docs/chat-bi/%E5%8A%A9%E7%90%86%E7%AE%A1%E7%90%86/" class="">助理管理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chat-bi/%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86/" class="">插件管理</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Headless BI</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/headless-bi/%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B/" class="">构建模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/headless-bi/%E6%8C%87%E6%A0%87%E7%AE%A1%E7%90%86/" class="">指标管理</a>
   
 
         </li>
@@ -218,18 +260,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
-<ul>
-  
-  <li>
-    <a href="/posts/"  >
-        Blog
-      </a>
-  </li>
-  
-</ul>
 
 
 
@@ -272,10 +302,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#项目介绍">项目介绍</a></li>
-    <li><a href="#项目动机">项目动机</a></li>
-    <li><a href="#开箱即用特性">开箱即用特性</a></li>
-    <li><a href="#关注社区进展">关注社区进展</a></li>
+    <li><a href="#bi新范式融合">BI新范式融合</a></li>
+    <li><a href="#项目社区建设">项目社区建设</a></li>
   </ul>
 </nav>
 
@@ -288,51 +316,39 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="项目介绍">
+  <article class="markdown book-article"><h1 id="项目介绍">
   项目介绍
   <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e4%bb%8b%e7%bb%8d">#</a>
-</h2>
-<p>通过SuperSonic的问答对话界面，用户能够使用自然语言查询数据，系统会选择合适的可视化图表呈现结果。SuperSonic不需要修改或复制数据，只需要在物理数据模型之上构建逻辑语义模型（定义指标/维度/实体/标签，以及它们的业务含义、相互关系等），即可开启数据问答体验。与此同时，SuperSonic被设计为可插拔的框架，采用Java SPI机制来扩展定制功能。</p>
-<figure><img src="../img/supersonic_demo.gif" width="800px">
+</h1>
+<p>SuperSonic是融合Headless BI和Chat BI的新一代数据分析平台，致力于通过自然语言对话来分析数据，与传统交互的分析产品组合，推动数据民主化。SuperSonic提供两套开箱即用的产品界面：</p>
+<ul>
+<li>Headless BI界面，用于构建语义数据模型，并设置数据访问权限。</li>
+<li>Chat BI界面，用于输入自然语言，并获得可视化的数据结果。</li>
+</ul>
+<figure><img src="../img/supersonic_demo.gif">
 </figure>
 
-<p><strong>SuperSonic融合Chat BI（powered by LLM）和Headless BI（powered by 语义层）打造新一代的BI平台</strong>。这种融合确保了Chat BI能够与传统BI一样访问统一化治理的语义数据模型。此外，两种BI新范式都从中获得收益：</p>
+<h2 id="bi新范式融合">
+  BI新范式融合
+  <a class="anchor" href="#bi%e6%96%b0%e8%8c%83%e5%bc%8f%e8%9e%8d%e5%90%88">#</a>
+</h2>
+<p>当前，BI领域分别在应用架构和产品交互两个层面兴起新的范式：一方面，随着数据应用和产品的百花齐放，Headless BI架构范式致力于构建与治理统一的语义数据模型，通过语义层Open API开放给消费端查询调用，以此提升数据复用，解决口径差异。另一方面，随着以ChatGPT为代表的大语言模型横空出世，Chat BI交互范式致力于通过大模型将自然语言转换成SQL语言，以此降低数据分析门槛。</p>
+<p>SuperSonic主张通过两种BI新范式的融合，一方面让数据得到更好的治理与复用，另一方面让大模型更好地理解数据语义，最终使得两者皆受益：</p>
 <ul>
-<li>Chat BI的Text2SQL生成通过检索语义数据模型得到增强。</li>
-<li>Headless BI的查询接口通过支持自然语言API得到拓展。</li>
+<li>Headless BI的Query能力，通过自然语言API获得智能拓展。</li>
+<li>Chat BI的Text2SQL能力，通过语义数据模型获得RAG增强。</li>
 </ul>
-<figure><img src="../img/supersonic_ideas.png" width="800px">
+<figure><img src="../img/supersonic_ideas.png" width="80%" height="80%">
 </figure>
 
-<h2 id="项目动机">
-  项目动机
-  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e5%8a%a8%e6%9c%ba">#</a>
+<h2 id="项目社区建设">
+  项目社区建设
+  <a class="anchor" href="#%e9%a1%b9%e7%9b%ae%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be">#</a>
 </h2>
-<p>大型语言模型（LLM）如ChatGPT的出现正在重塑信息检索的方式，引领数据分析领域的一种新范式，被称为Chat BI。为了实现Chat BI，学术界和工业界主要关注利用LLM的能力将自然语言转换为SQL，通常称为Text2SQL或NL2SQL。尽管一些方法显示出有希望的结果，但它们在大规模实际应用中的可靠性还不足。</p>
-<p>与此同时，另一种新兴范式被称为Headless BI，它专注于构建统一的语义数据模型，并引起了广泛的关注。Headless BI通过一个通用的语义层来实现，通过开放的API公开一致的数据语义。</p>
-<p>从我们的角度来看，Chat BI和Headless BI的融合有潜力在两个方面增强Text2SQL的能力：</p>
-<ol>
-<li>将数据语义（如业务术语、列值等）纳入提示词中，使LLM能够更好地理解语义，以<strong>减少幻觉</strong>。</li>
-<li>将高级SQL语法（如连接、公式等）的生成从LLM卸载到语义层，以<strong>减少复杂度</strong>。</li>
-</ol>
-<p>为了验证上述想法，我们开发了SuperSonic项目，并将其应用在实际的内部产品中。与此同时，我们将SuperSonic作为一个可扩展的框架开源，希望能够促进数据问答对话领域的进一步发展。</p>
-<h2 id="开箱即用特性">
-  开箱即用特性
-  <a class="anchor" href="#%e5%bc%80%e7%ae%b1%e5%8d%b3%e7%94%a8%e7%89%b9%e6%80%a7">#</a>
-</h2>
-<ul>
-<li>内置Chat BI界面以便<em>业务用户</em>输入数据查询。</li>
-<li>内置Headless BI界面以便<em>分析工程师</em>构建语义模型。</li>
-<li>内置基于规则的语义解析器，在特定场景可以提升运行效率。</li>
-<li>支持文本输入的联想和查询问题的推荐。</li>
-<li>支持四级权限控制：主题域级、模型级、列级、行级。</li>
-</ul>
-<h2 id="关注社区进展">
-  关注社区进展
-  <a class="anchor" href="#%e5%85%b3%e6%b3%a8%e7%a4%be%e5%8c%ba%e8%bf%9b%e5%b1%95">#</a>
-</h2>
-<p>欢迎关注微信公众号，不定期更新项目发版计划与通知：</p>
-<figure><img src="../img/supersonic_wechat_oa.png" width="200px">
+<p>项目开源地址：<a href="https://github.com/tencentmusic/supersonic">https://github.com/tencentmusic/supersonic</a></p>
+<p>Playground地址：<a href="http://117.72.46.148:9080">http://117.72.46.148:9080</a></p>
+<p>微信公众号，不定期更新项目发版计划与通知，进入公众号后可获取用户交流群二维码。</p>
+<figure><img src="../img/supersonic_wechat_oa.png" width="50%" height="50%">
 </figure>
 
 </article>
@@ -376,10 +392,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#项目介绍">项目介绍</a></li>
-    <li><a href="#项目动机">项目动机</a></li>
-    <li><a href="#开箱即用特性">开箱即用特性</a></li>
-    <li><a href="#关注社区进展">关注社区进展</a></li>
+    <li><a href="#bi新范式融合">BI新范式融合</a></li>
+    <li><a href="#项目社区建设">项目社区建设</a></li>
   </ul>
 </nav>
 
