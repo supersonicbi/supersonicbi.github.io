@@ -1,6 +1,6 @@
 +++
-title = "快速体验"
-weight = 1
+title = "FAQ"
+weight = 6
 +++
 
 ## 快速体验
