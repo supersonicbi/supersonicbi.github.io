@@ -13,7 +13,7 @@
       <link>https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/</guid>
-      <description>&#xD;快速体验&#xD;#&#xD;SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：&#xA;从release page下载预先构建好的发行包 运行 &amp;ldquo;assembly/bin/supersonic-daemon.sh start&amp;quot;启动standalone模式的Java服务 在浏览器访问http://localhost:9080 开启探索 </description>
+      <description>&#xD;快速体验&#xD;#&#xD;SuperSonic自带样例的语义模型和问答对话，只需以下三步即可快速体验：&#xA;从release page下载预先构建好的发行包 运行 &amp;ldquo;bin/supersonic-daemon.sh start&amp;quot;启动standalone模式的Java服务 在浏览器访问http://localhost:9080 开启探索 </description>
     </item>
     <item>
       <title>项目架构</title>
