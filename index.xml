@@ -33,7 +33,7 @@
       <link>https://example.org/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/</guid>
-      <description>快速体验 SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。&#xA;启动系统 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&amp;quot;API Key&amp;quot; 点击“确定”，保存助理大模型配置 问题对话 进入菜单“问答对话”，选择智能助理“算指标” 点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁” 点击&amp;quot;LLM解析S2SQL&amp;quot;可以查看大模型生成的SQL </description>
+      <description>快速体验 SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。&#xA;启动系统 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&amp;quot;API Key&amp;quot; 点击“确定”，保存助理大模型配置 问题对话 进入菜单“问答对话”，选择智能助理“算指标”&#xA;点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”&#xA;点击&amp;quot;LLM解析S2SQL&amp;quot;可以查看大模型生成的SQL</description>
     </item>
     <item>
       <title>指标管理</title>
@@ -54,7 +54,7 @@
       <link>https://example.org/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/</guid>
-      <description>配置LLM LLM的使用是SuperSonic的重要一环。能显著增强对用户的问题的理解能力，是通过对话形式与用户交互的基石之一。在本项目中对语言模型能力的应用主要在 LLM 和 Embedding 两方面, 且支持Java和Python两种访问语言模型的方式。&#xA;首先，关于LLM的配置，我们专门在launchers/standalone/src/main/resources下创建了一个supersonic-env.sh文件，用于LLM的配置，通过在这里配置，Java和Python两种访问LLM的方式都能生效。&#xA;JavaLLMProxy 服务默认启D动方式就为Java访问语言模型的方式，语言模型相关配置可直接通过YAML文件来配置，目前在配置中支持配置访问open-ai的key和LLM模型的名称&#xA;PythonLLMProxy Python访问LLM的方式需要通过sh assembly/bin/supersonic-daemon.sh start pyllm来启动Python服务, 该命令同时也会启动Java服务, 但通过Python服务来访问LLM。 Python服务默认使用的模型中，LLM选用闭源模型 gpt-3.5-turbo，Embedding模型选用开源模型 GanymedeNil/text2vec-large-chinese。用户可以根据自己实际需求进行配置更改。&#xA;配置方式&#xA;LLM模型的配置 LLM模型相关的配置，在 supersonic/headless/core/src/main/python/config/run_config.ini 进行配置。 LLM默认采用OpenAI的闭源模型 gpt-3.5-turbo，用户可以根据自己的实际需要选择LLM模型的提供方，例如Azure、文心一言等。通过[LLMProvider]下的LLM_PROVIDER_NAME 变量进行配置。需要注意的是，现阶段支持配置的模型提供方必须能够被langchain所支持，提供方的名字可以在langchain文档中查询。 LLM的相关变量在[LLMModel]下进行配置，例如openAI的模型，需要提供 MODEL_NAME、OPENAI_API_KEY、TEMPERATURE 等参数配置。不同的LLM提供方需要的配置各不相同，用户可以根据实际情况配置相关变量。 Embedding模型配置 Embedding模型默认采用开源模型 GanymedeNil/text2vec-large-chinese。用户可以根据实际需要配置适合的Embedding模型；通过[Text2Vec]下 HF_TEXT2VEC_MODEL_NAME 变量进行配置，为了使用方便采用托管在HuggingFace的源，初次启动时自动下载模型文件。 LLM与embedding配置 FAQ 可以用开源的LLM模型替代OpenAI的GPT模型吗？ 暂时不能。我们测试过大部分主流的开源LLM，在实际使用中，在本项目需要LLM提供的逻辑推理和代码生成场景上，开源模型还不能满足需求。 我们会持续跟进开源LLM的最新进展，在有满足要求的开源LLM后，在项目中集成私有化部署开源LLM的能力。 可以用国产的闭源模型替代OpenAI的GPT模型吗？ 据部分用户反馈，在他们的场景下文心一言、混元等国产闭源模型的效果与GPT3.5差距不大；整体而言GPT3.5及GPT4适用的场景会更广泛一些。用户可以在自己的场景下修改LLM的相应配置，试一试实际效果。 GPT4、GPT3.5、GPT3.5-16k 这几个模型用哪个比较好？ GPT3.5、GPT3.5-16k 均能基本满足要求，但会有输出结果不稳定的情况；GPT3.5的token长度限制为4k，在现有CoT策略下，容易出现超过长度限制的情况。 GPT4的输出更稳定，但费用成本远超GPT3.5，可以根据实际使用场景进行选择。 Embedding模型用其他的可以吗？ 可以。可以以该项目text2vec的榜单作为参考，然后在HuggingFace找到对应模型的model card，修改HF_TEXT2VEC_MODEL_NAME变量的取值。 启动时，首次下载Embedding模型需要会链接HuggingFace的源进行下载，如果网络不通怎么办？ 可以到HuggingFace的官网找到对应的model card，然后将模型下载到本地。在supersonic/chat/core/src/main/python/config/run_config.ini 中将HF_TEXT2VEC_MODEL_NAME变量配置为模型所在的绝对路径。 LLM在text2sql中的应用 text2sql的功能实现，高度依赖对LLM的应用。通过LLM生成SQL的过程中，利用小样本(few-shots-examples)通过思维链(chain-of-thoughts)的方式对LLM in-context-learning的能力进行引导，对于生成较为稳定且符合下游语法解析规则的SQL非常重要。用户可以根据自身需要，对样本池及样本的数量进行配置，使其更加符合自身业务特点。&#xA;text2sql运行中更新配置的脚本 如果在启动项目后，用户需要对text2sql功能的相关配置进行调试，可以在修改相关配置文件后，通过以下2种方式让配置在项目运行中让配置生效。 执行 supersonic-daemon.sh reload llmparser 执行 python examples_reload_run.py </description>
+      <description>配置LLM Text2SQL模型 SuperSonic可以从两个粒度配置LLM：&#xA;系统粒度：修改配置文件conf/supersonic-env.sh，替换相应的变量 助理粒度：在助理管理模块，修改助理配置，填入相应的变量 Embedding模型 </description>
     </item>
     <item>
       <title>项目架构</title>
@@ -68,7 +68,7 @@
       <link>https://example.org/docs/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/docs/faq/</guid>
-      <description>FAQ 项目是否自带大模型服务？ A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。&#xA;项目可以支持哪些大模型服务？ A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。&#xA;项目有没有体验的地址？ A: Playground访问地址：http://117.72.46.148:9080&#xA;项目是否支持文本知识库？ A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。</description>
+      <description>FAQ 项目有没有体验的地址？ A: Playground访问地址：http://117.72.46.148:9080&#xA;初始启动后为什么能显示DEMO问答对话？ A: 为了便于快速体验，系统内置DEMO语义模型，且实现了基于规则的解析器，所以不需要大模型也可以进行问答对话。不过，规则解析器能力有限，推荐仅用于测试验证，生产使用还是需要大模型解析。&#xA;是否自带大模型服务？ A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。&#xA;支持哪些大模型服务？ A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。&#xA;是否支持文本知识库？ A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。&#xA;是否支持多轮对话？ A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。</description>
     </item>
   </channel>
 </rss>
