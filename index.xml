@@ -50,6 +50,13 @@
       <description>插件管理 </description>
     </item>
     <item>
+      <title>配置DB</title>
+      <link>https://example.org/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/</guid>
+      <description>配置DB </description>
+    </item>
+    <item>
       <title>配置LLM</title>
       <link>https://example.org/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
