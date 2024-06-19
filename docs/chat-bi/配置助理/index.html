@@ -3,29 +3,33 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="生成数据库链接 # 当前支持的数据类型 # 所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等 Clickhouse，PostgreSQL，H2 支持灵活扩展，欢迎贡献其它数据库类型 在SuperSonic中创建数据库连接的步骤 # 填写连接信息 点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1 点击保存。 如图所示, 我们创建了一个H2数据库实例作为例子:
-需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。
-管理员: 可以编辑这个数据库链接的人
-使用者: 可以使用这个数据库链接查询数据的人">
+<meta name="description" content="配置助理 # 1.1 新建助理 # 打开超音数首页，点击&quot;智能助理&quot; -&gt; &ldquo;新建助理&rdquo;，即可新建助理，进行配置。
+新建助理时需要填写以下信息：
+新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&quot;标签圈选&quot;:
+1.2 编辑助理 # 点击智能助理模块, 会展示当前所有的智能助理信息：
+点击特定智能助理右侧的&quot;编辑&quot;选项, 即可对该助理在新建时的基本信息进行修改： 此外可以选择该智能助理的能力(工具) :
+如上图, 该智能助理拥有两个工具, 既可以使用规则语义解析, 也可以使用大模型进行语义解析 如果需要删除该助理，直接点击助理右侧的&quot;删除&quot;选项即可。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="生成数据库链接 # 当前支持的数据类型 # 所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等 Clickhouse，PostgreSQL，H2 支持灵活扩展，欢迎贡献其它数据库类型 在SuperSonic中创建数据库连接的步骤 # 填写连接信息 点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1 点击保存。 如图所示, 我们创建了一个H2数据库实例作为例子:
-需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。
-管理员: 可以编辑这个数据库链接的人
-使用者: 可以使用这个数据库链接查询数据的人">
+  <meta property="og:description" content="配置助理 # 1.1 新建助理 # 打开超音数首页，点击&#34;智能助理&#34; -&gt; “新建助理”，即可新建助理，进行配置。
+新建助理时需要填写以下信息：
+新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&#34;标签圈选&#34;:
+1.2 编辑助理 # 点击智能助理模块, 会展示当前所有的智能助理信息：
+点击特定智能助理右侧的&#34;编辑&#34;选项, 即可对该助理在新建时的基本信息进行修改： 此外可以选择该智能助理的能力(工具) :
+如上图, 该智能助理拥有两个工具, 既可以使用规则语义解析, 也可以使用大模型进行语义解析 如果需要删除该助理，直接点击助理右侧的&#34;删除&#34;选项即可。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>生成数据库连接 | SuperSonic</title>
+<title>配置助理 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.55db35483f24722d5da3b592e1a39b204b4ce06dccf0a030cafb1fafc4c5d504.js" integrity="sha256-Vds1SD8kci1do7WS4aObIEtM4G3M8KAwyvsfr8TF1QQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aef09147373b71971122a94c099320fcbb4d3092103d447e5b94fa88dd207099.js" integrity="sha256-rvCRRzc7cZcRIqlMCZMg/LtNMJIQPUR&#43;W5T6iN0gcJk=" crossorigin="anonymous"></script>
 
   
 
@@ -177,7 +181,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-bi/%E6%8F%92%E4%BB%B6%E5%B8%82%E5%9C%BA/" class="">插件市场</a>
+    <a href="/docs/chat-bi/%E6%A6%82%E5%BF%B5/" class="">概念</a>
   
 
         </li>
@@ -190,7 +194,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-bi/%E6%99%BA%E8%83%BD%E5%8A%A9%E7%90%86/" class="">智能助理</a>
+    <a href="/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/" class="active">配置助理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chat-bi/%E9%97%AE%E7%AD%94%E5%AF%B9%E8%AF%9D/" class="">问答对话</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chat-bi/%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6/" class="">配置插件</a>
   
 
         </li>
@@ -234,7 +264,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" class="active">生成数据库连接</a>
+    <a href="/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="">连接数据库</a>
   
 
         </li>
@@ -260,7 +290,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="">创建和管理指标</a>
+    <a href="/docs/headless-bi/%E5%88%9B%E5%BB%BA%E6%8C%87%E6%A0%87/" class="">创建指标</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="">管理指标</a>
   
 
         </li>
@@ -293,6 +336,19 @@ https://github.com/alex-shpak/hugo-book
       
     
   </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/" class="">系统设置</a>
+  
 
         </li>
       
@@ -346,7 +402,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>生成数据库连接</strong>
+  <strong>配置助理</strong>
 
   <label for="toc-control">
     
@@ -362,12 +418,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#当前支持的数据类型"><strong>当前支持的数据类型</strong></a></li>
-        <li><a href="#在supersonic中创建数据库连接的步骤"><strong>在SuperSonic中创建数据库连接的步骤</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#11-新建助理">1.1 新建助理</a></li>
+    <li><a href="#12-编辑助理">1.2 编辑助理</a></li>
   </ul>
 </nav>
 
@@ -380,33 +432,33 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="生成数据库链接">
-  生成数据库链接
-  <a class="anchor" href="#%e7%94%9f%e6%88%90%e6%95%b0%e6%8d%ae%e5%ba%93%e9%93%be%e6%8e%a5">#</a>
+  <article class="markdown book-article"><h1 id="配置助理">
+  配置助理
+  <a class="anchor" href="#%e9%85%8d%e7%bd%ae%e5%8a%a9%e7%90%86">#</a>
 </h1>
-<h3 id="当前支持的数据类型">
-  <strong>当前支持的数据类型</strong>
-  <a class="anchor" href="#%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">#</a>
-</h3>
-<ol>
-<li>所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等</li>
-<li>Clickhouse，PostgreSQL，H2</li>
-<li>支持灵活扩展，欢迎贡献其它数据库类型</li>
-</ol>
-<h3 id="在supersonic中创建数据库连接的步骤">
-  <strong>在SuperSonic中创建数据库连接的步骤</strong>
-  <a class="anchor" href="#%e5%9c%a8supersonic%e4%b8%ad%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e8%bf%9e%e6%8e%a5%e7%9a%84%e6%ad%a5%e9%aa%a4">#</a>
-</h3>
-<ol>
-<li>填写连接信息</li>
-<li>点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1</li>
-<li>点击保存。</li>
-</ol>
-<p>如图所示, 我们创建了一个H2数据库实例作为例子:</p>
-<p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/f4b1b8d7-33fb-40b4-9767-c4acee534ea5" alt="image" /></p>
-<p>需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。</p>
-<p><strong>管理员</strong>: 可以编辑这个数据库链接的人</p>
-<p><strong>使用者</strong>: 可以使用这个数据库链接查询数据的人</p>
+<h2 id="11-新建助理">
+  1.1 新建助理
+  <a class="anchor" href="#11-%e6%96%b0%e5%bb%ba%e5%8a%a9%e7%90%86">#</a>
+</h2>
+<p>打开超音数首页，点击&quot;智能助理&quot; -&gt; &ldquo;新建助理&rdquo;，即可新建助理，进行配置。</p>
+<p><img src="/img/agent_new.jpg" alt="image" /></p>
+<p>新建助理时需要填写以下信息：</p>
+<p><img src="/img/agent_config.jpg" alt="image" /></p>
+<!-- raw HTML omitted -->
+<p>新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&quot;标签圈选&quot;:</p>
+<p><img src="/img/agent_show.jpg" alt="image" />
+<!-- raw HTML omitted --></p>
+<h2 id="12-编辑助理">
+  1.2 编辑助理
+  <a class="anchor" href="#12-%e7%bc%96%e8%be%91%e5%8a%a9%e7%90%86">#</a>
+</h2>
+<p>点击智能助理模块, 会展示当前所有的智能助理信息：</p>
+<p><img src="/img/agent_edit.jpg" alt="image" /></p>
+<p>点击特定智能助理右侧的&quot;编辑&quot;选项, 即可对该助理在新建时的基本信息进行修改：
+此外可以选择该智能助理的能力(工具) :</p>
+<p><img src="/img/agent_tool.jpg" alt="image" /></p>
+<p>如上图, 该智能助理拥有两个工具,  既可以使用规则语义解析, 也可以使用大模型进行语义解析
+如果需要删除该助理，直接点击助理右侧的&quot;删除&quot;选项即可。</p>
 </article>
  
       
@@ -448,12 +500,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#当前支持的数据类型"><strong>当前支持的数据类型</strong></a></li>
-        <li><a href="#在supersonic中创建数据库连接的步骤"><strong>在SuperSonic中创建数据库连接的步骤</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#11-新建助理">1.1 新建助理</a></li>
+    <li><a href="#12-编辑助理">1.2 编辑助理</a></li>
   </ul>
 </nav>
 

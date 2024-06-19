@@ -22,6 +22,13 @@
       <description>项目架构 # 架构图 # 核心组件 # Knowledge Base： 定期从语义模型中提取相关的模式信息，构建词典和索引，以便后续的模式映射。&#xA;Schema Mapper： 将自然语言文本在知识库中进行匹配，为后续的语义解析提供相关信息。&#xA;Semantic Parser： 理解用户查询并抽取语义信息，生成语义查询语句S2SQL。&#xA;Semantic Corrector： 检查语义查询语句的合法性，对不合法的信息做修正和优化处理。&#xA;Semantic Translator： 将语义查询语句翻译成可在物理数据模型上执行的SQL语句。&#xA;Chat Plugin： 通过第三方工具扩展功能。给定所有配置的插件及其功能描述和示例问题，大语言模型将选择最合适的插件。</description>
     </item>
     <item>
+      <title></title>
+      <link>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</guid>
+      <description>快速补充中&amp;hellip;</description>
+    </item>
+    <item>
       <title>FAQ</title>
       <link>https://supersonicbi.github.io/docs/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

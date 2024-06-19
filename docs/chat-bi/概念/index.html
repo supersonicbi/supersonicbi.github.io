@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="快速体验 # SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
-启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM # 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot; 点击“确定”，保存助理大模型配置 问题对话 # 进入菜单“问答对话”，选择智能助理“算指标”
-点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”
-点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL">
+<meta name="description" content="概念 # 助理 # 智能助理可以理解为超音数一系列工具的集合, 一个智能助理可以同时具备规则解析, LLM语义解析, 插件召回等多种工具和能力。 用户可以根据自己的需要进行配置, 问答对话时也可以灵活选择需要的智能助理。 此外，因为智能助理可以选择特定的工具, 配置适合的智能助理可以减少不同工具之间的干扰，使得用户可以更加专注在自己需要的工具中。 而工具中又可以配置特定的数据集, 也可以减少不同数据集数据之间的干扰, 使得用户更容易获取到自己需要的数据。
+工具 # 快速补充中&hellip;
+插件 # 为了更好的实现用户的自定义需求，SuperSonic提供了插件市场的功能。 用户录入插件信息之后, 插件就可以被向量数据库和LLM召回, 进而执行对应的插件逻辑。目前插件分为Web页面插件和Web服务插件两类。
+Web页面插件： 插件形式为任意一个网页, 可以是一个看板, 也可以是一个解读报告, 召回之后可以把这个网页渲染到问答会话列表；
+Web服务插件： 插件形式为任意一个HTTP服务链接, 通过插件召回之后, 问答服务可以根据配置自动去调用HTTP服务链接并获取结果, 并把结果呈现到问答会话列表进行渲染。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/chat-bi/%E6%A6%82%E5%BF%B5/">
   <meta property="og:site_name" content="SuperSonic">
-  <meta property="og:title" content="快速体验">
-  <meta property="og:description" content="快速体验 # SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
-启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM # 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&#34;API Key&#34; 点击“确定”，保存助理大模型配置 问题对话 # 进入菜单“问答对话”，选择智能助理“算指标”
-点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”
-点击&#34;LLM解析S2SQL&#34;可以查看大模型生成的SQL">
+  <meta property="og:title" content="SuperSonic">
+  <meta property="og:description" content="概念 # 助理 # 智能助理可以理解为超音数一系列工具的集合, 一个智能助理可以同时具备规则解析, LLM语义解析, 插件召回等多种工具和能力。 用户可以根据自己的需要进行配置, 问答对话时也可以灵活选择需要的智能助理。 此外，因为智能助理可以选择特定的工具, 配置适合的智能助理可以减少不同工具之间的干扰，使得用户可以更加专注在自己需要的工具中。 而工具中又可以配置特定的数据集, 也可以减少不同数据集数据之间的干扰, 使得用户更容易获取到自己需要的数据。
+工具 # 快速补充中…
+插件 # 为了更好的实现用户的自定义需求，SuperSonic提供了插件市场的功能。 用户录入插件信息之后, 插件就可以被向量数据库和LLM召回, 进而执行对应的插件逻辑。目前插件分为Web页面插件和Web服务插件两类。
+Web页面插件： 插件形式为任意一个网页, 可以是一个看板, 也可以是一个解读报告, 召回之后可以把这个网页渲染到问答会话列表；
+Web服务插件： 插件形式为任意一个HTTP服务链接, 通过插件召回之后, 问答服务可以根据配置自动去调用HTTP服务链接并获取结果, 并把结果呈现到问答会话列表进行渲染。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>快速体验 | SuperSonic</title>
+<title>概念 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/chat-bi/%E6%A6%82%E5%BF%B5/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.aef09147373b71971122a94c099320fcbb4d3092103d447e5b94fa88dd207099.js" integrity="sha256-rvCRRzc7cZcRIqlMCZMg/LtNMJIQPUR&#43;W5T6iN0gcJk=" crossorigin="anonymous"></script>
@@ -81,7 +83,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="active">快速体验</a>
+    <a href="/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="">快速体验</a>
   
 
         </li>
@@ -177,7 +179,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-bi/%E6%A6%82%E5%BF%B5/" class="">概念</a>
+    <a href="/docs/chat-bi/%E6%A6%82%E5%BF%B5/" class="active">概念</a>
   
 
         </li>
@@ -398,7 +400,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>快速体验</strong>
+  <strong>概念</strong>
 
   <label for="toc-control">
     
@@ -414,9 +416,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#配置llm">配置LLM</a></li>
-    <li><a href="#问题对话">问题对话</a></li>
+    <li>
+      <ul>
+        <li><a href="#助理"><strong>助理</strong></a></li>
+        <li><a href="#工具"><strong>工具</strong></a></li>
+        <li><a href="#插件"><strong>插件</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -429,52 +435,30 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="快速体验">
-  快速体验
-  <a class="anchor" href="#%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c">#</a>
+  <article class="markdown book-article"><h1 id="概念">
+  概念
+  <a class="anchor" href="#%e6%a6%82%e5%bf%b5">#</a>
 </h1>
-<p>SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。</p>
-<h2 id="启动系统">
-  启动系统
-  <a class="anchor" href="#%e5%90%af%e5%8a%a8%e7%b3%bb%e7%bb%9f">#</a>
-</h2>
-<ol>
-<li>下载相应版本<a href="https://github.com/tencentmusic/supersonic/releases">release包</a></li>
-<li>解压zip包，执行启动脚本：<code>sh bin/supersonic-daemon.sh start</code></li>
-<li>访问浏览器：http://localhost:9080</li>
-</ol>
-<h2 id="配置llm">
-  配置LLM
-  <a class="anchor" href="#%e9%85%8d%e7%bd%aellm">#</a>
-</h2>
-<ol>
-<li>进入菜单“助理管理”，选择系统内置的DEMO助理“算指标”</li>
-<li>点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot;</li>
-<li>点击“确定”，保存助理大模型配置</li>
-</ol>
-<figure><img src="/img/supersonic_quickstart_llm.png#center">
-</figure>
-
-<h2 id="问题对话">
-  问题对话
-  <a class="anchor" href="#%e9%97%ae%e9%a2%98%e5%af%b9%e8%af%9d">#</a>
-</h2>
-<ol>
-<li>
-<p>进入菜单“问答对话”，选择智能助理“算指标”</p>
-</li>
-<li>
-<p>点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”</p>
-</li>
-<li>
-<p>点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL</p>
-</li>
-<li>
-<figure><img src="/img/supersonic_quickstart_chat.png#center">
-</figure>
-
-</li>
-</ol>
+<h3 id="助理">
+  <strong>助理</strong>
+  <a class="anchor" href="#%e5%8a%a9%e7%90%86">#</a>
+</h3>
+<p>智能助理可以理解为超音数一系列工具的集合, 一个智能助理可以同时具备规则解析, LLM语义解析, 插件召回等多种工具和能力。
+用户可以根据自己的需要进行配置, 问答对话时也可以灵活选择需要的智能助理。 此外，因为智能助理可以选择特定的工具,
+配置适合的智能助理可以减少不同工具之间的干扰，使得用户可以更加专注在自己需要的工具中。
+而工具中又可以配置特定的数据集, 也可以减少不同数据集数据之间的干扰, 使得用户更容易获取到自己需要的数据。</p>
+<h3 id="工具">
+  <strong>工具</strong>
+  <a class="anchor" href="#%e5%b7%a5%e5%85%b7">#</a>
+</h3>
+<p>快速补充中&hellip;</p>
+<h3 id="插件">
+  <strong>插件</strong>
+  <a class="anchor" href="#%e6%8f%92%e4%bb%b6">#</a>
+</h3>
+<p>为了更好的实现用户的自定义需求，SuperSonic提供了插件市场的功能。 用户录入插件信息之后, 插件就可以被向量数据库和LLM召回, 进而执行对应的插件逻辑。目前插件分为Web页面插件和Web服务插件两类。</p>
+<p><strong>Web页面插件</strong>： 插件形式为任意一个网页, 可以是一个看板, 也可以是一个解读报告, 召回之后可以把这个网页渲染到问答会话列表；</p>
+<p><strong>Web服务插件</strong>： 插件形式为任意一个HTTP服务链接, 通过插件召回之后, 问答服务可以根据配置自动去调用HTTP服务链接并获取结果, 并把结果呈现到问答会话列表进行渲染。</p>
 </article>
  
       
@@ -516,9 +500,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#配置llm">配置LLM</a></li>
-    <li><a href="#问题对话">问题对话</a></li>
+    <li>
+      <ul>
+        <li><a href="#助理"><strong>助理</strong></a></li>
+        <li><a href="#工具"><strong>工具</strong></a></li>
+        <li><a href="#插件"><strong>插件</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

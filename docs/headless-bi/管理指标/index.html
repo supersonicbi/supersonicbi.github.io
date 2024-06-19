@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="快速体验 # SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
-启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM # 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot; 点击“确定”，保存助理大模型配置 问题对话 # 进入菜单“问答对话”，选择智能助理“算指标”
-点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”
-点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL">
+<meta name="description" content="管理指标(草稿状态) # 1. 指标列表页 # 首先，我们可以点击顶部指标市场TAB来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按自然语言的方式对指标进行检索，也可以对指标进行收藏，便于下次查找。
+2. 指标详情页 # 然后，我们可以点击具体的指标，进入到指标的详情页。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击下载按钮进行下载即可。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/">
   <meta property="og:site_name" content="SuperSonic">
-  <meta property="og:title" content="快速体验">
-  <meta property="og:description" content="快速体验 # SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
-启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 配置LLM # 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&#34;API Key&#34; 点击“确定”，保存助理大模型配置 问题对话 # 进入菜单“问答对话”，选择智能助理“算指标”
-点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”
-点击&#34;LLM解析S2SQL&#34;可以查看大模型生成的SQL">
+  <meta property="og:title" content="SuperSonic">
+  <meta property="og:description" content="管理指标(草稿状态) # 1. 指标列表页 # 首先，我们可以点击顶部指标市场TAB来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按自然语言的方式对指标进行检索，也可以对指标进行收藏，便于下次查找。
+2. 指标详情页 # 然后，我们可以点击具体的指标，进入到指标的详情页。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击下载按钮进行下载即可。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>快速体验 | SuperSonic</title>
+<title>管理指标 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.aef09147373b71971122a94c099320fcbb4d3092103d447e5b94fa88dd207099.js" integrity="sha256-rvCRRzc7cZcRIqlMCZMg/LtNMJIQPUR&#43;W5T6iN0gcJk=" crossorigin="anonymous"></script>
@@ -81,7 +77,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="active">快速体验</a>
+    <a href="/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/" class="">快速体验</a>
   
 
         </li>
@@ -299,7 +295,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="">管理指标</a>
+    <a href="/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="active">管理指标</a>
   
 
         </li>
@@ -398,7 +394,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>快速体验</strong>
+  <strong>管理指标</strong>
 
   <label for="toc-control">
     
@@ -414,9 +410,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#配置llm">配置LLM</a></li>
-    <li><a href="#问题对话">问题对话</a></li>
+    <li>
+      <ul>
+        <li><a href="#1-指标列表页"><strong>1. 指标列表页</strong></a></li>
+        <li><a href="#2-指标详情页"><strong>2. 指标详情页</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -429,52 +428,22 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="快速体验">
-  快速体验
-  <a class="anchor" href="#%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c">#</a>
+  <article class="markdown book-article"><h1 id="管理指标草稿状态">
+  管理指标(草稿状态)
+  <a class="anchor" href="#%e7%ae%a1%e7%90%86%e6%8c%87%e6%a0%87%e8%8d%89%e7%a8%bf%e7%8a%b6%e6%80%81">#</a>
 </h1>
-<p>SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。</p>
-<h2 id="启动系统">
-  启动系统
-  <a class="anchor" href="#%e5%90%af%e5%8a%a8%e7%b3%bb%e7%bb%9f">#</a>
-</h2>
-<ol>
-<li>下载相应版本<a href="https://github.com/tencentmusic/supersonic/releases">release包</a></li>
-<li>解压zip包，执行启动脚本：<code>sh bin/supersonic-daemon.sh start</code></li>
-<li>访问浏览器：http://localhost:9080</li>
-</ol>
-<h2 id="配置llm">
-  配置LLM
-  <a class="anchor" href="#%e9%85%8d%e7%bd%aellm">#</a>
-</h2>
-<ol>
-<li>进入菜单“助理管理”，选择系统内置的DEMO助理“算指标”</li>
-<li>点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot;</li>
-<li>点击“确定”，保存助理大模型配置</li>
-</ol>
-<figure><img src="/img/supersonic_quickstart_llm.png#center">
-</figure>
-
-<h2 id="问题对话">
-  问题对话
-  <a class="anchor" href="#%e9%97%ae%e9%a2%98%e5%af%b9%e8%af%9d">#</a>
-</h2>
-<ol>
-<li>
-<p>进入菜单“问答对话”，选择智能助理“算指标”</p>
-</li>
-<li>
-<p>点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”</p>
-</li>
-<li>
-<p>点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL</p>
-</li>
-<li>
-<figure><img src="/img/supersonic_quickstart_chat.png#center">
-</figure>
-
-</li>
-</ol>
+<h3 id="1-指标列表页">
+  <strong>1. 指标列表页</strong>
+  <a class="anchor" href="#1-%e6%8c%87%e6%a0%87%e5%88%97%e8%a1%a8%e9%a1%b5">#</a>
+</h3>
+<p>首先，我们可以点击顶部<strong>指标市场TAB</strong>来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按<strong>自然语言</strong>的方式对指标进行检索，也可以对指标进行<strong>收藏</strong>，便于下次查找。</p>
+<p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/24eea209-462d-4b45-bfc6-4cb3527fd81a" alt="image" /></p>
+<h3 id="2-指标详情页">
+  <strong>2. 指标详情页</strong>
+  <a class="anchor" href="#2-%e6%8c%87%e6%a0%87%e8%af%a6%e6%83%85%e9%a1%b5">#</a>
+</h3>
+<p>然后，我们可以点击具体的指标，进入到<strong>指标的详情页</strong>。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击<strong>下载</strong>按钮进行下载即可。</p>
+<p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/e507db8c-4ab4-4531-8dbe-4d9a1aa77572" alt="image" /></p>
 </article>
  
       
@@ -516,9 +485,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#配置llm">配置LLM</a></li>
-    <li><a href="#问题对话">问题对话</a></li>
+    <li>
+      <ul>
+        <li><a href="#1-指标列表页"><strong>1. 指标列表页</strong></a></li>
+        <li><a href="#2-指标详情页"><strong>2. 指标详情页</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

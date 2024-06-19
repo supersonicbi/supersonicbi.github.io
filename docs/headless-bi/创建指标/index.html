@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="创建和管理指标 # 1. 创建指标 # 在构建模型时，我们已经展示了如何在创建模型的时候通过快速创建的方式来创建指标。 接下来，我们继续展示下如何通过手动自定义的方式来创建指标。 创建出来后，通过进一步进行下钻维度等配置，就可以在指标市场查看这几个指标的基本数据情况。
+<meta name="description" content="创建指标 # 在构建模型时，我们已经展示了如何在创建模型的时候通过快速创建的方式来创建指标。 接下来，我们继续展示下如何通过手动自定义的方式来创建指标。 创建出来后，通过进一步进行下钻维度等配置，就可以在指标市场查看这几个指标的基本数据情况。
 在创建新的指标之前，我们首先看看访问次数这个指标的定义。如图，访问次数这个指标是在创建模型时通过快速创建的方式创建出来的，已经初始化了名称等基本信息。 上面表格中除了基本的名称信息以外，还包括:
 别名: 别名是这个指标的其它名称，如访问次数这个指标又可以被称为PV。
 分类: 分类是对这个指标的描述，如访问次数这个指标可被归类为核心指标，访问相关指标等。
@@ -13,24 +13,22 @@
 根据以上介绍，我们来对访问次数这个指标进行信息补充，具体如下：
 如图，除了补充别名和标签以外，我们还补充好了下钻维度信息，表示这个指标可根据部门和用户这两个维度来进行下钻查询。需要注意的是，可配置的下钻维度不仅仅来自指标当前模型，还可来自与该模型有关联关系的模型。
 接下来，我们来查看它的表达式信息。可以看到，我们一共提供了三种创建指标的模式：按度量，按指标，按字段。
-1.1 按度量创建指标 # 访问次数这个指标通过快速创建的方式创建出来，默认的模式为按度量。 选中s2_pv_uv_statis_pv这个度量并在下面的表达式框中直接填写s2_pv_uv_statis_pv， 表明这个指标是通过s2_pv_uv_statis_pv直接创建而来。
+1 按度量创建指标 # 访问次数这个指标通过快速创建的方式创建出来，默认的模式为按度量。 选中s2_pv_uv_statis_pv这个度量并在下面的表达式框中直接填写s2_pv_uv_statis_pv， 表明这个指标是通过s2_pv_uv_statis_pv直接创建而来。
 注意
 s2_pv_uv_statis_pv这个度量名字是由模型英文名s2_pv_uv_statis和字段pv拼接而成， 且由于在创建模型的时候已经指定了聚合方式为SUM了，所以这里的表达式无需再填写聚合函数。
 以上，我们就介绍完了访问次数这个指标包含的基本信息以及它的表达式定义。接下来，我们开始来通过按指标和按字段两种模式来创建新的指标: 访问用户数和人均访问次数。
-1.2 按字段创建指标 # 首先，我们来创建访问用户数。如图，我们补充好了访问用户数的基本信息，并给它添加了一个别名：UV。
+2 按字段创建指标 # 首先，我们来创建访问用户数。如图，我们补充好了访问用户数的基本信息，并给它添加了一个别名：UV。
 然后，我们来配置下访问用户数的下钻维度，可以看到，我们选中了部门这个维度作为它的下钻维度，并勾选了绑定。绑定的含义是我们在查询这个指标时，必须配合这个维度来进行查询，否则提示缺少下钻维度。
 最后，我们来选择按字段的方式来进行表达式的定义，这些字段来自当前模型。可以看到我们选择了user_id这个字段来创建指标，并定义了字段表达式。由于字段上不包含聚合函数，因此需要在写表达式的时候指定聚合函数。
 点击完成之后，我们就完成了访问用户数这个指标的定义。
-1.3 基于已有指标来创建指标 # 最后，我们来创建人均访问次数这个指标，由于基本信息的补充都基本类似，就不再介绍啦。我们选择按指标的模式来定义表达式，通过分析，人均访问次数这个指标可由访问次数和访问用户数这两个指标结合起来创建。因此，如下图我们选中了访问次数和访问用户数这两个指标，并通过pv/uv的方式来表达人均访问次数。
-到这里，我们就完成了所有指标的创建了。
-2. 管理指标 # 2.1 指标市场 # 首先，我们可以点击顶部指标市场TAB来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按自然语言的方式对指标进行检索，也可以对指标进行收藏，便于下次查找。
-2.1 指标详情页 # 然后，我们可以点击具体的指标，进入到指标的详情页。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击下载按钮进行下载即可。">
+3 基于已有指标来创建指标 # 最后，我们来创建人均访问次数这个指标，由于基本信息的补充都基本类似，就不再介绍啦。我们选择按指标的模式来定义表达式，通过分析，人均访问次数这个指标可由访问次数和访问用户数这两个指标结合起来创建。因此，如下图我们选中了访问次数和访问用户数这两个指标，并通过pv/uv的方式来表达人均访问次数。
+到这里，我们就完成了所有指标的创建了。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E5%88%9B%E5%BB%BA%E6%8C%87%E6%A0%87/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="创建和管理指标 # 1. 创建指标 # 在构建模型时，我们已经展示了如何在创建模型的时候通过快速创建的方式来创建指标。 接下来，我们继续展示下如何通过手动自定义的方式来创建指标。 创建出来后，通过进一步进行下钻维度等配置，就可以在指标市场查看这几个指标的基本数据情况。
+  <meta property="og:description" content="创建指标 # 在构建模型时，我们已经展示了如何在创建模型的时候通过快速创建的方式来创建指标。 接下来，我们继续展示下如何通过手动自定义的方式来创建指标。 创建出来后，通过进一步进行下钻维度等配置，就可以在指标市场查看这几个指标的基本数据情况。
 在创建新的指标之前，我们首先看看访问次数这个指标的定义。如图，访问次数这个指标是在创建模型时通过快速创建的方式创建出来的，已经初始化了名称等基本信息。 上面表格中除了基本的名称信息以外，还包括:
 别名: 别名是这个指标的其它名称，如访问次数这个指标又可以被称为PV。
 分类: 分类是对这个指标的描述，如访问次数这个指标可被归类为核心指标，访问相关指标等。
@@ -40,28 +38,26 @@ s2_pv_uv_statis_pv这个度量名字是由模型英文名s2_pv_uv_statis和字�
 根据以上介绍，我们来对访问次数这个指标进行信息补充，具体如下：
 如图，除了补充别名和标签以外，我们还补充好了下钻维度信息，表示这个指标可根据部门和用户这两个维度来进行下钻查询。需要注意的是，可配置的下钻维度不仅仅来自指标当前模型，还可来自与该模型有关联关系的模型。
 接下来，我们来查看它的表达式信息。可以看到，我们一共提供了三种创建指标的模式：按度量，按指标，按字段。
-1.1 按度量创建指标 # 访问次数这个指标通过快速创建的方式创建出来，默认的模式为按度量。 选中s2_pv_uv_statis_pv这个度量并在下面的表达式框中直接填写s2_pv_uv_statis_pv， 表明这个指标是通过s2_pv_uv_statis_pv直接创建而来。
+1 按度量创建指标 # 访问次数这个指标通过快速创建的方式创建出来，默认的模式为按度量。 选中s2_pv_uv_statis_pv这个度量并在下面的表达式框中直接填写s2_pv_uv_statis_pv， 表明这个指标是通过s2_pv_uv_statis_pv直接创建而来。
 注意
 s2_pv_uv_statis_pv这个度量名字是由模型英文名s2_pv_uv_statis和字段pv拼接而成， 且由于在创建模型的时候已经指定了聚合方式为SUM了，所以这里的表达式无需再填写聚合函数。
 以上，我们就介绍完了访问次数这个指标包含的基本信息以及它的表达式定义。接下来，我们开始来通过按指标和按字段两种模式来创建新的指标: 访问用户数和人均访问次数。
-1.2 按字段创建指标 # 首先，我们来创建访问用户数。如图，我们补充好了访问用户数的基本信息，并给它添加了一个别名：UV。
+2 按字段创建指标 # 首先，我们来创建访问用户数。如图，我们补充好了访问用户数的基本信息，并给它添加了一个别名：UV。
 然后，我们来配置下访问用户数的下钻维度，可以看到，我们选中了部门这个维度作为它的下钻维度，并勾选了绑定。绑定的含义是我们在查询这个指标时，必须配合这个维度来进行查询，否则提示缺少下钻维度。
 最后，我们来选择按字段的方式来进行表达式的定义，这些字段来自当前模型。可以看到我们选择了user_id这个字段来创建指标，并定义了字段表达式。由于字段上不包含聚合函数，因此需要在写表达式的时候指定聚合函数。
 点击完成之后，我们就完成了访问用户数这个指标的定义。
-1.3 基于已有指标来创建指标 # 最后，我们来创建人均访问次数这个指标，由于基本信息的补充都基本类似，就不再介绍啦。我们选择按指标的模式来定义表达式，通过分析，人均访问次数这个指标可由访问次数和访问用户数这两个指标结合起来创建。因此，如下图我们选中了访问次数和访问用户数这两个指标，并通过pv/uv的方式来表达人均访问次数。
-到这里，我们就完成了所有指标的创建了。
-2. 管理指标 # 2.1 指标市场 # 首先，我们可以点击顶部指标市场TAB来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按自然语言的方式对指标进行检索，也可以对指标进行收藏，便于下次查找。
-2.1 指标详情页 # 然后，我们可以点击具体的指标，进入到指标的详情页。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击下载按钮进行下载即可。">
+3 基于已有指标来创建指标 # 最后，我们来创建人均访问次数这个指标，由于基本信息的补充都基本类似，就不再介绍啦。我们选择按指标的模式来定义表达式，通过分析，人均访问次数这个指标可由访问次数和访问用户数这两个指标结合起来创建。因此，如下图我们选中了访问次数和访问用户数这两个指标，并通过pv/uv的方式来表达人均访问次数。
+到这里，我们就完成了所有指标的创建了。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>创建和管理指标 | SuperSonic</title>
+<title>创建指标 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E5%88%9B%E5%BB%BA%E6%8C%87%E6%A0%87/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.55db35483f24722d5da3b592e1a39b204b4ce06dccf0a030cafb1fafc4c5d504.js" integrity="sha256-Vds1SD8kci1do7WS4aObIEtM4G3M8KAwyvsfr8TF1QQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aef09147373b71971122a94c099320fcbb4d3092103d447e5b94fa88dd207099.js" integrity="sha256-rvCRRzc7cZcRIqlMCZMg/LtNMJIQPUR&#43;W5T6iN0gcJk=" crossorigin="anonymous"></script>
 
   
 
@@ -213,7 +209,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-bi/%E6%8F%92%E4%BB%B6%E5%B8%82%E5%9C%BA/" class="">插件市场</a>
+    <a href="/docs/chat-bi/%E6%A6%82%E5%BF%B5/" class="">概念</a>
   
 
         </li>
@@ -226,7 +222,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-bi/%E6%99%BA%E8%83%BD%E5%8A%A9%E7%90%86/" class="">智能助理</a>
+    <a href="/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/" class="">配置助理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chat-bi/%E9%97%AE%E7%AD%94%E5%AF%B9%E8%AF%9D/" class="">问答对话</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chat-bi/%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6/" class="">配置插件</a>
   
 
         </li>
@@ -270,7 +292,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" class="">生成数据库连接</a>
+    <a href="/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="">连接数据库</a>
   
 
         </li>
@@ -296,7 +318,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="active">创建和管理指标</a>
+    <a href="/docs/headless-bi/%E5%88%9B%E5%BB%BA%E6%8C%87%E6%A0%87/" class="active">创建指标</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="">管理指标</a>
   
 
         </li>
@@ -329,6 +364,19 @@ https://github.com/alex-shpak/hugo-book
       
     
   </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/" class="">系统设置</a>
+  
 
         </li>
       
@@ -382,7 +430,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>创建和管理指标</strong>
+  <strong>创建指标</strong>
 
   <label for="toc-control">
     
@@ -398,17 +446,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-创建指标"><strong>1. 创建指标</strong></a>
+    <li>
       <ul>
-        <li><a href="#11-按度量创建指标"><strong>1.1 按度量创建指标</strong></a></li>
-        <li><a href="#12-按字段创建指标"><strong>1.2 按字段创建指标</strong></a></li>
-        <li><a href="#13-基于已有指标来创建指标"><strong>1.3 基于已有指标来创建指标</strong></a></li>
-      </ul>
-    </li>
-    <li><a href="#2-管理指标"><strong>2. 管理指标</strong></a>
-      <ul>
-        <li><a href="#21-指标市场"><strong>2.1 指标市场</strong></a></li>
-        <li><a href="#21-指标详情页"><strong>2.1 指标详情页</strong></a></li>
+        <li><a href="#1-按度量创建指标"><strong>1 按度量创建指标</strong></a></li>
+        <li><a href="#2-按字段创建指标"><strong>2 按字段创建指标</strong></a></li>
+        <li><a href="#3-基于已有指标来创建指标"><strong>3 基于已有指标来创建指标</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -423,14 +465,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="创建和管理指标">
-  创建和管理指标
-  <a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%92%8c%e7%ae%a1%e7%90%86%e6%8c%87%e6%a0%87">#</a>
+  <article class="markdown book-article"><h1 id="创建指标">
+  创建指标
+  <a class="anchor" href="#%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
 </h1>
-<h2 id="1-创建指标">
-  <strong>1. 创建指标</strong>
-  <a class="anchor" href="#1-%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
-</h2>
 <p>在构建模型时，我们已经展示了如何在创建模型的时候通过<strong>快速创建</strong>的方式来创建指标。 接下来，我们继续展示下如何通过<strong>手动自定义</strong>的方式来创建指标。
 创建出来后，通过进一步进行下钻维度等配置，就可以在指标市场查看这几个指标的基本数据情况。</p>
 <p>在创建新的指标之前，我们首先看看<strong>访问次数</strong>这个指标的定义。如图，访问次数这个指标是在创建模型时通过快速创建的方式创建出来的，已经初始化了名称等基本信息。
@@ -446,9 +484,9 @@ https://github.com/alex-shpak/hugo-book
 <p>如图，除了补充<strong>别名和标签</strong>以外，我们还补充好了<strong>下钻维度</strong>信息，表示这个指标可根据部门和用户这两个维度来进行下钻查询。需要注意的是，可配置的下钻维度不仅仅来自指标当前模型，还可来自与该模型有关联关系的模型。</p>
 <p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/dfd5cb74-2b28-44bb-b289-8950bdda7f32" alt="image" /></p>
 <p>接下来，我们来查看它的<strong>表达式</strong>信息。可以看到，我们一共提供了<strong>三种</strong>创建指标的模式：<strong>按度量，按指标，按字段</strong>。</p>
-<h3 id="11-按度量创建指标">
-  <strong>1.1 按度量创建指标</strong>
-  <a class="anchor" href="#11-%e6%8c%89%e5%ba%a6%e9%87%8f%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
+<h3 id="1-按度量创建指标">
+  <strong>1 按度量创建指标</strong>
+  <a class="anchor" href="#1-%e6%8c%89%e5%ba%a6%e9%87%8f%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
 </h3>
 <p>访问次数这个指标通过快速创建的方式创建出来，默认的模式为按度量。
 选中<strong>s2_pv_uv_statis_pv</strong>这个度量并在下面的表达式框中直接填写s2_pv_uv_statis_pv，
@@ -462,9 +500,9 @@ https://github.com/alex-shpak/hugo-book
 
 <p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/fb126873-7b86-425e-bc30-383ce78144c0" alt="image" /></p>
 <p>以上，我们就介绍完了访问次数这个指标包含的基本信息以及它的表达式定义。接下来，我们开始来通过按指标和按字段两种模式来创建新的指标: 访问用户数和人均访问次数。</p>
-<h3 id="12-按字段创建指标">
-  <strong>1.2 按字段创建指标</strong>
-  <a class="anchor" href="#12-%e6%8c%89%e5%ad%97%e6%ae%b5%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
+<h3 id="2-按字段创建指标">
+  <strong>2 按字段创建指标</strong>
+  <a class="anchor" href="#2-%e6%8c%89%e5%ad%97%e6%ae%b5%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
 </h3>
 <p>首先，我们来创建<strong>访问用户数</strong>。如图，我们补充好了访问用户数的基本信息，并给它添加了一个别名：UV。</p>
 <p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/377b1dbd-9112-4ec6-811f-9f7ab37186b1" alt="image" /></p>
@@ -473,29 +511,13 @@ https://github.com/alex-shpak/hugo-book
 <p>最后，我们来选择按字段的方式来进行表达式的定义，这些字段来自当前模型。可以看到我们选择了<strong>user_id</strong>这个字段来创建指标，并定义了字段表达式。由于字段上不包含聚合函数，因此需要在写表达式的时候指定聚合函数。</p>
 <p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/f4ac362e-408e-48ec-b1fd-3fbaa0b7a119" alt="image" /></p>
 <p>点击完成之后，我们就完成了访问用户数这个指标的定义。</p>
-<h3 id="13-基于已有指标来创建指标">
-  <strong>1.3 基于已有指标来创建指标</strong>
-  <a class="anchor" href="#13-%e5%9f%ba%e4%ba%8e%e5%b7%b2%e6%9c%89%e6%8c%87%e6%a0%87%e6%9d%a5%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
+<h3 id="3-基于已有指标来创建指标">
+  <strong>3 基于已有指标来创建指标</strong>
+  <a class="anchor" href="#3-%e5%9f%ba%e4%ba%8e%e5%b7%b2%e6%9c%89%e6%8c%87%e6%a0%87%e6%9d%a5%e5%88%9b%e5%bb%ba%e6%8c%87%e6%a0%87">#</a>
 </h3>
 <p>最后，我们来创建<strong>人均访问次数</strong>这个指标，由于基本信息的补充都基本类似，就不再介绍啦。我们选择按指标的模式来定义表达式，通过分析，<strong>人均访问次数这个指标可由访问次数和访问用户数这两个指标结合起来创建</strong>。因此，如下图我们选中了访问次数和访问用户数这两个指标，并通过<strong>pv/uv</strong>的方式来表达人均访问次数。</p>
 <p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/106bfee2-8e67-4e93-b0ab-c9ed6392612e" alt="image" /></p>
 <p>到这里，我们就完成了所有指标的创建了。</p>
-<h2 id="2-管理指标">
-  <strong>2. 管理指标</strong>
-  <a class="anchor" href="#2-%e7%ae%a1%e7%90%86%e6%8c%87%e6%a0%87">#</a>
-</h2>
-<h3 id="21-指标市场">
-  <strong>2.1 指标市场</strong>
-  <a class="anchor" href="#21-%e6%8c%87%e6%a0%87%e5%b8%82%e5%9c%ba">#</a>
-</h3>
-<p>首先，我们可以点击顶部<strong>指标市场TAB</strong>来看下目前系统中一共有哪些指标。在指标市场这个页面中，不仅可以支持按<strong>自然语言</strong>的方式对指标进行检索，也可以对指标进行<strong>收藏</strong>，便于下次查找。</p>
-<p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/24eea209-462d-4b45-bfc6-4cb3527fd81a" alt="image" /></p>
-<h3 id="21-指标详情页">
-  <strong>2.1 指标详情页</strong>
-  <a class="anchor" href="#21-%e6%8c%87%e6%a0%87%e8%af%a6%e6%83%85%e9%a1%b5">#</a>
-</h3>
-<p>然后，我们可以点击具体的指标，进入到<strong>指标的详情页</strong>。如图，我们进入到访问次数这个指标的详情页，可以看到它的基本信息以及具体数据趋势和表格明细。同时，还可以根据我们刚刚配置的下钻维度来对指标数据进行下钻和过滤。访问用户数和停留时长等指标数据也是同理可查看。并且，若需要对数据进行下载离线分析，可直接点击<strong>下载</strong>按钮进行下载即可。</p>
-<p><img src="https://github.com/supersonicbi/supersonic-website/assets/168408457/e507db8c-4ab4-4531-8dbe-4d9a1aa77572" alt="image" /></p>
 </article>
  
       
@@ -537,17 +559,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-创建指标"><strong>1. 创建指标</strong></a>
+    <li>
       <ul>
-        <li><a href="#11-按度量创建指标"><strong>1.1 按度量创建指标</strong></a></li>
-        <li><a href="#12-按字段创建指标"><strong>1.2 按字段创建指标</strong></a></li>
-        <li><a href="#13-基于已有指标来创建指标"><strong>1.3 基于已有指标来创建指标</strong></a></li>
-      </ul>
-    </li>
-    <li><a href="#2-管理指标"><strong>2. 管理指标</strong></a>
-      <ul>
-        <li><a href="#21-指标市场"><strong>2.1 指标市场</strong></a></li>
-        <li><a href="#21-指标详情页"><strong>2.1 指标详情页</strong></a></li>
+        <li><a href="#1-按度量创建指标"><strong>1 按度量创建指标</strong></a></li>
+        <li><a href="#2-按字段创建指标"><strong>2 按字段创建指标</strong></a></li>
+        <li><a href="#3-基于已有指标来创建指标"><strong>3 基于已有指标来创建指标</strong></a></li>
       </ul>
     </li>
   </ul>
