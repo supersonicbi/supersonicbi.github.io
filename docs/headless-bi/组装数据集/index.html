@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
-注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 设置查询模式 # 快速补充中&hellip;">
+<meta name="description" content=" 组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
+注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 查询设置 # 指标模式: 可设置默认时间范围
+明细模式: 可设置默认时间以及查询表头
+注意 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
-注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 设置查询模式 # 快速补充中…">
+  <meta property="og:description" content=" 组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
+注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 查询设置 # 指标模式: 可设置默认时间范围
+明细模式: 可设置默认时间以及查询表头
+注意 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1 ">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -21,7 +25,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e372ea3eea0e32c980e4b8320a7e79a6656ffcbb0656c772904d82c13c6f9521.js" integrity="sha256-43LqPuoOMsmA5LgyCn55pmVv/LsGVsdykE2CwTxvlSE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ff3bf5fcaadbee8b3a8d4f7e7f8b97d0da9c2bf933cd30e097dfcec5a2ee0bb2.js" integrity="sha256-/zv1/Krb7os6jU9&#43;f4uX0NqcK/kzzTDgl9/OxaLuC7I=" crossorigin="anonymous"></script>
 
   
 
@@ -413,7 +417,7 @@ https://github.com/alex-shpak/hugo-book
     <li>
       <ul>
         <li><a href="#1-挑选指标维度"><strong>1. 挑选指标维度</strong></a></li>
-        <li><a href="#2-设置查询模式"><strong>2. 设置查询模式</strong></a></li>
+        <li><a href="#2-查询设置"><strong>2. 查询设置</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -443,11 +447,19 @@ https://github.com/alex-shpak/hugo-book
 
 <p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/f3203106-83a3-403a-9961-b6eed9c7c1af" alt="image" /></p>
 <p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/80cf0239-339c-41e1-9bf5-b3cc36964947" alt="image" /></p>
-<h3 id="2-设置查询模式">
-  <strong>2. 设置查询模式</strong>
-  <a class="anchor" href="#2-%e8%ae%be%e7%bd%ae%e6%9f%a5%e8%af%a2%e6%a8%a1%e5%bc%8f">#</a>
+<h3 id="2-查询设置">
+  <strong>2. 查询设置</strong>
+  <a class="anchor" href="#2-%e6%9f%a5%e8%af%a2%e8%ae%be%e7%bd%ae">#</a>
 </h3>
-<p>快速补充中&hellip;</p>
+<p><strong>指标模式:</strong> 可设置默认时间范围</p>
+<p><strong>明细模式:</strong> 可设置默认时间以及查询表头</p>
+<blockquote class="book-hint info">
+  <strong>注意</strong> 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1
+</blockquote>
+
+<figure><img src="/img/dataset_query_config.png#center">
+</figure>
+
 </article>
  
       
@@ -492,7 +504,7 @@ https://github.com/alex-shpak/hugo-book
     <li>
       <ul>
         <li><a href="#1-挑选指标维度"><strong>1. 挑选指标维度</strong></a></li>
-        <li><a href="#2-设置查询模式"><strong>2. 设置查询模式</strong></a></li>
+        <li><a href="#2-查询设置"><strong>2. 查询设置</strong></a></li>
       </ul>
     </li>
   </ul>
