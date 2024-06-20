@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="配置助理 # 1.1 新建助理 # 打开超音数首页，点击&quot;智能助理&quot; -&gt; &ldquo;新建助理&rdquo;，即可新建助理，进行配置。
-新建助理时需要填写以下信息：
-新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&quot;标签圈选&quot;:
-1.2 编辑助理 # 点击智能助理模块, 会展示当前所有的智能助理信息：
-点击特定智能助理右侧的&quot;编辑&quot;选项, 即可对该助理在新建时的基本信息进行修改： 此外可以选择该智能助理的能力(工具) :
-如上图, 该智能助理拥有两个工具, 既可以使用规则语义解析, 也可以使用大模型进行语义解析 如果需要删除该助理，直接点击助理右侧的&quot;删除&quot;选项即可。">
+<meta name="description" content=" 配置助理 # 1. 信息配置 # 助理的配置主要分为三个部分:
+基本信息的配置 大模型连接配置 工具配置 1.1 基本信息的配置 # 名称: 即助理的名称
+支持联想: 默认开启，开启后，用户在问答对话中输入问题时，会进行联想提示
+开启多轮: 默认关闭，开启后，用户在问答对话时，可自动保存上下文，提供多轮对话的效果
+示例问题: 配置后，用户在问答对话选择这个助理时，可以看到示例问题
+描述: 这个助理的描述信息
+1.2 大模型信息的配置 # 当前主要针对支持OpenAI协议的大模型进行配置: 1.3 工具的配置 # 规则语义解析工具的配置
+规则语义解析工具主要支持配置这个工具可作用的数据集范围以及查询模式: 大模型语义解析工具的配置
+大模型语义解析工具主要支持配置这个工具可作用的数据集: 第三方插件工具的配置
+第三方插件工具主要支持配置选用一个具体的插件: 2. 助理使用 # 助理的使用也很简单，在问答对话左侧选择使用即可: ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="配置助理 # 1.1 新建助理 # 打开超音数首页，点击&#34;智能助理&#34; -&gt; “新建助理”，即可新建助理，进行配置。
-新建助理时需要填写以下信息：
-新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&#34;标签圈选&#34;:
-1.2 编辑助理 # 点击智能助理模块, 会展示当前所有的智能助理信息：
-点击特定智能助理右侧的&#34;编辑&#34;选项, 即可对该助理在新建时的基本信息进行修改： 此外可以选择该智能助理的能力(工具) :
-如上图, 该智能助理拥有两个工具, 既可以使用规则语义解析, 也可以使用大模型进行语义解析 如果需要删除该助理，直接点击助理右侧的&#34;删除&#34;选项即可。">
+  <meta property="og:description" content=" 配置助理 # 1. 信息配置 # 助理的配置主要分为三个部分:
+基本信息的配置 大模型连接配置 工具配置 1.1 基本信息的配置 # 名称: 即助理的名称
+支持联想: 默认开启，开启后，用户在问答对话中输入问题时，会进行联想提示
+开启多轮: 默认关闭，开启后，用户在问答对话时，可自动保存上下文，提供多轮对话的效果
+示例问题: 配置后，用户在问答对话选择这个助理时，可以看到示例问题
+描述: 这个助理的描述信息
+1.2 大模型信息的配置 # 当前主要针对支持OpenAI协议的大模型进行配置: 1.3 工具的配置 # 规则语义解析工具的配置
+规则语义解析工具主要支持配置这个工具可作用的数据集范围以及查询模式: 大模型语义解析工具的配置
+大模型语义解析工具主要支持配置这个工具可作用的数据集: 第三方插件工具的配置
+第三方插件工具主要支持配置选用一个具体的插件: 2. 助理使用 # 助理的使用也很简单，在问答对话左侧选择使用即可: ">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -29,7 +37,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/chat-bi/%E9%85%8D%E7%BD%AE%E5%8A%A9%E7%90%86/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b81c0559db868e5785ed3102fd56b18969966609cca827f899ab8b293f5f69e4.js" integrity="sha256-uBwFWduGjleF7TEC/VaxiWmWZgnMqCf4mauLKT9faeQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f07168eff3860010fe38c290a4bad7e62baf4d8b819359f45b07f3ba222c49bd.js" integrity="sha256-8HFo7/OGABD&#43;OMKQpLrX5iuvTYuBk1n0WwfzuiIsSb0=" crossorigin="anonymous"></script>
 
   
 
@@ -418,8 +426,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#11-新建助理">1.1 新建助理</a></li>
-    <li><a href="#12-编辑助理">1.2 编辑助理</a></li>
+    <li><a href="#1-信息配置">1. 信息配置</a>
+      <ul>
+        <li><a href="#11-基本信息的配置"><strong>1.1 基本信息的配置</strong></a></li>
+        <li><a href="#12-大模型信息的配置"><strong>1.2 大模型信息的配置</strong></a></li>
+        <li><a href="#13-工具的配置"><strong>1.3 工具的配置</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#2-助理使用"><strong>2. 助理使用</strong></a></li>
   </ul>
 </nav>
 
@@ -436,29 +450,63 @@ https://github.com/alex-shpak/hugo-book
   配置助理
   <a class="anchor" href="#%e9%85%8d%e7%bd%ae%e5%8a%a9%e7%90%86">#</a>
 </h1>
-<h2 id="11-新建助理">
-  1.1 新建助理
-  <a class="anchor" href="#11-%e6%96%b0%e5%bb%ba%e5%8a%a9%e7%90%86">#</a>
+<h2 id="1-信息配置">
+  1. 信息配置
+  <a class="anchor" href="#1-%e4%bf%a1%e6%81%af%e9%85%8d%e7%bd%ae">#</a>
 </h2>
-<p>打开超音数首页，点击&quot;智能助理&quot; -&gt; &ldquo;新建助理&rdquo;，即可新建助理，进行配置。</p>
-<p><img src="/img/agent_new.jpg" alt="image" /></p>
-<p>新建助理时需要填写以下信息：</p>
-<p><img src="/img/agent_config.jpg" alt="image" /></p>
-<!-- raw HTML omitted -->
-<p>新建并启用超音数智能助理后, 在问答对话左侧则会增加一个&quot;标签圈选&quot;:</p>
-<p><img src="/img/agent_show.jpg" alt="image" />
-<!-- raw HTML omitted --></p>
-<h2 id="12-编辑助理">
-  1.2 编辑助理
-  <a class="anchor" href="#12-%e7%bc%96%e8%be%91%e5%8a%a9%e7%90%86">#</a>
+<p>助理的配置主要分为三个部分:</p>
+<ol>
+<li>基本信息的配置</li>
+<li>大模型连接配置</li>
+<li>工具配置</li>
+</ol>
+<h3 id="11-基本信息的配置">
+  <strong>1.1 基本信息的配置</strong>
+  <a class="anchor" href="#11-%e5%9f%ba%e6%9c%ac%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae">#</a>
+</h3>
+<p><strong>名称:</strong> 即助理的名称</p>
+<p><strong>支持联想:</strong> 默认开启，开启后，用户在问答对话中输入问题时，会进行联想提示</p>
+<p><strong>开启多轮:</strong> 默认关闭，开启后，用户在问答对话时，可自动保存上下文，提供多轮对话的效果</p>
+<p><strong>示例问题:</strong> 配置后，用户在问答对话选择这个助理时，可以看到示例问题</p>
+<p><strong>描述</strong>: 这个助理的描述信息</p>
+<figure><img src="/img/agent_base_info.png#center">
+</figure>
+
+<h3 id="12-大模型信息的配置">
+  <strong>1.2 大模型信息的配置</strong>
+  <a class="anchor" href="#12-%e5%a4%a7%e6%a8%a1%e5%9e%8b%e4%bf%a1%e6%81%af%e7%9a%84%e9%85%8d%e7%bd%ae">#</a>
+</h3>
+<p>当前主要针对支持OpenAI协议的大模型进行配置:
+<figure><img src="/img/supersonic_quickstart_llm.png#center">
+</figure>
+</p>
+<h3 id="13-工具的配置">
+  <strong>1.3 工具的配置</strong>
+  <a class="anchor" href="#13-%e5%b7%a5%e5%85%b7%e7%9a%84%e9%85%8d%e7%bd%ae">#</a>
+</h3>
+<p><strong>规则语义解析工具的配置</strong></p>
+<p>规则语义解析工具主要支持配置这个工具可作用的数据集范围以及查询模式:
+<figure><img src="/img/agent_rule_tool.png#center">
+</figure>
+</p>
+<p><strong>大模型语义解析工具的配置</strong></p>
+<p>大模型语义解析工具主要支持配置这个工具可作用的数据集:
+<figure><img src="/img/agent_llm_tool.png#center">
+</figure>
+</p>
+<p><strong>第三方插件工具的配置</strong></p>
+<p>第三方插件工具主要支持配置选用一个具体的插件:
+<figure><img src="/img/agent_plugin_tool.png#center">
+</figure>
+</p>
+<h2 id="2-助理使用">
+  <strong>2. 助理使用</strong>
+  <a class="anchor" href="#2-%e5%8a%a9%e7%90%86%e4%bd%bf%e7%94%a8">#</a>
 </h2>
-<p>点击智能助理模块, 会展示当前所有的智能助理信息：</p>
-<p><img src="/img/agent_edit.jpg" alt="image" /></p>
-<p>点击特定智能助理右侧的&quot;编辑&quot;选项, 即可对该助理在新建时的基本信息进行修改：
-此外可以选择该智能助理的能力(工具) :</p>
-<p><img src="/img/agent_tool.jpg" alt="image" /></p>
-<p>如上图, 该智能助理拥有两个工具,  既可以使用规则语义解析, 也可以使用大模型进行语义解析
-如果需要删除该助理，直接点击助理右侧的&quot;删除&quot;选项即可。</p>
+<p>助理的使用也很简单，在问答对话左侧选择使用即可:
+<figure><img src="/img/agent_use.png#center">
+</figure>
+</p>
 </article>
  
       
@@ -500,8 +548,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#11-新建助理">1.1 新建助理</a></li>
-    <li><a href="#12-编辑助理">1.2 编辑助理</a></li>
+    <li><a href="#1-信息配置">1. 信息配置</a>
+      <ul>
+        <li><a href="#11-基本信息的配置"><strong>1.1 基本信息的配置</strong></a></li>
+        <li><a href="#12-大模型信息的配置"><strong>1.2 大模型信息的配置</strong></a></li>
+        <li><a href="#13-工具的配置"><strong>1.3 工具的配置</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#2-助理使用"><strong>2. 助理使用</strong></a></li>
   </ul>
 </nav>
 
