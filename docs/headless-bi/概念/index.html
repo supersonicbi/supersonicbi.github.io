@@ -16,9 +16,10 @@ Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指�
 度量 # 度量的概念则恰好和维度相反，通常是一些数值型的字段，用来表达客观现象的程度。在SuperSonic中，度量主要用来创建一个具体的指标，没有其它实质性的作用。
 指标 # 指标是相对度量更具具体和实例化的概念，用户可以基于度量，字段或者已有指标来创建指标并对它进行管理。同时，创建出来的指标也可以被问答这样的上层BI产品进行消费。
 时间日期 # 时间日期字段在SuperSonic中有比较重要的作用，比如一个典型的场景，当我们在问答中询问&quot;超音数近10天访问次数&quot;时，需要得到具体的 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时， 就必须指定时间日期字段。
-select * from s2_pv_$interval$ 标签对象 # 在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象
+标签对象 # 在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象
 标签 # 标签用来圈取标签对象，比如，在上面的例子“国风类型的歌曲”，国风就是一个标签。标签可以由是一个维度，也可以是由一个指标演化而来。
-数据集 # 数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。 对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。">
+数据集 # 数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。 对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。
+术语 # 企业内部通常有自己的私域知识，是否能把私域知识教给大模型对结果准确性有较大的影响。因此，SuperSonic引入了术语的概念，通过配置术语及其描述，就可以把私域知识 传授给大模型。比如SuperSonic给的样例术语：[近期]指代近10天；[核心用户]指Tom和Lucy，就能很容易让大模型学习到这个知识。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E6%A6%82%E5%BF%B5/">
@@ -37,9 +38,10 @@ Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指�
 度量 # 度量的概念则恰好和维度相反，通常是一些数值型的字段，用来表达客观现象的程度。在SuperSonic中，度量主要用来创建一个具体的指标，没有其它实质性的作用。
 指标 # 指标是相对度量更具具体和实例化的概念，用户可以基于度量，字段或者已有指标来创建指标并对它进行管理。同时，创建出来的指标也可以被问答这样的上层BI产品进行消费。
 时间日期 # 时间日期字段在SuperSonic中有比较重要的作用，比如一个典型的场景，当我们在问答中询问&#34;超音数近10天访问次数&#34;时，需要得到具体的 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时， 就必须指定时间日期字段。
-select * from s2_pv_$interval$ 标签对象 # 在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象
+标签对象 # 在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象
 标签 # 标签用来圈取标签对象，比如，在上面的例子“国风类型的歌曲”，国风就是一个标签。标签可以由是一个维度，也可以是由一个指标演化而来。
-数据集 # 数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。 对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。">
+数据集 # 数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。 对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。
+术语 # 企业内部通常有自己的私域知识，是否能把私域知识教给大模型对结果准确性有较大的影响。因此，SuperSonic引入了术语的概念，通过配置术语及其描述，就可以把私域知识 传授给大模型。比如SuperSonic给的样例术语：[近期]指代近10天；[核心用户]指Tom和Lucy，就能很容易让大模型学习到这个知识。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -49,7 +51,7 @@ select * from s2_pv_$interval$ 标签对象 # 在SuperSonic中，标签对象特
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%A6%82%E5%BF%B5/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.728f98416b44204feb277b39f50884b133781b935ef8e9da9b059d73e8caeaa8.js" integrity="sha256-co&#43;YQWtEIE/rJ3s59QiEsTN4G5Ne&#43;OnamwWdc&#43;jK6qg=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e372ea3eea0e32c980e4b8320a7e79a6656ffcbb0656c772904d82c13c6f9521.js" integrity="sha256-43LqPuoOMsmA5LgyCn55pmVv/LsGVsdykE2CwTxvlSE=" crossorigin="anonymous"></script>
 
   
 
@@ -570,9 +572,7 @@ https://github.com/alex-shpak/hugo-book
 <p>时间日期字段在SuperSonic中有比较重要的作用，比如一个典型的场景，当我们在问答中询问&quot;超音数近10天访问次数&quot;时，需要得到具体的
 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时，
 就必须指定时间日期字段。</p>
-<pre tabindex="0"><code>select *
-from s2_pv_$interval$
-</code></pre><h3 id="标签对象">
+<h3 id="标签对象">
   <strong>标签对象</strong>
   <a class="anchor" href="#%e6%a0%87%e7%ad%be%e5%af%b9%e8%b1%a1">#</a>
 </h3>
@@ -600,7 +600,9 @@ from s2_pv_$interval$
 </h3>
 <p>当我们写SQL脚本的时候，如果希望有一些更加动态的效果，就需要用到SQL变量。举个例子，当我们想基于同一个SQL模板动态的查询日表/周表/月表的时候，就可以采用SQL变量，
 如下面这段SQL，<strong>interval</strong>就是一个SQL变量，通过在调用接口的时候动态的传递interval的值，就可以实现查询不通周期粒度表的效果。</p>
-<blockquote class="book-hint info">
+<pre tabindex="0"><code>select *
+from s2_pv_$interval$
+</code></pre><blockquote class="book-hint info">
   <strong>注意</strong> 当前SQL变量只作用在通过API接口查询数据的时候，而不作用在智能问答
 </blockquote>
 
