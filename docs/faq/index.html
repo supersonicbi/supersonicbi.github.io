@@ -8,7 +8,8 @@
 是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。
 支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。
 是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。
-是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。">
+是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。
+重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/faq/">
@@ -19,7 +20,8 @@
 是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。
 支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。
 是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。
-是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。">
+是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。
+重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -29,7 +31,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/faq/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.fd03240771ae9178e1dc7c846cb2c0d7d980143bf84b76719b273429164bc7e6.js" integrity="sha256-/QMkB3GukXjh3HyEbLLA19mAFDv4S3Zxmyc0KRZLx&#43;Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.39de96308f383e8c5493b621abca55951bf5b9f939781de49881c79b95fa2a1d.js" integrity="sha256-Od6WMI84PoxUk7Yhq8pVlRv1ufk5eB3kmIHHm5X6Kh0=" crossorigin="anonymous"></script>
 
   
 
@@ -424,6 +426,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#支持哪些大模型服务">支持哪些大模型服务？</a></li>
     <li><a href="#是否支持文本知识库">是否支持文本知识库？</a></li>
     <li><a href="#是否支持多轮对话">是否支持多轮对话？</a></li>
+    <li><a href="#重启系统后为什么配置的助理模型数据丢失了">重启系统后为什么配置的助理/模型数据丢失了？</a></li>
   </ul>
 </nav>
 
@@ -470,6 +473,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81%e5%a4%9a%e8%bd%ae%e5%af%b9%e8%af%9d">#</a>
 </h2>
 <p>A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。</p>
+<h2 id="重启系统后为什么配置的助理模型数据丢失了">
+  重启系统后为什么配置的助理/模型数据丢失了？
+  <a class="anchor" href="#%e9%87%8d%e5%90%af%e7%b3%bb%e7%bb%9f%e5%90%8e%e4%b8%ba%e4%bb%80%e4%b9%88%e9%85%8d%e7%bd%ae%e7%9a%84%e5%8a%a9%e7%90%86%e6%a8%a1%e5%9e%8b%e6%95%b0%e6%8d%ae%e4%b8%a2%e5%a4%b1%e4%ba%86">#</a>
+</h2>
+<p>A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考<a href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/">文档</a></p>
 </article>
  
       
@@ -517,6 +525,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#支持哪些大模型服务">支持哪些大模型服务？</a></li>
     <li><a href="#是否支持文本知识库">是否支持文本知识库？</a></li>
     <li><a href="#是否支持多轮对话">是否支持多轮对话？</a></li>
+    <li><a href="#重启系统后为什么配置的助理模型数据丢失了">重启系统后为什么配置的助理/模型数据丢失了？</a></li>
   </ul>
 </nav>
 
