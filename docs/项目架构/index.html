@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="项目架构 # 架构图 # 核心组件 # Knowledge Base： 定期从语义模型中提取相关的模式信息，构建词典和索引，以便后续的模式映射。
 Schema Mapper： 将自然语言文本在知识库中进行匹配，为后续的语义解析提供相关信息。
-Semantic Parser： 理解用户查询并抽取语义信息，生成语义查询语句S2SQL。
-Semantic Corrector： 检查语义查询语句的合法性，对不合法的信息做修正和优化处理。
-Semantic Translator： 将语义查询语句翻译成可在物理数据模型上执行的SQL语句。
+Semantic Parser： 理解用户查询并抽取语义信息，生成语义查询S2SQL语句。
+Semantic Corrector： 检查语义查询S2SQL语句的合法性，尝试做修正和优化处理。
+Semantic Layer： 将语义查询S2SQL语句翻译成可在数据库上执行的SQL语句。
 Chat Plugin： 通过第三方工具扩展功能。给定所有配置的插件及其功能描述和示例问题，大语言模型将选择最合适的插件。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -16,9 +16,9 @@ Chat Plugin： 通过第三方工具扩展功能。给定所有配置的插件�
   <meta property="og:title" content="项目架构">
   <meta property="og:description" content="项目架构 # 架构图 # 核心组件 # Knowledge Base： 定期从语义模型中提取相关的模式信息，构建词典和索引，以便后续的模式映射。
 Schema Mapper： 将自然语言文本在知识库中进行匹配，为后续的语义解析提供相关信息。
-Semantic Parser： 理解用户查询并抽取语义信息，生成语义查询语句S2SQL。
-Semantic Corrector： 检查语义查询语句的合法性，对不合法的信息做修正和优化处理。
-Semantic Translator： 将语义查询语句翻译成可在物理数据模型上执行的SQL语句。
+Semantic Parser： 理解用户查询并抽取语义信息，生成语义查询S2SQL语句。
+Semantic Corrector： 检查语义查询S2SQL语句的合法性，尝试做修正和优化处理。
+Semantic Layer： 将语义查询S2SQL语句翻译成可在数据库上执行的SQL语句。
 Chat Plugin： 通过第三方工具扩展功能。给定所有配置的插件及其功能描述和示例问题，大语言模型将选择最合适的插件。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -29,7 +29,7 @@ Chat Plugin： 通过第三方工具扩展功能。给定所有配置的插件�
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.39de96308f383e8c5493b621abca55951bf5b9f939781de49881c79b95fa2a1d.js" integrity="sha256-Od6WMI84PoxUk7Yhq8pVlRv1ufk5eB3kmIHHm5X6Kh0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e58361ee6a94e294281ae9491d2cc8cc53ec4a44b9a971f83f2f01f9f8c2fefe.js" integrity="sha256-5YNh7mqU4pQoGulJHSzIzFPsSkS5qXH4Py8B&#43;fjC/v4=" crossorigin="anonymous"></script>
 
   
 
@@ -455,13 +455,13 @@ https://github.com/alex-shpak/hugo-book
 <p><strong>Schema Mapper：</strong> 将自然语言文本在知识库中进行匹配，为后续的语义解析提供相关信息。</p>
 </li>
 <li>
-<p><strong>Semantic Parser：</strong> 理解用户查询并抽取语义信息，生成语义查询语句S2SQL。</p>
+<p><strong>Semantic Parser：</strong> 理解用户查询并抽取语义信息，生成语义查询S2SQL语句。</p>
 </li>
 <li>
-<p><strong>Semantic Corrector：</strong> 检查语义查询语句的合法性，对不合法的信息做修正和优化处理。</p>
+<p><strong>Semantic Corrector：</strong> 检查语义查询S2SQL语句的合法性，尝试做修正和优化处理。</p>
 </li>
 <li>
-<p><strong>Semantic Translator：</strong> 将语义查询语句翻译成可在物理数据模型上执行的SQL语句。</p>
+<p><strong>Semantic Layer：</strong> 将语义查询S2SQL语句翻译成可在数据库上执行的SQL语句。</p>
 </li>
 <li>
 <p><strong>Chat Plugin：</strong> 通过第三方工具扩展功能。给定所有配置的插件及其功能描述和示例问题，大语言模型将选择最合适的插件。</p>
