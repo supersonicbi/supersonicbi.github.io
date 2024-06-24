@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 配置LLM # Text2SQL模型 # SuperSonic可以从两个粒度配置LLM：
-系统粒度：修改配置文件conf/supersonic-env.sh，替换相应的变量 助理粒度：在助理管理模块，修改助理配置，填入相应的变量 Embedding模型 # SuperSonic有三种方式配置Embedding模型（0.9.2版本及之前）：
-in_process：默认采用内嵌的BgeSmallZhEmbeddingModel模型；可支持配置本地模型（需符合onnx格式）
-open_ai：采用open_ai提供的Embedding模型
-hugging_face：采用hugging_face提供的Embedding模型
-注意：如果修改了EmbeddingModel模型,需要清理一下本地数据：
-rm /tmp/InMemory.meta_collectio年 rm /tmp/InMemory.preset_query_collection rm /tmp/InMemory.solved_query_collection rm /tmp/InMemory.text2dsl_agent_collection ">
+<meta name="description" content="配置LLM # Chat Model # SuperSonic可以从两个粒度配置Chat Model：
+1. 系统粒度 # 系统粒度有两种方式配置：
+1.1.修改supersonic-env.sh方式 # 修改配置文件conf/supersonic-env.sh，替换相应的变量
+1.2.修改application-local.yaml方式 # 修改配置文件conf/application-local.yaml，替换相应的变量 目前支持：open-ai、zhipu、ollama、azure、qianfan、dashscope；通常情况下各模型会兼容open-ai协议，可以统一采用open-ai方式
+open-ai 配置方式：
+langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} zhipu 配置方式：
+langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
+langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：
+langchain4j: azure: chat-model: endpoint: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} deployment-name: ${OPENAI_MODEL_NAME:gpt-3.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="配置LLM">
-  <meta property="og:description" content=" 配置LLM # Text2SQL模型 # SuperSonic可以从两个粒度配置LLM：
-系统粒度：修改配置文件conf/supersonic-env.sh，替换相应的变量 助理粒度：在助理管理模块，修改助理配置，填入相应的变量 Embedding模型 # SuperSonic有三种方式配置Embedding模型（0.9.2版本及之前）：
-in_process：默认采用内嵌的BgeSmallZhEmbeddingModel模型；可支持配置本地模型（需符合onnx格式）
-open_ai：采用open_ai提供的Embedding模型
-hugging_face：采用hugging_face提供的Embedding模型
-注意：如果修改了EmbeddingModel模型,需要清理一下本地数据：
-rm /tmp/InMemory.meta_collectio年 rm /tmp/InMemory.preset_query_collection rm /tmp/InMemory.solved_query_collection rm /tmp/InMemory.text2dsl_agent_collection ">
+  <meta property="og:description" content="配置LLM # Chat Model # SuperSonic可以从两个粒度配置Chat Model：
+1. 系统粒度 # 系统粒度有两种方式配置：
+1.1.修改supersonic-env.sh方式 # 修改配置文件conf/supersonic-env.sh，替换相应的变量
+1.2.修改application-local.yaml方式 # 修改配置文件conf/application-local.yaml，替换相应的变量 目前支持：open-ai、zhipu、ollama、azure、qianfan、dashscope；通常情况下各模型会兼容open-ai协议，可以统一采用open-ai方式
+open-ai 配置方式：
+langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} zhipu 配置方式：
+langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
+langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：
+langchain4j: azure: chat-model: endpoint: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} deployment-name: ${OPENAI_MODEL_NAME:gpt-3.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,7 +35,7 @@ rm /tmp/InMemory.meta_collectio年 rm /tmp/InMemory.preset_query_collection rm /
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c67f6f1c9c59141fea1ede7dada35ce6a788c80f783978789bf9cc7cfed177c6.js" integrity="sha256-xn9vHJxZFB/qHt59raNc5qeIyA94OXh4m/nMfP7Rd8Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6ad94c02333af4315a2532f859545d022e1e26b1e4fb36c3504ae588ce3fae29.js" integrity="sha256-atlMAjM69DFaJTL4WVRdAi4eJrHk&#43;zbDUErliM4/rik=" crossorigin="anonymous"></script>
 
   
 
@@ -420,8 +424,19 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#text2sql模型">Text2SQL模型</a></li>
-    <li><a href="#embedding模型">Embedding模型</a></li>
+    <li><a href="#chat-model">Chat Model</a>
+      <ul>
+        <li><a href="#1-系统粒度"><strong>1. 系统粒度</strong></a></li>
+        <li><a href="#2-助理粒度"><strong>2. 助理粒度</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-model">Embedding Model</a>
+      <ul>
+        <li><a href="#1-092版本及之前"><strong>1. 0.9.2版本及之前</strong></a></li>
+        <li><a href="#2-092版本之后"><strong>2. 0.9.2版本之后</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-store">Embedding Store</a></li>
   </ul>
 </nav>
 
@@ -438,28 +453,104 @@ https://github.com/alex-shpak/hugo-book
   配置LLM
   <a class="anchor" href="#%e9%85%8d%e7%bd%aellm">#</a>
 </h1>
-<h2 id="text2sql模型">
-  Text2SQL模型
-  <a class="anchor" href="#text2sql%e6%a8%a1%e5%9e%8b">#</a>
+<h2 id="chat-model">
+  Chat Model
+  <a class="anchor" href="#chat-model">#</a>
 </h2>
-<p>SuperSonic可以从两个粒度配置LLM：</p>
-<ul>
-<li>系统粒度：修改配置文件<code>conf/supersonic-env.sh</code>，替换相应的变量</li>
-</ul>
+<p>SuperSonic可以从两个粒度配置Chat Model：</p>
+<h3 id="1-系统粒度">
+  <strong>1. 系统粒度</strong>
+  <a class="anchor" href="#1-%e7%b3%bb%e7%bb%9f%e7%b2%92%e5%ba%a6">#</a>
+</h3>
+<p>系统粒度有两种方式配置：</p>
+<h4 id="11修改supersonic-envsh方式">
+  <strong>1.1.修改supersonic-env.sh方式</strong>
+  <a class="anchor" href="#11%e4%bf%ae%e6%94%b9supersonic-envsh%e6%96%b9%e5%bc%8f">#</a>
+</h4>
+<p>修改配置文件<code>conf/supersonic-env.sh</code>，替换相应的变量</p>
 <figure><img src="/img/supersonic_deploy_llm.png#center">
 </figure>
 
-<ul>
-<li>助理粒度：在助理管理模块，修改助理配置，填入相应的变量
+<h4 id="12修改application-localyaml方式">
+  <strong>1.2.修改application-local.yaml方式</strong>
+  <a class="anchor" href="#12%e4%bf%ae%e6%94%b9application-localyaml%e6%96%b9%e5%bc%8f">#</a>
+</h4>
+<p>修改配置文件<code>conf/application-local.yaml</code>，替换相应的变量
+<figure><img src="/img/supersonic_llm_config.png#center">
+</figure>
+
+目前支持：open-ai、zhipu、ollama、azure、qianfan、dashscope；通常情况下各模型会兼容open-ai协议，可以统一采用open-ai方式</p>
+<p>open-ai 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    open-ai:
+        chat-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            temperature: ${OPENAI_TEMPERATURE:0.0}
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>zhipu 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    zhipu:
+        chat-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            temperature: ${OPENAI_TEMPERATURE:0.0}
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>ollama 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    ollama:
+        chat-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            temperature: ${OPENAI_TEMPERATURE:0.0}
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>azure 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    azure:
+        chat-model:
+            endpoint: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            deployment-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            max-tokens: ${OPENAI_TEMPERATURE:20}
+</code></pre><p>qianfan 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    qianfan:
+        chat-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            temperature: ${OPENAI_TEMPERATURE:0.0}
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>dashscope 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    dashscope:
+        chat-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
+            temperature: ${OPENAI_TEMPERATURE:0.0}
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>其他的方式类似</p>
+<h3 id="2-助理粒度">
+  <strong>2. 助理粒度</strong>
+  <a class="anchor" href="#2-%e5%8a%a9%e7%90%86%e7%b2%92%e5%ba%a6">#</a>
+</h3>
+<p>在助理管理模块，修改助理配置，填入相应的变量
 <figure><img src="/img/supersonic_agent_config.png#center">
 </figure>
-</li>
-</ul>
-<h2 id="embedding模型">
-  Embedding模型
-  <a class="anchor" href="#embedding%e6%a8%a1%e5%9e%8b">#</a>
+</p>
+<h2 id="embedding-model">
+  Embedding Model
+  <a class="anchor" href="#embedding-model">#</a>
 </h2>
-<p>SuperSonic有三种方式配置Embedding模型（0.9.2版本及之前）：</p>
+<h3 id="1-092版本及之前">
+  <strong>1. 0.9.2版本及之前</strong>
+  <a class="anchor" href="#1-092%e7%89%88%e6%9c%ac%e5%8f%8a%e4%b9%8b%e5%89%8d">#</a>
+</h3>
+<p>SuperSonic0.9.2版本及之前，有三种方式配置Embedding模型：</p>
 <ul>
 <li>
 <p>in_process：默认采用内嵌的BgeSmallZhEmbeddingModel模型；可支持配置本地模型（需符合onnx格式）</p>
@@ -479,6 +570,91 @@ https://github.com/alex-shpak/hugo-book
 rm  /tmp/InMemory.preset_query_collection
 rm  /tmp/InMemory.solved_query_collection
 rm  /tmp/InMemory.text2dsl_agent_collection
+</code></pre><h3 id="2-092版本之后">
+  <strong>2. 0.9.2版本之后</strong>
+  <a class="anchor" href="#2-092%e7%89%88%e6%9c%ac%e4%b9%8b%e5%90%8e">#</a>
+</h3>
+<p>统一采用一种方式配置Embedding模型，支持in-memory、open-ai、zhipu、ollama、azure、qianfan、dashscope</p>
+<figure><img src="/img/supersonic_embedding_model_v2.png#center">
+</figure>
+
+<p>支持in-memory 配置方式：
+目前支持bge-small-zh、all-minilm-l6-v2-q内嵌模型；并支持符合onnx格式的本地模型；</p>
+<pre tabindex="0"><code>langchain4j:
+    in-memory:
+        embedding-model:
+            model-name: bge-small-zh
+            modelPath: /data/model.onnx
+            vocabularyPath: /data/onnx_vocab.txt
+</code></pre><p>open-ai 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    open-ai:
+        embedding-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: xxx
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>zhipu 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    zhipu:
+        embedding-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: xxx
+</code></pre><p>ollama 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    ollama:
+        embedding-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            model-name: xxx
+            timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>azure 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    azure:
+        embedding-model:
+            endpoint: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            deployment-name: xxx
+</code></pre><p>qianfan 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    qianfan:
+        embedding-model:
+            base-url: ${OPENAI_API_BASE:demo}
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: xxx
+</code></pre><p>dashscope 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    dashscope:
+        chat-model:
+            api-key: ${OPENAI_API_KEY:demo}
+            model-name: xxx
+</code></pre><p>其他的方式类似</p>
+<h2 id="embedding-store">
+  Embedding Store
+  <a class="anchor" href="#embedding-store">#</a>
+</h2>
+<p>supsersonic支持in-memory、chroma、milvus三种模式；支持后续扩展更多Embedding Store。</p>
+<p>in-memory 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    in-memory:
+        embedding-store:
+            file-path: /tmp
+</code></pre><p>chroma 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    chroma:
+        embedding-store:
+            baseUrl: http://0.0.0.0:8000
+            timeout: 120s
+</code></pre><p>milvus 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    milvus:
+        embedding-store:
+            host: localhost
+            port: 2379
+            url: http://0.0.0.0:2379
+            token: demo
+            dimension: 384
+            timeout: 120s   
 </code></pre></article>
  
       
@@ -520,8 +696,19 @@ rm  /tmp/InMemory.text2dsl_agent_collection
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#text2sql模型">Text2SQL模型</a></li>
-    <li><a href="#embedding模型">Embedding模型</a></li>
+    <li><a href="#chat-model">Chat Model</a>
+      <ul>
+        <li><a href="#1-系统粒度"><strong>1. 系统粒度</strong></a></li>
+        <li><a href="#2-助理粒度"><strong>2. 助理粒度</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-model">Embedding Model</a>
+      <ul>
+        <li><a href="#1-092版本及之前"><strong>1. 0.9.2版本及之前</strong></a></li>
+        <li><a href="#2-092版本之后"><strong>2. 0.9.2版本之后</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-store">Embedding Store</a></li>
   </ul>
 </nav>
 
