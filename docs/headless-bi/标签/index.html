@@ -3,26 +3,38 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
-注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 查询设置 # 指标模式: 可设置默认时间范围
-明细模式: 可设置默认时间以及查询表头
-注意 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1 ">
+<meta name="description" content="标签 # 标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
+1. 标签对象 # 每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。
+1.1 新建标签对象 # 新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象
+新建标签对象时, 需要填入以下信息:
+1.2 绑定标签对象 # 完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:
+2. 导出标签 # 完成 1.1 中相关标签对象的设置后, 就可以将该模型上的维度/指标批量导出为标签了。 如图选择特定的艺人库模型, 选择维度管理, 选择需要的维度(demo中选择了活跃区域和代表作), 然后选择批量操作中的 &ldquo;导出为标签&rdquo;。
+当然也可以通过编辑特定的维度来完成单个标签的导出:
+以上针对维度进行了导出标签操作, 如果要将指标导出为标签方法类似。
+3. 标签市场 # 完成 1.2 中标签的导出后, 就可以在标签市场中看到上述导出的标签:
+我们还支持查看具体的标签详情, 点击具体某一个标签会发现有如下信息:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E6%A0%87%E7%AD%BE/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content=" 组装数据集 # 1. 挑选指标维度 # 如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。
-注意 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。 2. 查询设置 # 指标模式: 可设置默认时间范围
-明细模式: 可设置默认时间以及查询表头
-注意 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1 ">
+  <meta property="og:description" content="标签 # 标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
+1. 标签对象 # 每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。
+1.1 新建标签对象 # 新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象
+新建标签对象时, 需要填入以下信息:
+1.2 绑定标签对象 # 完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:
+2. 导出标签 # 完成 1.1 中相关标签对象的设置后, 就可以将该模型上的维度/指标批量导出为标签了。 如图选择特定的艺人库模型, 选择维度管理, 选择需要的维度(demo中选择了活跃区域和代表作), 然后选择批量操作中的 “导出为标签”。
+当然也可以通过编辑特定的维度来完成单个标签的导出:
+以上针对维度进行了导出标签操作, 如果要将指标导出为标签方法类似。
+3. 标签市场 # 完成 1.2 中标签的导出后, 就可以在标签市场中看到上述导出的标签:
+我们还支持查看具体的标签详情, 点击具体某一个标签会发现有如下信息:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>组装数据集 | SuperSonic</title>
+<title>标签 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%A0%87%E7%AD%BE/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.6df4889eb22b32b2eb77e43093674fcae04fbdaaac010ef03a300c682e24372a.js" integrity="sha256-bfSInrIrMrLrd&#43;Qwk2dPyuBPvaqsAQ7wOjAMaC4kNyo=" crossorigin="anonymous"></script>
@@ -325,7 +337,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/" class="active">组装数据集</a>
+    <a href="/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/" class="">组装数据集</a>
   
 
         </li>
@@ -351,7 +363,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E6%A0%87%E7%AD%BE/" class="">标签</a>
+    <a href="/docs/headless-bi/%E6%A0%87%E7%AD%BE/" class="active">标签</a>
   
 
         </li>
@@ -424,7 +436,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>组装数据集</strong>
+  <strong>标签</strong>
 
   <label for="toc-control">
     
@@ -440,12 +452,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-标签对象"><strong>1. 标签对象</strong></a>
       <ul>
-        <li><a href="#1-挑选指标维度"><strong>1. 挑选指标维度</strong></a></li>
-        <li><a href="#2-查询设置"><strong>2. 查询设置</strong></a></li>
+        <li><a href="#11-新建标签对象"><strong>1.1 新建标签对象</strong></a></li>
+        <li><a href="#12-绑定标签对象"><strong>1.2 绑定标签对象</strong></a></li>
       </ul>
     </li>
+    <li><a href="#2-导出标签"><strong>2. 导出标签</strong></a></li>
+    <li><a href="#3-标签市场"><strong>3. 标签市场</strong></a></li>
   </ul>
 </nav>
 
@@ -458,32 +472,60 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="组装数据集">
-  组装数据集
-  <a class="anchor" href="#%e7%bb%84%e8%a3%85%e6%95%b0%e6%8d%ae%e9%9b%86">#</a>
+  <article class="markdown book-article"><h1 id="标签">
+  标签
+  <a class="anchor" href="#%e6%a0%87%e7%ad%be">#</a>
 </h1>
-<h3 id="1-挑选指标维度">
-  <strong>1. 挑选指标维度</strong>
-  <a class="anchor" href="#1-%e6%8c%91%e9%80%89%e6%8c%87%e6%a0%87%e7%bb%b4%e5%ba%a6">#</a>
+<p>标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；</p>
+<h2 id="1-标签对象">
+  <strong>1. 标签对象</strong>
+  <a class="anchor" href="#1-%e6%a0%87%e7%ad%be%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<p>每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。</p>
+<h3 id="11-新建标签对象">
+  <strong>1.1 新建标签对象</strong>
+  <a class="anchor" href="#11-%e6%96%b0%e5%bb%ba%e6%a0%87%e7%ad%be%e5%af%b9%e8%b1%a1">#</a>
 </h3>
-<p>如下图，创建数据集时，首先填写好数据集的名称等基本信息，然后即可进入到下一步，可以选择相同主题域下的所有模型，并挑选符合场景需要的指标维度加入到数据集中。</p>
-<blockquote class="book-hint warning">
-  <strong>注意</strong> 加入到数据集的指标维度所在的模型必须已在构建模型时配置好关联关系，否则将会提示报错。
-</blockquote>
+<p>新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象</p>
+<figure><img src="/img/tag_object_new.jpg#center">
+</figure>
 
-<p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/f3203106-83a3-403a-9961-b6eed9c7c1af" alt="image" /></p>
-<p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/80cf0239-339c-41e1-9bf5-b3cc36964947" alt="image" /></p>
-<h3 id="2-查询设置">
-  <strong>2. 查询设置</strong>
-  <a class="anchor" href="#2-%e6%9f%a5%e8%af%a2%e8%ae%be%e7%bd%ae">#</a>
+<p>新建标签对象时, 需要填入以下信息:</p>
+<figure><img src="/img/tag_object_edit.jpg#center">
+</figure>
+
+<h3 id="12-绑定标签对象">
+  <strong>1.2 绑定标签对象</strong>
+  <a class="anchor" href="#12-%e7%bb%91%e5%ae%9a%e6%a0%87%e7%ad%be%e5%af%b9%e8%b1%a1">#</a>
 </h3>
-<p><strong>指标模式:</strong> 可设置默认时间范围</p>
-<p><strong>明细模式:</strong> 可设置默认时间以及查询表头</p>
-<blockquote class="book-hint info">
-  <strong>注意</strong> 当未能从问询文本中得到时间信息时，默认会用这里的时间作为过滤条件，若不想加上时间限制，请把时间设置为-1
-</blockquote>
+<p>完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:</p>
+<figure><img src="/img/tag_object_model.jpg#center">
+</figure>
 
-<figure><img src="/img/dataset_query_config.png#center">
+<h2 id="2-导出标签">
+  <strong>2. 导出标签</strong>
+  <a class="anchor" href="#2-%e5%af%bc%e5%87%ba%e6%a0%87%e7%ad%be">#</a>
+</h2>
+<p>完成 1.1 中相关标签对象的设置后, 就可以将该模型上的维度/指标批量导出为标签了。
+如图选择特定的艺人库模型, 选择维度管理, 选择需要的维度(demo中选择了活跃区域和代表作), 然后选择批量操作中的 &ldquo;导出为标签&rdquo;。</p>
+<figure><img src="/img/tag_dimensions.jpg#center">
+</figure>
+
+<p>当然也可以通过编辑特定的维度来完成单个标签的导出:</p>
+<figure><img src="/img/tag_dimension.jpg#center">
+</figure>
+
+<p>以上针对维度进行了导出标签操作, 如果要将指标导出为标签方法类似。</p>
+<h2 id="3-标签市场">
+  <strong>3. 标签市场</strong>
+  <a class="anchor" href="#3-%e6%a0%87%e7%ad%be%e5%b8%82%e5%9c%ba">#</a>
+</h2>
+<p>完成 1.2 中标签的导出后, 就可以在标签市场中看到上述导出的标签:</p>
+<figure><img src="/img/tag_market_list.jpg#center">
+</figure>
+
+<p>我们还支持查看具体的标签详情, 点击具体某一个标签会发现有如下信息:</p>
+<figure><img src="/img/tag_market_detail.jpg#center">
 </figure>
 
 </article>
@@ -527,12 +569,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-标签对象"><strong>1. 标签对象</strong></a>
       <ul>
-        <li><a href="#1-挑选指标维度"><strong>1. 挑选指标维度</strong></a></li>
-        <li><a href="#2-查询设置"><strong>2. 查询设置</strong></a></li>
+        <li><a href="#11-新建标签对象"><strong>1.1 新建标签对象</strong></a></li>
+        <li><a href="#12-绑定标签对象"><strong>1.2 绑定标签对象</strong></a></li>
       </ul>
     </li>
+    <li><a href="#2-导出标签"><strong>2. 导出标签</strong></a></li>
+    <li><a href="#3-标签市场"><strong>3. 标签市场</strong></a></li>
   </ul>
 </nav>
 
