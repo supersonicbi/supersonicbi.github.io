@@ -71,6 +71,13 @@
       <description>构建模型 # 建模的目的&#xA;为了帮助你更好地理解建模的过程, 我们通过一个问题示例来进行介绍: SuperSonic本身作为一个产品, 那么如何用语义建模来统计它的埋点访问数据呢？比如SuperSonic在一段时间内的访问用户数是多少？ 这些用户的访问次数和停留时长是怎样的？这些用户来自哪些部门？这些用户看了哪些页面？分别看了多少次？等我们建模完成, 这些问题的答案也就浮出水面了。&#xA;1. 创建一个主题域和模型集 # 如图所示, 为了统计SuperSonic的埋点访问情况, 我们创建了一个叫&amp;quot;超音数&amp;quot;的主题域以及基于SuperSonic的埋点数据创建了一个&amp;quot;埋点模型集&amp;quot;:&#xA;2. 创建数据模型 # 创建好了一个模型集后, 我们就可以把物理数据抽象为一个个数据模型并创建到模型集下。如下图, SuperSonic提供了两种创建数据模型的方式。&#xA;快速创建可以直接指定一张物理表来把它创建为数据模型。&#xA;SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写一条逻辑SQL来把它指定为数据模型。&#xA;2.1 编辑SQL创建数据模型 # 在填写完数据模型名称和描述等基本信息后，我们首先写一条SQL来表达我们的数据模型逻辑。 然后点击运行, 就可以看到这条SQL查询出来的数据。 校验数据无误之后, 我们可以点击生成数据模型。&#xA;注意 这里选择数据库链接的时候, 需要有数据库的使用者权限。 如图，我们把这条SQL的表头字段指定为日期，主键，维度和度量之后，还可以写一条过滤SQL用于词典导入场景。 举个例子，在问答中，如果需要对维度值进行识别，那么就需要提前把维度值写入到词典，但是当我们希望对维度值做一些过滤的时候，如在音乐场景里， 我们只希望把国风类型的歌曲导入到词典中，那么就可以通过这条SQL来进行过滤。&#xA;快速创建 若勾选，则会直接把选中的维度/度量批量创建到维度/指标列表。 2.2 指定库表名快速创建模型 # 如图，在选择快速创建的方式之后，需要先填写该模型依赖的数据库连接，然后系统会自动拉取这个数据库连接的元数据，用户直接选择库名和表名并填写基本信息就可以进入到下一步。 在第二步中，和上述通过SQL脚本来创建模型的方式基本一致，就不再重复介绍了。&#xA;如下图所示, 重复以上步骤，为我们创建的3个数据模型示例, 分别为:&#xA;用户部门: 主要包含用户以及用户的部门信息&#xA;PVUV统计: 主要包含用户访问次数和访问人数等信息&#xA;停留时长统计: 主要包含用户的停留时长信息&#xA;同时，在刚刚创建模型时，我们把一些字段标识为了维度/度量，并勾选了快速创建，因此，可以在对应模型中的指标维度列表看到已快速创建好的指标维度:&#xA;到此为止, 我们就成功把超音数的访问统计数据建模成了相关的数据模型、维度和指标。&#xA;3. 创建模型间连接 # 可以看到，刚刚创建的这些指标和维度分散在不同的模型里，那么如果想要在一次查询里同时包含这些指标和维度，如&amp;quot;按部门统计访问次数&amp;quot;，应该还要继续如何配置呢？我们可以在模型列表右上角点击切换到画布模式，并创建模型间的连接关系，如下图: 到目前为止，我们就创建好了指标维度，以及模型间的关联关系。但要想被上层应用使用到，这还不够，还需要进行最后一步，创建一个数据集。</description>
     </item>
     <item>
+      <title>贡献指南</title>
+      <link>https://supersonicbi.github.io/docs/%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://supersonicbi.github.io/docs/%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97/</guid>
+      <description>👍🎉 首先，感谢您花时间为本项目做出贡献！🎉👍&#xA;1. 创建issue # 在提交Issue之前，请先检查项目的Issue跟踪器，以确保没有其他人已经报告了相同的问题或请求了相同的功能。 Issue提交规范示例：&#xA;标题格式请用：【{模块名}】+标题内容 选择提交issue对应的Labels（如bug、documentation、question等） 选择Milestone迭代完成周期 2. Fork和Clone代码 # 进入supersonic github页面，点击页面右上角的&amp;quot;Fork&amp;quot;按钮。这将在你的GitHub账户下创建项目的一个副本。 在你的机器上clone Fork的仓库： git clone https://github.com/&amp;lt;your_github_name&amp;gt;/supersonic.git cd supersonic 将supersonic添加为本地仓库的远程分支upstream git remote add upstream https://github.com/tencentmusic/supersonic 同步远端主分支至本地 git pull upstream master --rebase 3. 修改提交 # 创建一个新的分支并修改代码，并推送到自己仓库&#xA;git checkout -b your-branch-name git add . git commit -m &amp;#34;A descriptive commit message&amp;#34; git push origin your-branch-name 4. 提交PR # （1）新建PR&#xA;进入到到自己supersonic github仓库，切换成自己提交的分支&amp;lt;your_branch_name&amp;gt; ，点击Compare&amp;amp;pull request按钮创建，如下图所示： （2）填写标题和修改内容&#xA;尽量按如下规范写描述&#xA;增加或修复了什么功能 修改了哪些文件内容 是否增加单元单元测试 消息内容中写明关联的 issue(如果有)，例如 #233; （3）完成创建</description>
+    </item>
+    <item>
       <title>配置LLM</title>
       <link>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -131,7 +138,7 @@
       <link>https://supersonicbi.github.io/docs/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://supersonicbi.github.io/docs/faq/</guid>
-      <description>FAQ # 项目有没有体验的地址？ # A: Playground访问地址：http://117.72.46.148:9080&#xA;初始启动后为什么能显示DEMO问答对话？ # A: 为了便于快速体验，系统内置DEMO语义模型，且实现了基于规则的解析器，所以不需要大模型也可以进行问答对话。不过，规则解析器能力有限，推荐仅用于测试验证，生产使用还是需要大模型解析。&#xA;是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。&#xA;支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。&#xA;是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。&#xA;是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。&#xA;重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档&#xA;admin、jack、tom、lucy、alice用户密码 # A: 系统默认创建的用户密码为：123456</description>
+      <description>FAQ # 项目有没有体验的地址？ # A: Playground访问地址：http://117.72.46.148:9080&#xA;初始启动后为什么能显示DEMO问答对话？ # A: 为了便于快速体验，系统内置DEMO语义模型，且实现了基于规则的解析器，所以不需要大模型也可以进行问答对话。不过，规则解析器能力有限，推荐仅用于测试验证，生产使用还是需要大模型解析。&#xA;是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。&#xA;支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。&#xA;是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。&#xA;是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。&#xA;重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档&#xA;admin、jack、tom、lucy、alice用户密码？ # A: 系统默认创建的用户密码为：123456</description>
     </item>
   </channel>
 </rss>
