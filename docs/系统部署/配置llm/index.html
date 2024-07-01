@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="配置LLM # Chat Model # SuperSonic可以从两个粒度配置Chat Model：
 1. 系统粒度 # 1.2.修改langchain4j.yaml配置文件方式 # 从0.9.4版本开始，langchain4j配置从application.yaml文件中单独抽取，方便用户配置；以langchain4j-local.yaml为例配置：
-目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；
+目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；由ollama适配不同的模型
 注意 推荐使用open_ai、ollama；其他azure、qianfan、dashscope、zhipu方式理论上也支持，但是待验证； open-ai 配置方式：
 langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
 langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} 注意 以下方式配置，待验证： zhipu 配置方式：
-langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：">
+langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.0 timeout: PT60S azure 配置方式：">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
@@ -17,11 +17,11 @@ langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPE
   <meta property="og:title" content="配置LLM">
   <meta property="og:description" content="配置LLM # Chat Model # SuperSonic可以从两个粒度配置Chat Model：
 1. 系统粒度 # 1.2.修改langchain4j.yaml配置文件方式 # 从0.9.4版本开始，langchain4j配置从application.yaml文件中单独抽取，方便用户配置；以langchain4j-local.yaml为例配置：
-目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；
+目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；由ollama适配不同的模型
 注意 推荐使用open_ai、ollama；其他azure、qianfan、dashscope、zhipu方式理论上也支持，但是待验证； open-ai 配置方式：
 langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
 langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} 注意 以下方式配置，待验证： zhipu 配置方式：
-langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：">
+langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.0 timeout: PT60S azure 配置方式：">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,7 +31,7 @@ langchain4j: zhipu: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPE
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.14953d4b91e8f71f228e6bf89fa92dab687c9c1c5588aec2d8fe7e3937b52cda.js" integrity="sha256-FJU9S5Ho9x8ijmv4n6ktq2h8nBxViK7C2P5&#43;OTe1LNo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.08707e2bdf98d1e6d14bc03d6e388d31e8e02f12697979d734390f2f7a0499b4.js" integrity="sha256-CHB&#43;K9&#43;Y0ebRS8A9bjiNMejgLxJpeXnXNDkPL3oEmbQ=" crossorigin="anonymous"></script>
 
   
 
@@ -507,7 +507,7 @@ https://github.com/alex-shpak/hugo-book
 
 目前支持：open-ai、ollama两种方式；
 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议
-2、ollama 用于连接本地模型；</p>
+2、ollama 用于连接本地模型；由ollama适配不同的模型</p>
 <blockquote class="book-hint info">
   <strong>注意</strong>
 推荐使用open_ai、ollama；其他azure、qianfan、dashscope、zhipu方式理论上也支持，但是待验证；
@@ -540,37 +540,37 @@ zhipu 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     zhipu:
         chat-model:
-            base-url: ${OPENAI_API_BASE:demo}
-            api-key: ${OPENAI_API_KEY:demo}
-            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
-            temperature: ${OPENAI_TEMPERATURE:0.0}
-            timeout: ${OPENAI_TIMEOUT:PT60S}
+            base-url: base-url
+            api-key: demo
+            model-name: xxx
+            temperature: 0.0
+            timeout: PT60S
 </code></pre><p>azure 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     azure:
         chat-model:
-            endpoint: ${OPENAI_API_BASE:demo}
-            api-key: ${OPENAI_API_KEY:demo}
-            deployment-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
-            max-tokens: ${OPENAI_TEMPERATURE:20}
+            endpoint: endpoint
+            api-key: demo
+            deployment-name: xxx
+            max-tokens: 20
 </code></pre><p>qianfan 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     qianfan:
         chat-model:
-            base-url: ${OPENAI_API_BASE:demo}
-            api-key: ${OPENAI_API_KEY:demo}
-            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
-            temperature: ${OPENAI_TEMPERATURE:0.0}
-            timeout: ${OPENAI_TIMEOUT:PT60S}
+            endpoint: endpoint
+            api-key: demo
+            deployment-name: xxx
+            temperature: 0.0
+            timeout: PT60S
 </code></pre><p>dashscope 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     dashscope:
         chat-model:
-            base-url: ${OPENAI_API_BASE:demo}
-            api-key: ${OPENAI_API_KEY:demo}
-            model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
-            temperature: ${OPENAI_TEMPERATURE:0.0}
-            timeout: ${OPENAI_TIMEOUT:PT60S}
+            endpoint: endpoint
+            api-key: demo
+            deployment-name: xxx
+            temperature: 0.0
+            timeout: PT60S
 </code></pre><h3 id="2-助理粒度">
   <strong>2. 助理粒度</strong>
   <a class="anchor" href="#2-%e5%8a%a9%e7%90%86%e7%b2%92%e5%ba%a6">#</a>
@@ -607,12 +607,7 @@ open-ai 配置方式：</p>
 <figure><img src="/img/supersonic_embedding_model.png#center">
 </figure>
 
-<p>注意：如果修改了EmbeddingModel模型,需要清理一下本地数据：</p>
-<pre tabindex="0"><code>rm  /tmp/InMemory.meta_collectio年
-rm  /tmp/InMemory.preset_query_collection
-rm  /tmp/InMemory.solved_query_collection
-rm  /tmp/InMemory.text2dsl_agent_collection
-</code></pre><h3 id="2-092版本之后">
+<h3 id="2-092版本之后">
   <strong>2. 0.9.2版本之后</strong>
   <a class="anchor" href="#2-092%e7%89%88%e6%9c%ac%e4%b9%8b%e5%90%8e">#</a>
 </h3>
@@ -697,7 +692,18 @@ rm  /tmp/InMemory.text2dsl_agent_collection
             token: demo
             dimension: 384
             timeout: 120s   
-</code></pre></article>
+</code></pre><blockquote class="book-hint info">
+  <p><strong>注意</strong>
+如果是采用了in-memory embedding-store方式，如果修改了EmbeddingModel模型,需要清理一下本地数据：</p>
+<pre tabindex="0"><code>rm  /tmp/InMemory.*collection
+rm  /tmp/InMemory.meta_collection
+rm  /tmp/InMemory.preset_query_collection
+rm  /tmp/InMemory.solved_query_collection
+rm  /tmp/InMemory.text2dsl_agent_collection
+</code></pre>
+</blockquote>
+
+</article>
  
       
 
