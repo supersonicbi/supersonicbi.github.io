@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="连接数据库 # 1. 当前支持的数据类型 # 所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等 Clickhouse，PostgreSQL，H2 支持灵活扩展，欢迎贡献其它数据库类型 2. 在SuperSonic中创建数据库连接的步骤 # 填写连接信息 点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1 点击保存。 如图所示, 我们创建了一个H2数据库实例作为例子:
-需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。
-管理员: 可以编辑这个数据库链接的人
-使用者: 可以使用这个数据库链接查询数据的人">
+<meta name="description" content="部署前提 # 下载安装Docker和Docker Compose
+启动部署 # 进入docker目录，执行脚步启动 docker-compose up -d 支持按SuperSonic版本启动： SUPERSONIC_VERSION=0.9.2-SNAPSHOT docker-compose up -d 运维操作
+查看进程运行状况： docker-compose ps 正常会出现三个服务： 访问：http://localhost:9080">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/">
   <meta property="og:site_name" content="SuperSonic">
-  <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="连接数据库 # 1. 当前支持的数据类型 # 所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等 Clickhouse，PostgreSQL，H2 支持灵活扩展，欢迎贡献其它数据库类型 2. 在SuperSonic中创建数据库连接的步骤 # 填写连接信息 点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1 点击保存。 如图所示, 我们创建了一个H2数据库实例作为例子:
-需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。
-管理员: 可以编辑这个数据库链接的人
-使用者: 可以使用这个数据库链接查询数据的人">
+  <meta property="og:title" content="Docker部署">
+  <meta property="og:description" content="部署前提 # 下载安装Docker和Docker Compose
+启动部署 # 进入docker目录，执行脚步启动 docker-compose up -d 支持按SuperSonic版本启动： SUPERSONIC_VERSION=0.9.2-SNAPSHOT docker-compose up -d 运维操作
+查看进程运行状况： docker-compose ps 正常会出现三个服务： 访问：http://localhost:9080">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>连接数据库 | SuperSonic</title>
+<title>Docker部署 | SuperSonic</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">
+<link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.876f961cbe9a9ff395726f57636a510c1e3f494fcb5088d68729534c707d3542.js" integrity="sha256-h2&#43;WHL6an/OVcm9XY2pRDB4/SU/LUIjWhylTTHB9NUI=" crossorigin="anonymous"></script>
@@ -133,7 +131,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/" class="">Docker部署</a>
+    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/" class="active">Docker部署</a>
   
 
         </li>
@@ -286,7 +284,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="active">连接数据库</a>
+    <a href="/docs/headless-bi/%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="">连接数据库</a>
   
 
         </li>
@@ -437,7 +435,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>连接数据库</strong>
+  <strong>Docker部署</strong>
 
   <label for="toc-control">
     
@@ -451,16 +449,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-当前支持的数据类型"><strong>1. 当前支持的数据类型</strong></a></li>
-        <li><a href="#2-在supersonic中创建数据库连接的步骤"><strong>2. 在SuperSonic中创建数据库连接的步骤</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
 
@@ -471,33 +460,38 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="连接数据库">
-  连接数据库
-  <a class="anchor" href="#%e8%bf%9e%e6%8e%a5%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+  <article class="markdown book-article"><h1 id="部署前提">
+  部署前提
+  <a class="anchor" href="#%e9%83%a8%e7%bd%b2%e5%89%8d%e6%8f%90">#</a>
 </h1>
-<h3 id="1-当前支持的数据类型">
-  <strong>1. 当前支持的数据类型</strong>
-  <a class="anchor" href="#1-%e5%bd%93%e5%89%8d%e6%94%af%e6%8c%81%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">#</a>
-</h3>
+<p>下载安装Docker和Docker Compose</p>
+<h1 id="启动部署">
+  启动部署
+  <a class="anchor" href="#%e5%90%af%e5%8a%a8%e9%83%a8%e7%bd%b2">#</a>
+</h1>
 <ol>
-<li>所有支持MySQL协议的数据库，如MySQL，Doris，StarRocks等</li>
-<li>Clickhouse，PostgreSQL，H2</li>
-<li>支持灵活扩展，欢迎贡献其它数据库类型</li>
+<li>
+<p>进入docker目录，执行脚步启动
+<code>docker-compose up -d</code>
+支持按SuperSonic版本启动：
+<code>SUPERSONIC_VERSION=0.9.2-SNAPSHOT docker-compose up -d</code>
+<figure><img src="/img/docker_ps.png#center">
+</figure>
+</p>
+</li>
+<li>
+<p>运维操作<br>
+查看进程运行状况：
+<code>docker-compose ps</code>
+正常会出现三个服务：
+<figure><img src="/img/docker_service.png#center">
+</figure>
+</p>
+</li>
+<li>
+<p>访问：http://localhost:9080</p>
+</li>
 </ol>
-<h3 id="2-在supersonic中创建数据库连接的步骤">
-  <strong>2. 在SuperSonic中创建数据库连接的步骤</strong>
-  <a class="anchor" href="#2-%e5%9c%a8supersonic%e4%b8%ad%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93%e8%bf%9e%e6%8e%a5%e7%9a%84%e6%ad%a5%e9%aa%a4">#</a>
-</h3>
-<ol>
-<li>填写连接信息</li>
-<li>点击测试连接, 若连接测试通过, 则可点击保存。否则, 返回步骤1</li>
-<li>点击保存。</li>
-</ol>
-<p>如图所示, 我们创建了一个H2数据库实例作为例子:</p>
-<p><img src="https://github.com/tencentmusic/supersonic/assets/22031277/f4b1b8d7-33fb-40b4-9767-c4acee534ea5" alt="image" /></p>
-<p>需要说明的是, 在这里创建数据库之后, 并不是所有人都可以查询这个数据库链接的数据, 需要在表单上进行授权。</p>
-<p><strong>管理员</strong>: 可以编辑这个数据库链接的人</p>
-<p><strong>使用者</strong>: 可以使用这个数据库链接查询数据的人</p>
 </article>
  
       
@@ -537,16 +531,7 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-当前支持的数据类型"><strong>1. 当前支持的数据类型</strong></a></li>
-        <li><a href="#2-在supersonic中创建数据库连接的步骤"><strong>2. 在SuperSonic中创建数据库连接的步骤</strong></a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
  
