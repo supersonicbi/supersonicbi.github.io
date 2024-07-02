@@ -31,7 +31,7 @@ langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c848b821290f399a4fe7bd543ded100d754461cb4c568a078c837ed515ccaebe.js" integrity="sha256-yEi4ISkPOZpP571UPe0QDXVEYctMVooHjIN&#43;1RXMrr4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.bb7960b2afd94532a8946ffddf517d08672e03a815635eb505353881d7802cd0.js" integrity="sha256-u3lgsq/ZRTKolG/931F9CGcuA6gVY161BTU4gdeALNA=" crossorigin="anonymous"></script>
 
   
 
@@ -623,7 +623,16 @@ open-ai 配置方式：</p>
             model-name: bge-small-zh
             modelPath: /data/model.onnx
             vocabularyPath: /data/onnx_vocab.txt
-</code></pre><p>open-ai 配置方式：</p>
+</code></pre><blockquote class="book-hint info">
+  <strong>注意</strong>
+如果是启动报错，version `GLIBC_2.27&rsquo; not found (required by xxxlibonnxruntime.so)，如下图所示：
+原因是本地环境缺少对应库文件可尝试切换open-ai、dashscope等提供的embedding-model
+</blockquote>
+
+<figure><img src="/img/supersonic_inmemory_error.jpg#center">
+</figure>
+
+<p>open-ai 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     open-ai:
         embedding-model:
@@ -637,7 +646,7 @@ open-ai 配置方式：</p>
         embedding-model:
             base-url: ${OPENAI_API_BASE:demo}
             api-key: ${OPENAI_API_KEY:demo}
-            model-name: xxx
+            model: xxx
 </code></pre><p>ollama 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     ollama:
@@ -662,7 +671,7 @@ open-ai 配置方式：</p>
 </code></pre><p>dashscope 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     dashscope:
-        chat-model:
+        embedding-model:
             api-key: ${OPENAI_API_KEY:demo}
             model-name: xxx
 </code></pre><p>其他的方式类似</p>
