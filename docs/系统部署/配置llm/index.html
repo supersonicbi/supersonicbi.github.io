@@ -8,8 +8,9 @@
 目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；由ollama适配不同的模型
 注意 推荐使用open_ai、ollama；其他azure、qianfan、dashscope、zhipu方式理论上也支持，但是待验证； open-ai 配置方式：
 langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
-langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} 注意 以下方式配置，待验证： zhipu 配置方式：
-langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.0 timeout: PT60S azure 配置方式：">
+langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：
+langchain4j: azure-open-ai: chat-model: endpoint: https://xxx.openai.azure.com/ api-key: xxxx deployment-name: gpt-35-turbo max-tokens: 500 注意 以下方式配置，待验证： zhipu 配置方式：
+langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
@@ -20,8 +21,9 @@ langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx
 目前支持：open-ai、ollama两种方式； 1、open_ai 用于连接云端模型；通常情况下各云上模型会兼容open-ai协议 2、ollama 用于连接本地模型；由ollama适配不同的模型
 注意 推荐使用open_ai、ollama；其他azure、qianfan、dashscope、zhipu方式理论上也支持，但是待验证； open-ai 配置方式：
 langchain4j: open-ai: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} ollama 配置方式：
-langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} 注意 以下方式配置，待验证： zhipu 配置方式：
-langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.0 timeout: PT60S azure 配置方式：">
+langchain4j: ollama: chat-model: base-url: ${OPENAI_API_BASE:demo} api-key: ${OPENAI_API_KEY:demo} model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo} temperature: ${OPENAI_TEMPERATURE:0.0} timeout: ${OPENAI_TIMEOUT:PT60S} azure 配置方式：
+langchain4j: azure-open-ai: chat-model: endpoint: https://xxx.openai.azure.com/ api-key: xxxx deployment-name: gpt-35-turbo max-tokens: 500 注意 以下方式配置，待验证： zhipu 配置方式：
+langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx temperature: 0.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,7 +33,7 @@ langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.b55b8955a687bfbda560119152c11a3f8d4723d24e7bd255994bdc28ccee59be.js" integrity="sha256-tVuJVaaHv72lYBGRUsEaP41HI9JOe9JVmUvcKMzuWb4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.399356f57791dc87ec08f5d77a4dad6ed36502ce62721a53e069a0ef896c8fb8.js" integrity="sha256-OZNW9XeR3IfsCPXXek2tbtNlAs5ichpT4Gmg74lsj7g=" crossorigin="anonymous"></script>
 
   
 
@@ -526,6 +528,14 @@ https://github.com/alex-shpak/hugo-book
             model-name: ${OPENAI_MODEL_NAME:gpt-3.5-turbo}
             temperature: ${OPENAI_TEMPERATURE:0.0}
             timeout: ${OPENAI_TIMEOUT:PT60S}
+</code></pre><p>azure 配置方式：</p>
+<pre tabindex="0"><code>langchain4j:
+    azure-open-ai:
+        chat-model:
+          endpoint: https://xxx.openai.azure.com/
+          api-key: xxxx
+          deployment-name: gpt-35-turbo
+          max-tokens: 500
 </code></pre><p><blockquote class="book-hint info">
   <strong>注意</strong>
 以下方式配置，待验证：
@@ -540,14 +550,6 @@ zhipu 配置方式：</p>
             model-name: xxx
             temperature: 0.0
             timeout: PT60S
-</code></pre><p>azure 配置方式：</p>
-<pre tabindex="0"><code>langchain4j:
-    azure:
-        chat-model:
-            endpoint: endpoint
-            api-key: demo
-            deployment-name: xxx
-            max-tokens: 20
 </code></pre><p>qianfan 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     qianfan:
@@ -628,11 +630,11 @@ open-ai 配置方式：</p>
             timeout: ${OPENAI_TIMEOUT:PT60S}
 </code></pre><p>azure 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
-    azure:
+    azure-open-ai:
         embedding-model:
-            endpoint: ${OPENAI_API_BASE:demo}
-            api-key: ${OPENAI_API_KEY:demo}
-            deployment-name: xxx
+          endpoint: https://xxxxx.openai.azure.com/
+          api-key: 20f7b4
+          deployment-name: text-embedding-ada-002
 </code></pre><p>qianfan 配置方式：</p>
 <pre tabindex="0"><code>langchain4j:
     qianfan:
