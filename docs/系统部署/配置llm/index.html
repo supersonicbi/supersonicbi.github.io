@@ -33,7 +33,7 @@ langchain4j: zhipu: chat-model: base-url: base-url api-key: demo model-name: xxx
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.399356f57791dc87ec08f5d77a4dad6ed36502ce62721a53e069a0ef896c8fb8.js" integrity="sha256-OZNW9XeR3IfsCPXXek2tbtNlAs5ichpT4Gmg74lsj7g=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a1235f27a19d19ede2a32916558de22d04c205c6c4ac74c3a26c6a554648fc32.js" integrity="sha256-oSNfJ6GdGe3ioykWVY3iLQTCBcbErHTDomxqVUZI/DI=" crossorigin="anonymous"></script>
 
   
 
@@ -598,9 +598,15 @@ open-ai 配置方式：</p>
             modelPath: /data/model.onnx
             vocabularyPath: /data/onnx_vocab.txt
 </code></pre><blockquote class="book-hint info">
-  <strong>注意</strong>
+  <p><strong>注意</strong>
 如果是启动报错，version `GLIBC_2.27&rsquo; not found (required by xxxlibonnxruntime.so)，如下图所示：
-原因是本地环境缺少对应库文件可尝试切换open-ai、dashscope等提供的embedding-model
+原因是libonnxruntime.so库依赖的libm.so.6库的版本不匹配。libm.so.6是GNU C库（glibc）的一部分，而libonnxruntime.so需要的glibc版本是2.27，部分系统上的glibc版本不是2.27导致报错；</p>
+<ul>
+<li>1.可尝试切换open-ai、dashscope等提供的embedding-model；</li>
+<li>2.最新master分支已修复；<br>
+<a href="https://github.com/tencentmusic/supersonic/commit/93ea7a618c2e6cc268a47242934163cf456e9544">https://github.com/tencentmusic/supersonic/commit/93ea7a618c2e6cc268a47242934163cf456e9544</a></li>
+<li>3.使用docker compose方式启动；</li>
+</ul>
 </blockquote>
 
 <figure><img src="/img/supersonic_inmemory_error.jpg#center">
