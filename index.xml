@@ -134,11 +134,11 @@
       <description> 数据权限控制 # SuperSonic支持四级数据权限控制, 分别为主题域权限、模型权限、行权限和列权限。&#xA;1. 主题域和模型权限 # 主题域权限和模型权限又可分为以下两种类别的权限:&#xA;管理权限: 即可管理该主题域/模型下所有资源的权限&#xA;数据浏览权限: 在问答可以问询该主题域/模型下的维度和指标的权限&#xA;1.1 配置主题域/模型权限 # 注意&#xA;这里对用户配置的数据浏览权限，指的是用户可以查看这个主题域/模型下的敏感度为普通和重要的指标/维度，核心指标/维度需要另外通过列权限单独开通; 而如果配置的是管理权限，则默认有该数据模型下所有行列权限。&#xA;1.2 主题域/模型权限控制效果 # 如下图，alice只被授权了用户部门这个数据模型的管理权限，因此在管理页面，其它数据模型的是对她不可见的 同时，alice也没有被授权PVUV统计这个数据模型的数据浏览权限，因此，她在问询时，无法问询得到相关的数据 2.行列权限 # 行列权限可在模型的权限管理里面进行设置, 本质上是限制用户对维度和指标的访问控制。&#xA;2.1 行权限 # 注意 行权限指的是对用户可见的数据行进行控制，若不设置，默认所有行可见。 如下图，对tom进行了行权限控制，tom被设置为只能看它自己的访问数据。 因此，tom在问询时，就会被提示结果数据已经经过过滤处理，以及具体的过滤条件: 2.2 列权限 # 注意 列权限设置中，均只展示被设置为核心敏感度的和指标/维度(敏感度可在指标/维度编辑的时候进行设置)，非核心敏感度的指标/维度不再需要配置。 如下图，页面这个维度以及停留时长这个指标在建模时，敏感度被设置为核心，默认用户是不可查看它们的数据的，下图把它们授权给jack， jack因此可以在问答时有了访问它们的权限。 而当lucy来问询停留时长这个核心指标时，就会被提示暂无权限 </description>
     </item>
     <item>
-      <title></title>
-      <link>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</link>
+      <title>chat-sdk集成</title>
+      <link>https://supersonicbi.github.io/docs/chat-sdk%E9%9B%86%E6%88%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</guid>
-      <description>快速补充中&amp;hellip;</description>
+      <guid>https://supersonicbi.github.io/docs/chat-sdk%E9%9B%86%E6%88%90/</guid>
+      <description>chat-sdk 集成 # 问答对话页支持以下两种方式集成：&#xA;npm 组件包集成 iframe 嵌入 npm 组件包集成 # 进入到/webapp/packages/chat-sdk 目录，修改 package.json { &amp;#34;name&amp;#34;: &amp;#34;xxx-chat-sdk&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;x.x.x&amp;#34;, ... } 执行npm run build 执行npm publish，将组件发布到 npm 仓库 在 react 前端项目执行npm install xxx-chat-sdk，安装 chat-sdk 组件包 在 react 前端项目中引入 chat-sdk 包 import { Chat } from &amp;#39;xxx-chat-sdk&amp;#39;; const ChatPage = () =&amp;gt; { return ( &amp;lt;Chat token=&amp;#34;xxx&amp;#34; /&amp;gt; ); }; export default ChatPage; 通过以上步骤便可以将问答对话页集成到业务系统中了&#xA;提示&#xA;npm 包名 name 和版本 version 需要自行根据项目业务需要进行设置 token 为 supersonic 用户登录认证 token iframe 嵌入 # 将以下代码加入业务系统前端项目组件中</description>
     </item>
     <item>
       <title>FAQ</title>
@@ -146,6 +146,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://supersonicbi.github.io/docs/faq/</guid>
       <description>FAQ # 项目有没有体验的地址？ # A: Playground访问地址：http://117.72.46.148:9080&#xA;初始启动后为什么能显示DEMO问答对话？ # A: 为了便于快速体验，系统内置DEMO语义模型，且实现了基于规则的解析器，所以不需要大模型也可以进行问答对话。不过，规则解析器能力有限，推荐仅用于测试验证，生产使用还是需要大模型解析。&#xA;是否自带大模型服务？ # A: 项目内置langchain4j社区提供的demo API key，但单次请求openai大模型限制在1000 token，因而只能用于快速体验。要正常体验问答对话，请自行申请大模型服务。&#xA;支持哪些大模型服务？ # A: 当前主要支持兼容open_ai接口协议的大模型服务，比如GPT、GLM、DeepSeek、Qwen、Moonshot等。文心和混元正在验证中，敬请期待。&#xA;是否支持文本知识库？ # A: 当前主要聚焦于结构化数据的问答，文本数据将在未来版本加入支持。&#xA;是否支持多轮对话？ # A: 自0.9.2版本起已经支持多轮对话，但默认是关闭的，需要在助理配置里开启。&#xA;重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档&#xA;系统默认的账号和密码是什么？ # A: 系统默认创建的用户有admin, jack, tom, lucy, alice，密码都是：123456&#xA;如果要用我自己的数据进行测试，我至少需要经过哪些步骤 # A: 连接数据库 -&amp;gt; 构造模型(创建指标和维度) -&amp;gt; 组装数据集 -&amp;gt; 创建助理和工具&#xA;是否可以提供接口供第三方应用调用？ # A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/</guid>
+      <description>快速补充中&amp;hellip;</description>
     </item>
     <item>
       <title></title>
