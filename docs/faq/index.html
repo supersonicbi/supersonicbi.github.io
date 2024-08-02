@@ -12,7 +12,9 @@
 重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档
 系统默认的账号和密码是什么？ # A: 系统默认创建的用户有admin, jack, tom, lucy, alice，密码都是：123456
 如果要用我自己的数据进行测试，我至少需要经过哪些步骤 # A: 连接数据库 -&gt; 构造模型(创建指标和维度) -&gt; 组装数据集 -&gt; 创建助理和工具
-是否可以提供接口供第三方应用调用？ # A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html">
+是否可以提供接口供第三方应用调用？ # A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html
+有哪些国内的大模型服务对接？ # A: 当前我们验证过一些主流大模型服务，其申请链接如下表所示：
+提供商 API申请链接 推荐模型 智谱AI https://open.bigmodel.cn/api/paas/v4 glm-4 阿里云 https://dashscope.aliyuncs.com/compatible-mode/v1 qwen-max 幻方 https://api.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/faq/">
@@ -27,7 +29,9 @@
 重启系统后为什么配置的助理/模型数据丢失了？ # A: 系统默认使用H2内存数据库，如果需要持久化存储需配置DB，参考文档
 系统默认的账号和密码是什么？ # A: 系统默认创建的用户有admin, jack, tom, lucy, alice，密码都是：123456
 如果要用我自己的数据进行测试，我至少需要经过哪些步骤 # A: 连接数据库 -&gt; 构造模型(创建指标和维度) -&gt; 组装数据集 -&gt; 创建助理和工具
-是否可以提供接口供第三方应用调用？ # A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html">
+是否可以提供接口供第三方应用调用？ # A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html
+有哪些国内的大模型服务对接？ # A: 当前我们验证过一些主流大模型服务，其申请链接如下表所示：
+提供商 API申请链接 推荐模型 智谱AI https://open.bigmodel.cn/api/paas/v4 glm-4 阿里云 https://dashscope.aliyuncs.com/compatible-mode/v1 qwen-max 幻方 https://api.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -37,7 +41,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/faq/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.19b7fb1074e11f5af8a5c050829477748868c505b9488bb25fd8d21153f78786.js" integrity="sha256-Gbf7EHThH1r4pcBQgpR3dIhoxQW5SIuyX9jSEVP3h4Y=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f22c947a76ce8f1a0b3c949ba33350a7c613a0d34add45e5936fd3fed8b378b3.js" integrity="sha256-8iyUenbOjxoLPJSbozNQp8YToNNK3UXlk2/T/tizeLM=" crossorigin="anonymous"></script>
 
   
 
@@ -488,6 +492,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#系统默认的账号和密码是什么">系统默认的账号和密码是什么？</a></li>
     <li><a href="#如果要用我自己的数据进行测试我至少需要经过哪些步骤">如果要用我自己的数据进行测试，我至少需要经过哪些步骤</a></li>
     <li><a href="#是否可以提供接口供第三方应用调用">是否可以提供接口供第三方应用调用？</a></li>
+    <li><a href="#有哪些国内的大模型服务对接">有哪些国内的大模型服务对接？</a></li>
   </ul>
 </nav>
 
@@ -557,6 +562,42 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%8f%90%e4%be%9b%e6%8e%a5%e5%8f%a3%e4%be%9b%e7%ac%ac%e4%b8%89%e6%96%b9%e5%ba%94%e7%94%a8%e8%b0%83%e7%94%a8">#</a>
 </h2>
 <p>A: 可以，启动系统后查看swagger接口文档：http://localhost:9080/swagger-ui/index.html</p>
+<h2 id="有哪些国内的大模型服务对接">
+  有哪些国内的大模型服务对接？
+  <a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b%e5%9b%bd%e5%86%85%e7%9a%84%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%9c%8d%e5%8a%a1%e5%af%b9%e6%8e%a5">#</a>
+</h2>
+<p>A: 当前我们验证过一些主流大模型服务，其申请链接如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>API申请链接</th>
+<th>推荐模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>智谱AI</td>
+<td><a href="https://open.bigmodel.cn/api/paas/v4">https://open.bigmodel.cn/api/paas/v4</a></td>
+<td>glm-4</td>
+</tr>
+<tr>
+<td>阿里云</td>
+<td><a href="https://dashscope.aliyuncs.com/compatible-mode/v1">https://dashscope.aliyuncs.com/compatible-mode/v1</a></td>
+<td>qwen-max</td>
+</tr>
+<tr>
+<td>幻方</td>
+<td><a href="https://api.deepseek.com">https://api.deepseek.com</a></td>
+<td>deepseek-chat</td>
+</tr>
+<tr>
+<td>月之暗面</td>
+<td><a href="https://api.moonshot.cn/v1">https://api.moonshot.cn/v1</a></td>
+<td>moonshot-v1-8k</td>
+</tr>
+</tbody>
+</table>
 </article>
  
       
@@ -608,6 +649,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#系统默认的账号和密码是什么">系统默认的账号和密码是什么？</a></li>
     <li><a href="#如果要用我自己的数据进行测试我至少需要经过哪些步骤">如果要用我自己的数据进行测试，我至少需要经过哪些步骤</a></li>
     <li><a href="#是否可以提供接口供第三方应用调用">是否可以提供接口供第三方应用调用？</a></li>
+    <li><a href="#有哪些国内的大模型服务对接">有哪些国内的大模型服务对接？</a></li>
   </ul>
 </nav>
 
