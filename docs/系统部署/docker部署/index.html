@@ -4,32 +4,40 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="部署前提 # 下载安装Docker和Docker Compose，并启动docker
-注意 如果报如下错:
+Docker版本：26.0.0&#43;
+Docker Compose：v2.26.1&#43;
+注意
+1 如果报如下错:
 Cannot connect to the Docker daemon at unix:///Users/lexluo/.docker/run/docker.sock. Is the docker daemon running?
-说明docker没有启动 启动部署 # 进入docker目录，执行脚步启动 # docker-compose up -d 注意 支持按SuperSonic版本启动，不指定版本默认是：latest
+说明docker没有启动
+2 supersonic_db_init主要作用是数据库数据初始化，不是常驻服务。执行完成后，exited是正常现象。
+启动部署 # 进入docker目录，执行脚步启动 # docker-compose up -d 注意 支持按SuperSonic版本启动，不指定版本默认是：latest
 SUPERSONIC_VERSION=0.9.2-SNAPSHOT docker-compose up -d 注意 镜像下载慢，可配置国内镜像源，许多国内的云服务提供商提供了Docker镜像加速服务。你可以配置Docker使用这些镜像源来加速下载。 以阿里云为例：
 登录阿里云控制台，进入容器镜像服务。 在左侧导航栏中选择“镜像加速器”。 复制加速器地址，例如 https://.mirror.aliyuncs.com。 编辑 Docker 配置文件 /etc/docker/daemon.json，添加以下内容：
 { &ldquo;registry-mirrors&rdquo;: [&ldquo;https://.mirror.aliyuncs.com&rdquo;] } 重启 Docker 服务：
 sudo systemctl daemon-reload
 sudo systemctl restart docker 运维操作 # 1 查看进程运行状况：
-docker-compose ps 正常会出现三个服务： 2 查看进程日志信息：
-docker exec -it supersonic_standalone bash">
+docker-compose ps 正常会出现三个服务： 2 查看进程日志信息：">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="Docker部署">
   <meta property="og:description" content="部署前提 # 下载安装Docker和Docker Compose，并启动docker
-注意 如果报如下错:
+Docker版本：26.0.0&#43;
+Docker Compose：v2.26.1&#43;
+注意
+1 如果报如下错:
 Cannot connect to the Docker daemon at unix:///Users/lexluo/.docker/run/docker.sock. Is the docker daemon running?
-说明docker没有启动 启动部署 # 进入docker目录，执行脚步启动 # docker-compose up -d 注意 支持按SuperSonic版本启动，不指定版本默认是：latest
+说明docker没有启动
+2 supersonic_db_init主要作用是数据库数据初始化，不是常驻服务。执行完成后，exited是正常现象。
+启动部署 # 进入docker目录，执行脚步启动 # docker-compose up -d 注意 支持按SuperSonic版本启动，不指定版本默认是：latest
 SUPERSONIC_VERSION=0.9.2-SNAPSHOT docker-compose up -d 注意 镜像下载慢，可配置国内镜像源，许多国内的云服务提供商提供了Docker镜像加速服务。你可以配置Docker使用这些镜像源来加速下载。 以阿里云为例：
 登录阿里云控制台，进入容器镜像服务。 在左侧导航栏中选择“镜像加速器”。 复制加速器地址，例如 https://.mirror.aliyuncs.com。 编辑 Docker 配置文件 /etc/docker/daemon.json，添加以下内容：
 { “registry-mirrors”: [“https://.mirror.aliyuncs.com”] } 重启 Docker 服务：
 sudo systemctl daemon-reload
 sudo systemctl restart docker 运维操作 # 1 查看进程运行状况：
-docker-compose ps 正常会出现三个服务： 2 查看进程日志信息：
-docker exec -it supersonic_standalone bash">
+docker-compose ps 正常会出现三个服务： 2 查看进程日志信息：">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -39,7 +47,7 @@ docker exec -it supersonic_standalone bash">
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c03688a34d0254d3fc84f68e6117ac1fc7bbc1419dbf98b0b75ee0861122dd48.js" integrity="sha256-wDaIo00CVNP8hPaOYResH8e7wUGdv5iwt17ghhEi3Ug=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f7f07abbfc057017c9565e5dec5a20c9a6ee5b60ab4bd705567b13f428ce2074.js" integrity="sha256-9/B6u/wFcBfJVl5d7FogyabuW2CrS9cFVnsT9CjOIHQ=" crossorigin="anonymous"></script>
 
   
 
@@ -499,12 +507,16 @@ https://github.com/alex-shpak/hugo-book
   部署前提
   <a class="anchor" href="#%e9%83%a8%e7%bd%b2%e5%89%8d%e6%8f%90">#</a>
 </h1>
-<p>下载安装Docker和Docker Compose，并启动docker</p>
+<p>下载安装Docker和Docker Compose，并启动docker<br>
+Docker版本：26.0.0+<br>
+Docker Compose：v2.26.1+</p>
 <blockquote class="book-hint info">
-  <strong>注意</strong>
-如果报如下错:<br>
+  <p><strong>注意</strong></p>
+<p>1 如果报如下错:<br>
 Cannot connect to the Docker daemon at unix:///Users/lexluo/.docker/run/docker.sock. Is the docker daemon running?<br>
-说明docker没有启动
+说明docker没有启动</p>
+<p>2 supersonic_db_init主要作用是数据库数据初始化，不是常驻服务。执行完成后，exited是正常现象。</p>
+
 </blockquote>
 
 <h1 id="启动部署">
