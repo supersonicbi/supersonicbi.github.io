@@ -41,7 +41,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/faq/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.f22c947a76ce8f1a0b3c949ba33350a7c613a0d34add45e5936fd3fed8b378b3.js" integrity="sha256-8iyUenbOjxoLPJSbozNQp8YToNNK3UXlk2/T/tizeLM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c03688a34d0254d3fc84f68e6117ac1fc7bbc1419dbf98b0b75ee0861122dd48.js" integrity="sha256-wDaIo00CVNP8hPaOYResH8e7wUGdv5iwt17ghhEi3Ug=" crossorigin="anonymous"></script>
 
   
 
@@ -493,6 +493,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#如果要用我自己的数据进行测试我至少需要经过哪些步骤">如果要用我自己的数据进行测试，我至少需要经过哪些步骤</a></li>
     <li><a href="#是否可以提供接口供第三方应用调用">是否可以提供接口供第三方应用调用？</a></li>
     <li><a href="#有哪些国内的大模型服务对接">有哪些国内的大模型服务对接？</a></li>
+    <li><a href="#语义模型和数据集有什么区别">【语义模型】和【数据集】有什么区别？</a></li>
+    <li><a href="#是否可以定制few-shot示例">是否可以定制few-shot示例？</a></li>
+    <li><a href="#使用ollama时问答出现在python中xxxx的如下图错误">使用ollama时，问答出现&quot;在Python中xxxx&quot;的如下图错误？</a></li>
   </ul>
 </nav>
 
@@ -598,6 +601,24 @@ https://github.com/alex-shpak/hugo-book
 </tr>
 </tbody>
 </table>
+<h2 id="语义模型和数据集有什么区别">
+  【语义模型】和【数据集】有什么区别？
+  <a class="anchor" href="#%e8%af%ad%e4%b9%89%e6%a8%a1%e5%9e%8b%e5%92%8c%e6%95%b0%e6%8d%ae%e9%9b%86%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">#</a>
+</h2>
+<p>A: 简单来说【数据集】比【语义模型】高一个层次，是直接面向应用的字段集合。从建模过程来说，先构建语义模型，在模型下创建指标和维度，最后从多个语义模型下选择指标和维度来创建数据集。那【数据集】存在的意义是什么？一方面，类比下数据库中的视图，可对底层数据表进行封装，从而对应用层屏蔽多表关联，在Text2SQL中能降低LLM的生成难度。另一方面，通过数据集可以对不同应用暴露不同的字段组合，从而实现灵活的访问控制。</p>
+<h2 id="是否可以定制few-shot示例">
+  是否可以定制few-shot示例？
+  <a class="anchor" href="#%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e5%ae%9a%e5%88%b6few-shot%e7%a4%ba%e4%be%8b">#</a>
+</h2>
+<p>A: 当前，配置few-shot示例门槛相对较高，涉及question、schema、sql多个信息的手动编辑，所以系统暂时不开放。取而代之的更简便方案，是在助理层面设置【示例问题】，系统会自动在后台对每个示例问题运行问答，将自动生成的中间schema和结果sql以【记忆】形式保存下来。如果助理开启了【记忆评估】，可经过【LLM】和【人工】两种方式对记忆做审核，以决定是否开启作为后续问答的few-shot。</p>
+<h2 id="使用ollama时问答出现在python中xxxx的如下图错误">
+  使用ollama时，问答出现&quot;在Python中xxxx&quot;的如下图错误？
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8ollama%e6%97%b6%e9%97%ae%e7%ad%94%e5%87%ba%e7%8e%b0%e5%9c%a8python%e4%b8%adxxxx%e7%9a%84%e5%a6%82%e4%b8%8b%e5%9b%be%e9%94%99%e8%af%af">#</a>
+</h2>
+<figure><img src="/img/ollama_error.png#center">
+</figure>
+
+<p>A: 请升级ollama到最新版本</p>
 </article>
  
       
@@ -650,6 +671,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#如果要用我自己的数据进行测试我至少需要经过哪些步骤">如果要用我自己的数据进行测试，我至少需要经过哪些步骤</a></li>
     <li><a href="#是否可以提供接口供第三方应用调用">是否可以提供接口供第三方应用调用？</a></li>
     <li><a href="#有哪些国内的大模型服务对接">有哪些国内的大模型服务对接？</a></li>
+    <li><a href="#语义模型和数据集有什么区别">【语义模型】和【数据集】有什么区别？</a></li>
+    <li><a href="#是否可以定制few-shot示例">是否可以定制few-shot示例？</a></li>
+    <li><a href="#使用ollama时问答出现在python中xxxx的如下图错误">使用ollama时，问答出现&quot;在Python中xxxx&quot;的如下图错误？</a></li>
   </ul>
 </nav>
 
