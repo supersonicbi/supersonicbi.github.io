@@ -3,31 +3,43 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="标签 # 标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
-1. 标签对象 # 每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。
-1.1 新建标签对象 # 新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象
+<meta name="description" content="
+  标签
+  #
+
+标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
+
+  1. 标签对象
+  #
+
+每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。
+
+  1.1 新建标签对象
+  #
+
+新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象
+
+
+
 新建标签对象时, 需要填入以下信息:
-1.2 绑定标签对象 # 完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:
-2. 导出标签 # 完成 1.1 中相关标签对象的设置后, 就可以将该模型上的维度/指标批量导出为标签了。 如图选择特定的艺人库模型, 选择维度管理, 选择需要的维度(demo中选择了活跃区域和代表作), 然后选择批量操作中的 &ldquo;导出为标签&rdquo;。
-当然也可以通过编辑特定的维度来完成单个标签的导出:
-以上针对维度进行了导出标签操作, 如果要将指标导出为标签方法类似。
-3. 标签市场 # 完成 1.2 中标签的导出后, 就可以在标签市场中看到上述导出的标签:
-我们还支持查看具体的标签详情, 点击具体某一个标签会发现有如下信息:">
+
+
+
+
+  1.2 绑定标签对象
+  #
+
+完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E6%A0%87%E7%AD%BE/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="SuperSonic">
-  <meta property="og:description" content="标签 # 标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
+  <meta property="og:description" content=" 标签 # 标签主要面向基于一个标签对象上, 进行圈选和洞察的场景；
 1. 标签对象 # 每一个标签都需要依赖于一个特定的标签对象,标签对象类似于一个实体,一般是有一个主键的。
 1.1 新建标签对象 # 新建标签对象的途径为: 语义建模 -&gt; 选择主题域 -&gt; 标签对象管理 -&gt; 创建标签对象
 新建标签对象时, 需要填入以下信息:
-1.2 绑定标签对象 # 完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:
-2. 导出标签 # 完成 1.1 中相关标签对象的设置后, 就可以将该模型上的维度/指标批量导出为标签了。 如图选择特定的艺人库模型, 选择维度管理, 选择需要的维度(demo中选择了活跃区域和代表作), 然后选择批量操作中的 “导出为标签”。
-当然也可以通过编辑特定的维度来完成单个标签的导出:
-以上针对维度进行了导出标签操作, 如果要将指标导出为标签方法类似。
-3. 标签市场 # 完成 1.2 中标签的导出后, 就可以在标签市场中看到上述导出的标签:
-我们还支持查看具体的标签详情, 点击具体某一个标签会发现有如下信息:">
+1.2 绑定标签对象 # 完成标签对象的创建后, 就可以在特定的模型的编辑页面上, 将其挂载到某一个标签对象上去, 只需要将该模型下的主键字段绑定到特定标签对象即可:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -37,10 +49,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%A0%87%E7%AD%BE/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.f7f07abbfc057017c9565e5dec5a20c9a6ee5b60ab4bd705567b13f428ce2074.js" integrity="sha256-9/B6u/wFcBfJVl5d7FogyabuW2CrS9cFVnsT9CjOIHQ=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/en.search.min.4c6d8274fd87f268036d2db1e3a85108cfabcb9d2235a506965ae4b168f468fe.js" integrity="sha256-TG2CdP2H8mgDbS2x46hRCM&#43;ry50iNaUGllrksWj0aP4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
