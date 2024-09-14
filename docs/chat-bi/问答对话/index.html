@@ -40,7 +40,64 @@
   2.2. 会话管理
   #
 
-主要包括四个部分：新对话、历史对话、智能助理、showcase；">
+主要包括四个部分：新对话、历史对话、智能助理、showcase；
+
+新对话，创建新的一轮对话；查询过的问题将按对话级别进行保存，后续多轮对话也是在对话基础之上进行；
+历史对话，能够查询历史对话记录，包括曾经问过哪些问题以及查询结果；支持搜索、删除历史会话；
+智能助理，对智能助理的管理，是否展示助理列表；
+showcase，通过对查询结果点赞功能加入至showcase，用于展示典型的查询case和问法；
+
+
+
+
+
+  3. 展示模块
+  #
+
+展示模块主要四个部分：意图解析、SQL生成、数据查询、推荐相似问题；每部分都会记录耗时；如下图所示：
+
+
+
+
+  3.1. 意图解析
+  #
+
+用于展示supersonic对输入文本的解析；parser阶段会生成多个解析结果，如上图生成2个解析，可点击切换解析结果；
+为了让用户快速分析识别结果，解析内容目前包括：识别到的数据模型、查询模式、指标以及筛选条件等关键数据；
+其中筛选条件可按需修改，如数据时间的灵活切换、切换其他维度值；修改条件后，点击重新查询即可；
+
+
+
+
+  3.2. SQL生成
+  #
+
+SQL生成展示按照解析类型分为两类，Rule解析、LLM解析；
+
+
+Rule解析：主要包括解析S2SQL、修正S2Sql、最终执行SQL; Rule解析S2SQL是通过按规则方式从文本中解析维度、维度值、指标等内容，构造成S2SQL；再经过修正操作生成修正S2SQL；Headless再将S2SQL解析成最终可在数据库引擎的执行SQL；
+
+
+LLM解析：在Rule解析基础上增加Schema映射、Few-shot示例信息；这两项是用于与大模型交互构造prompt，并生成S2SQL时使用到的信息；
+
+
+
+
+
+
+
+
+
+  3.3. 数据查询
+  #
+
+主要功能是展示查询结果；根据返回结果的不同，前端灵活展示不同的样式；
+
+
+结果中存在时间、指标，则展示指标趋势；
+
+
+结果中只有一条数据则展示指标卡；">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/chat-bi/%E9%97%AE%E7%AD%94%E5%AF%B9%E8%AF%9D/">
@@ -50,7 +107,17 @@
 2. 输入模块 # 输入模块主要包括文本输入框、会话管理两部分；
 2.1. 文本输入框 # 顾名思义，可在此处进行自然语音交互；如果在助理设置中开启了联想，输入文本时会实时进行联想提示
 实时联想原理：
-先对文本进行分词 然后再进行并行分段探测 选取探测文本最长的、且有联想结果的那项进行返回 2.2. 会话管理 # 主要包括四个部分：新对话、历史对话、智能助理、showcase；">
+先对文本进行分词 然后再进行并行分段探测 选取探测文本最长的、且有联想结果的那项进行返回 2.2. 会话管理 # 主要包括四个部分：新对话、历史对话、智能助理、showcase；
+新对话，创建新的一轮对话；查询过的问题将按对话级别进行保存，后续多轮对话也是在对话基础之上进行； 历史对话，能够查询历史对话记录，包括曾经问过哪些问题以及查询结果；支持搜索、删除历史会话； 智能助理，对智能助理的管理，是否展示助理列表； showcase，通过对查询结果点赞功能加入至showcase，用于展示典型的查询case和问法； 3. 展示模块 # 展示模块主要四个部分：意图解析、SQL生成、数据查询、推荐相似问题；每部分都会记录耗时；如下图所示：
+3.1. 意图解析 # 用于展示supersonic对输入文本的解析；parser阶段会生成多个解析结果，如上图生成2个解析，可点击切换解析结果；
+为了让用户快速分析识别结果，解析内容目前包括：识别到的数据模型、查询模式、指标以及筛选条件等关键数据；
+其中筛选条件可按需修改，如数据时间的灵活切换、切换其他维度值；修改条件后，点击重新查询即可；
+3.2. SQL生成 # SQL生成展示按照解析类型分为两类，Rule解析、LLM解析；
+Rule解析：主要包括解析S2SQL、修正S2Sql、最终执行SQL; Rule解析S2SQL是通过按规则方式从文本中解析维度、维度值、指标等内容，构造成S2SQL；再经过修正操作生成修正S2SQL；Headless再将S2SQL解析成最终可在数据库引擎的执行SQL；
+LLM解析：在Rule解析基础上增加Schema映射、Few-shot示例信息；这两项是用于与大模型交互构造prompt，并生成S2SQL时使用到的信息；
+3.3. 数据查询 # 主要功能是展示查询结果；根据返回结果的不同，前端灵活展示不同的样式；
+结果中存在时间、指标，则展示指标趋势；
+结果中只有一条数据则展示指标卡；">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -60,7 +127,7 @@
 <link rel="canonical" href="https://supersonicbi.github.io/docs/chat-bi/%E9%97%AE%E7%AD%94%E5%AF%B9%E8%AF%9D/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4c6d8274fd87f268036d2db1e3a85108cfabcb9d2235a506965ae4b168f468fe.js" integrity="sha256-TG2CdP2H8mgDbS2x46hRCM&#43;ry50iNaUGllrksWj0aP4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.39d0c6b6e645b4b726393329971c73d478be23895f1dee1181ce52100fab4b24.js" integrity="sha256-OdDGtuZFtLcmOTMplxxz1Hi&#43;I4lfHe4Rgc5SEA&#43;rSyQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

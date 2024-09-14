@@ -28,7 +28,38 @@ SuperSonic本身作为一个产品, 那么如何用语义建模来统计它的�
 创建好了一个模型集后, 我们就可以把物理数据抽象为一个个数据模型并创建到模型集下。如下图, SuperSonic提供了两种创建数据模型的方式。
 快速创建可以直接指定一张物理表来把它创建为数据模型。
 SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写一条逻辑SQL来把它指定为数据模型。
-">
+
+
+  2.1 编辑SQL创建数据模型
+  #
+
+在填写完数据模型名称和描述等基本信息后，我们首先写一条SQL来表达我们的数据模型逻辑。 然后点击运行, 就可以看到这条SQL查询出来的数据。
+校验数据无误之后, 我们可以点击生成数据模型。
+
+  注意
+这里选择数据库链接的时候, 需要有数据库的使用者权限。
+
+
+
+如图，我们把这条SQL的表头字段指定为日期，主键，维度和度量之后，还可以写一条过滤SQL用于词典导入场景。
+举个例子，在问答中，如果需要对维度值进行识别，那么就需要提前把维度值写入到词典，但是当我们希望对维度值做一些过滤的时候，如在音乐场景里，
+我们只希望把国风类型的歌曲导入到词典中，那么就可以通过这条SQL来进行过滤。
+
+
+  快速创建
+若勾选，则会直接把选中的维度/度量批量创建到维度/指标列表。
+
+
+
+  2.2 指定库表名快速创建模型
+  #
+
+
+如图，在选择快速创建的方式之后，需要先填写该模型依赖的数据库连接，然后系统会自动拉取这个数据库连接的元数据，用户直接选择库名和表名并填写基本信息就可以进入到下一步。
+在第二步中，和上述通过SQL脚本来创建模型的方式基本一致，就不再重复介绍了。
+如下图所示, 重复以上步骤，为我们创建的3个数据模型示例, 分别为:
+用户部门: 主要包含用户以及用户的部门信息
+PVUV统计: 主要包含用户访问次数和访问人数等信息">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B/">
@@ -39,7 +70,13 @@ SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写
 1. 创建一个主题域和模型集 # 如图所示, 为了统计SuperSonic的埋点访问情况, 我们创建了一个叫&#34;超音数&#34;的主题域以及基于SuperSonic的埋点数据创建了一个&#34;埋点模型集&#34;:
 2. 创建数据模型 # 创建好了一个模型集后, 我们就可以把物理数据抽象为一个个数据模型并创建到模型集下。如下图, SuperSonic提供了两种创建数据模型的方式。
 快速创建可以直接指定一张物理表来把它创建为数据模型。
-SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写一条逻辑SQL来把它指定为数据模型。">
+SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写一条逻辑SQL来把它指定为数据模型。
+2.1 编辑SQL创建数据模型 # 在填写完数据模型名称和描述等基本信息后，我们首先写一条SQL来表达我们的数据模型逻辑。 然后点击运行, 就可以看到这条SQL查询出来的数据。 校验数据无误之后, 我们可以点击生成数据模型。
+注意 这里选择数据库链接的时候, 需要有数据库的使用者权限。 如图，我们把这条SQL的表头字段指定为日期，主键，维度和度量之后，还可以写一条过滤SQL用于词典导入场景。 举个例子，在问答中，如果需要对维度值进行识别，那么就需要提前把维度值写入到词典，但是当我们希望对维度值做一些过滤的时候，如在音乐场景里， 我们只希望把国风类型的歌曲导入到词典中，那么就可以通过这条SQL来进行过滤。
+快速创建 若勾选，则会直接把选中的维度/度量批量创建到维度/指标列表。 2.2 指定库表名快速创建模型 # 如图，在选择快速创建的方式之后，需要先填写该模型依赖的数据库连接，然后系统会自动拉取这个数据库连接的元数据，用户直接选择库名和表名并填写基本信息就可以进入到下一步。 在第二步中，和上述通过SQL脚本来创建模型的方式基本一致，就不再重复介绍了。
+如下图所示, 重复以上步骤，为我们创建的3个数据模型示例, 分别为:
+用户部门: 主要包含用户以及用户的部门信息
+PVUV统计: 主要包含用户访问次数和访问人数等信息">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -49,7 +86,7 @@ SQL脚本则提供了更灵活的数据模型创建方式, 我们可以通过写
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4c6d8274fd87f268036d2db1e3a85108cfabcb9d2235a506965ae4b168f468fe.js" integrity="sha256-TG2CdP2H8mgDbS2x46hRCM&#43;ry50iNaUGllrksWj0aP4=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.39d0c6b6e645b4b726393329971c73d478be23895f1dee1181ce52100fab4b24.js" integrity="sha256-OdDGtuZFtLcmOTMplxxz1Hi&#43;I4lfHe4Rgc5SEA&#43;rSyQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
