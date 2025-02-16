@@ -36,12 +36,12 @@ spring:
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="配置DB">
-  <meta property="og:description" content=" 配置DB # 注意
+  <meta property="og:description" content="配置DB # 注意
 系统默认使用H2内存数据库, 重启后会丢失数据, 若需要替换为自己的MySQL, 请按以下进行配置.
 1. 执行SQL脚本 # 初次配置DB请依次执行conf/db下schema-mysql.sql、 data-mysql.sql, 这两个脚本均为最新表结构
 若是已配置过DB并部署好的服务, 可参考sql-update.sql, 这里会注明每次功能改动需要改动的表结构
 2. 配置YAML文件 # conf下application-local.yaml中默认的DB配置为H2配置, 替换为自己的MySQL即可
-spring: datasource: url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;allowMultiQueries=true username: your_username password: your_password driver-class-name: com.mysql.jdbc.Driver ">
+spring: datasource: url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;allowMultiQueries=true username: your_username password: your_password driver-class-name: com.mysql.jdbc.Driver">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -51,7 +51,7 @@ spring: datasource: url: jdbc:mysql://localhost:3306/your_database?useUnicode=tr
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5355df0193f7743d5f1b9f54532c8f21c4d8454cebd380c59f1bd25b763a8319.js" integrity="sha256-U1XfAZP3dD1fG59UUyyPIcTYRUzr04DFnxvSW3Y6gxk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.373b0df885e7ab9fe39ba54a8fe0d1d746a75730f0f903e63a480ce958737d62.js" integrity="sha256-NzsN&#43;IXnq5/jm6VKj&#43;DR10anVzDw&#43;QPmOkgM6VhzfWI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -349,6 +349,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/headless-bi/%E7%AE%A1%E7%90%86%E6%8C%87%E6%A0%87/" class="">管理指标</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/headless-bi/%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/" class="">上传本地文件</a>
   
 
         </li>
