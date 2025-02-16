@@ -20,11 +20,11 @@
 数据集可由多个模型组装而来
 
 
-数据模型由指标、维度和标签组装而成
+数据模型由指标、维度组装而成
 
 
 它们之间类似DB中的对应关系：
-Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度/标签)
+Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度)
 
 
 
@@ -107,10 +107,11 @@ SuperSonic中的主键概念不完全等同于数据库中的主键。当我们�
 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时，
 就必须指定时间日期字段。
 
-  标签对象
+  数据集
   #
 
-在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象">
+数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。
+对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/headless-bi/%E6%A6%82%E5%BF%B5/">
@@ -119,9 +120,9 @@ SuperSonic中的主键概念不完全等同于数据库中的主键。当我们�
   <meta property="og:description" content="概念 # 总览 # 下面这个图清晰地表达了SuperSonic中Headless部分的各种概念之间的关系:
 数据集、数据模型都归属于一个主题域
 数据集可由多个模型组装而来
-数据模型由指标、维度和标签组装而成
+数据模型由指标、维度组装而成
 它们之间类似DB中的对应关系：
-Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度/标签)
+Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度)
 主题域 # 主题域可以理解为一个分类的概念，用户可以根据自己的业务场景来划分主题域。SuperSonic中的数据模型，数据集，术语等概念都归属于一个主题域。
 数据模型 # 在SuperSonic中, 数据模型是对数据库中数据的一种逻辑层面上的抽象, 它既可以直接指代一张物理表, 也可以由一段SQL逻辑创建而成。 当我们得到一张表物理表或者一段逻辑SQL后，可以将表头字段指定为主键、维度、度量、时间日期或者是普通字段， 当表头字段都被赋予这些特定的语义后， 即形成了一个数据模型。
 字段 字段类型(表/SQL表头) 语义类型(模型) imp_date Date 日期 user_name String 主键 department String 维度 pv Bigint 度量 uv Bigint 度量 主键 # SuperSonic中的主键概念不完全等同于数据库中的主键。当我们创建多个模型之后，如果需要指定模型间的关联关系，通俗来讲就是Join的方式， 就可以通过指定主键来进行关联。
@@ -129,7 +130,7 @@ Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指�
 度量 # 度量的概念则恰好和维度相反，通常是一些数值型的字段，用来表达客观现象的程度。在SuperSonic中，度量主要用来创建一个具体的指标，没有其它实质性的作用。
 指标 # 指标是相对度量更具具体和实例化的概念，用户可以基于度量，字段或者已有指标来创建指标并对它进行管理。同时，创建出来的指标也可以被问答这样的上层BI产品进行消费。
 时间日期 # 时间日期字段在SuperSonic中有比较重要的作用，比如一个典型的场景，当我们在问答中询问&#34;超音数近10天访问次数&#34;时，需要得到具体的 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时， 就必须指定时间日期字段。
-标签对象 # 在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象">
+数据集 # 数据集是SuperSonic用来对接问答和其它上层BI应用的一个数据结构，在数据集中，可包含来自多个模型的维度指标。 对上层应用来说，底层建模细节是隐藏的，它只需要关注数据集中暴露出来的维度指标即可，也就是说，上层应用可以把一个数据集当作是一个大宽表，可以直接进行指标维度的分析查询。">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -139,7 +140,7 @@ Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指�
 <link rel="canonical" href="https://supersonicbi.github.io/docs/headless-bi/%E6%A6%82%E5%BF%B5/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e0f5e1c7f0fc637dc772512be761f3ac58ba2d59e16f6a19e3599647e8338023.js" integrity="sha256-4PXhx/D8Y33HclEr52HzrFi6LVnhb2oZ41mWR&#43;gzgCM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2eb6da40ce7cf1a512642786710573cc5366f718dae4894ac56f24c665394075.js" integrity="sha256-LrbaQM588aUSZCeGcQVzzFNm9xja5IlKxW8kxmU5QHU=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -271,19 +272,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEdb/" class="">配置DB</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/%E9%85%8D%E7%BD%AEllm/" class="">配置LLM</a>
   
 
         </li>
@@ -449,7 +437,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/" class="">上传本地文件</a>
+    <a href="/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/" class="">组装数据集</a>
   
 
         </li>
@@ -462,7 +450,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/headless-bi/%E7%BB%84%E8%A3%85%E6%95%B0%E6%8D%AE%E9%9B%86/" class="">组装数据集</a>
+    <a href="/docs/headless-bi/%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/" class="">上传本地文件</a>
   
 
         </li>
@@ -481,19 +469,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/headless-bi/%E6%A0%87%E7%AD%BE/" class="">标签</a>
-  
-
-        </li>
-      
-    
   </ul>
 
         </li>
@@ -506,7 +481,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/chat-sdk%E9%9B%86%E6%88%90/" class="">chat-sdk集成</a>
+    <a href="/docs/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%A1%E7%90%86/" class="">大模型管理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/%E5%89%8D%E7%AB%AFsdk%E9%9B%86%E6%88%90/" class="">前端SDK集成</a>
   
 
         </li>
@@ -520,19 +508,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/faq/" class="">FAQ</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE/" class="">系统设置</a>
   
 
         </li>
@@ -600,8 +575,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#度量"><strong>度量</strong></a></li>
         <li><a href="#指标"><strong>指标</strong></a></li>
         <li><a href="#时间日期"><strong>时间日期</strong></a></li>
-        <li><a href="#标签对象"><strong>标签对象</strong></a></li>
-        <li><a href="#标签"><strong>标签</strong></a></li>
         <li><a href="#数据集"><strong>数据集</strong></a></li>
         <li><a href="#术语"><strong>术语</strong></a></li>
         <li><a href="#sql变量"><strong>SQL变量</strong></a></li>
@@ -636,11 +609,11 @@ https://github.com/alex-shpak/hugo-book
 <p>数据集可由多个模型组装而来</p>
 </li>
 <li>
-<p>数据模型由指标、维度和标签组装而成</p>
+<p>数据模型由指标、维度组装而成</p>
 </li>
 <li>
 <p>它们之间类似DB中的对应关系：</p>
-<p>Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度/标签)</p>
+<p>Database(主题域)-&gt;View(数据集)-&gt;Table(数据模型)-&gt;Column(指标/维度)</p>
 </li>
 </ol>
 <figure><img src="/img/supersonic_headless_concept.png#center">
@@ -722,16 +695,6 @@ https://github.com/alex-shpak/hugo-book
 <p>时间日期字段在SuperSonic中有比较重要的作用，比如一个典型的场景，当我们在问答中询问&quot;超音数近10天访问次数&quot;时，需要得到具体的
 时间字段来进行时间范围的过滤。因此，提前在建模时把时间字段及其格式显示指定好，能起到很大的作用。并且，目前当模型中包含有度量时，
 就必须指定时间日期字段。</p>
-<h3 id="标签对象">
-  <strong>标签对象</strong>
-  <a class="anchor" href="#%e6%a0%87%e7%ad%be%e5%af%b9%e8%b1%a1">#</a>
-</h3>
-<p>在SuperSonic中，标签对象特指被标签圈选的实体对象。比如“国风类型的歌曲”，歌曲在这里就是一个标签对象，以及“访问次数超过100的用户”，用户在这里也是一个标签对象</p>
-<h3 id="标签">
-  <strong>标签</strong>
-  <a class="anchor" href="#%e6%a0%87%e7%ad%be">#</a>
-</h3>
-<p>标签用来圈取标签对象，比如，在上面的例子“国风类型的歌曲”，国风就是一个标签。标签可以由是一个维度，也可以是由一个指标演化而来。</p>
 <h3 id="数据集">
   <strong>数据集</strong>
   <a class="anchor" href="#%e6%95%b0%e6%8d%ae%e9%9b%86">#</a>
@@ -807,8 +770,6 @@ from s2_pv_$interval$
         <li><a href="#度量"><strong>度量</strong></a></li>
         <li><a href="#指标"><strong>指标</strong></a></li>
         <li><a href="#时间日期"><strong>时间日期</strong></a></li>
-        <li><a href="#标签对象"><strong>标签对象</strong></a></li>
-        <li><a href="#标签"><strong>标签</strong></a></li>
         <li><a href="#数据集"><strong>数据集</strong></a></li>
         <li><a href="#术语"><strong>术语</strong></a></li>
         <li><a href="#sql变量"><strong>SQL变量</strong></a></li>
