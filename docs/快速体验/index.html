@@ -7,7 +7,11 @@
   快速体验
   #
 
-SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
+
+  SuperSonic最新版本为0.9.10，本文档介绍基于该版本的功能。
+
+
+SuperSonic内置DEMO的语义模型、问答助理以及大模型连接，因而只需启动系统即可马上体验核心功能。
 
   启动系统
   #
@@ -19,27 +23,11 @@ SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下
 
 
   注意
-启动之前请安装好Java环境(JDK1.8)，Windows系统请到bin目录下执行.\supersonic-daemon.bat start 即可
+启动之前请安装好Java环境(JDK 17以上)，Windows系统请到bin目录下执行.\supersonic-daemon.bat start 即可
 
 
 
-  测试LLM连通性
-  #
-
-
-  配置LLM
-  #
-
-
-进入菜单“助理管理”，选择系统内置的DEMO助理“来闲聊”
-点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot;
-点击“确定”，保存助理大模型配置
-
-
-
-
-
-  问题对话
+  闲聊对话
   #
 
 
@@ -50,12 +38,11 @@ SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下
 
 
 
-  测试Text2SQL
+  问数对话
   #
 
 
-进入菜单“助理管理”，选择系统内置的DEMO助理“算指标”，配置LLM（与上节相同）
-进入菜单“问答对话”，选择智能助理“算指标”
+进入菜单“问答对话”，选择智能助理“超音数分析助手”
 点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”
 点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL
 
@@ -66,8 +53,8 @@ SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
   <meta property="og:site_name" content="SuperSonic">
   <meta property="og:title" content="快速体验">
-  <meta property="og:description" content="快速体验 # SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。
-启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 注意 启动之前请安装好Java环境(JDK1.8)，Windows系统请到bin目录下执行.\supersonic-daemon.bat start 即可 测试LLM连通性 # 配置LLM # 进入菜单“助理管理”，选择系统内置的DEMO助理“来闲聊” 点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&#34;API Key&#34; 点击“确定”，保存助理大模型配置 问题对话 # 进入菜单&#34;问答对话&#34;，选择智能助理“来闲聊” 随便输入文字，如何收到回复，则代表大模型连接成功 测试Text2SQL # 进入菜单“助理管理”，选择系统内置的DEMO助理“算指标”，配置LLM（与上节相同） 进入菜单“问答对话”，选择智能助理“算指标” 点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁” 点击&#34;LLM解析S2SQL&#34;可以查看大模型生成的SQL">
+  <meta property="og:description" content="快速体验 # SuperSonic最新版本为0.9.10，本文档介绍基于该版本的功能。 SuperSonic内置DEMO的语义模型、问答助理以及大模型连接，因而只需启动系统即可马上体验核心功能。
+启动系统 # 下载相应版本release包 解压zip包，执行启动脚本：sh bin/supersonic-daemon.sh start 访问浏览器：http://localhost:9080 注意 启动之前请安装好Java环境(JDK 17以上)，Windows系统请到bin目录下执行.\supersonic-daemon.bat start 即可 闲聊对话 # 进入菜单&#34;问答对话&#34;，选择智能助理“来闲聊” 随便输入文字，如何收到回复，则代表大模型连接成功 问数对话 # 进入菜单“问答对话”，选择智能助理“超音数分析助手” 点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁” 点击&#34;LLM解析S2SQL&#34;可以查看大模型生成的SQL">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -77,7 +64,7 @@ SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E5%BF%AB%E9%80%9F%E4%BD%93%E9%AA%8C/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.283611aab2d16f37dc8755831339791c4bfc2ac5723d2b9a7a11e7ccd3aaa69d.js" integrity="sha256-KDYRqrLRbzfch1WDEzl5HEv8KsVyPSuaehHnzNOqpp0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e53d95c8f01a65dfaf712ff3cd46ebb6073b57e7a7c70f64611db72d4b77e72f.js" integrity="sha256-5T2VyPAaZd&#43;vcS/zzUbrtgc7V&#43;enxw9kYR23LUt35y8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -503,13 +490,8 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#测试llm连通性">测试LLM连通性</a>
-      <ul>
-        <li><a href="#配置llm">配置LLM</a></li>
-        <li><a href="#问题对话">问题对话</a></li>
-      </ul>
-    </li>
-    <li><a href="#测试text2sql">测试Text2SQL</a></li>
+    <li><a href="#闲聊对话">闲聊对话</a></li>
+    <li><a href="#问数对话">问数对话</a></li>
   </ul>
 </nav>
 
@@ -526,7 +508,11 @@ https://github.com/alex-shpak/hugo-book
   快速体验
   <a class="anchor" href="#%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c">#</a>
 </h1>
-<p>SuperSonic内置用于DEMO的语义模型和智能助理，因而只需要以下三步即可快速体验。</p>
+<blockquote class="book-hint info">
+  SuperSonic最新版本为0.9.10，本文档介绍基于该版本的功能。
+</blockquote>
+
+<p>SuperSonic内置DEMO的语义模型、问答助理以及大模型连接，因而只需启动系统即可马上体验核心功能。</p>
 <h2 id="启动系统">
   启动系统
   <a class="anchor" href="#%e5%90%af%e5%8a%a8%e7%b3%bb%e7%bb%9f">#</a>
@@ -538,29 +524,13 @@ https://github.com/alex-shpak/hugo-book
 </ol>
 <blockquote class="book-hint info">
   <strong>注意</strong>
-启动之前请安装好Java环境(JDK1.8)，Windows系统请到bin目录下执行<code>.\supersonic-daemon.bat start</code> 即可
+启动之前请安装好Java环境(JDK 17以上)，Windows系统请到bin目录下执行<code>.\supersonic-daemon.bat start</code> 即可
 </blockquote>
 
-<h2 id="测试llm连通性">
-  测试LLM连通性
-  <a class="anchor" href="#%e6%b5%8b%e8%af%95llm%e8%bf%9e%e9%80%9a%e6%80%a7">#</a>
+<h2 id="闲聊对话">
+  闲聊对话
+  <a class="anchor" href="#%e9%97%b2%e8%81%8a%e5%af%b9%e8%af%9d">#</a>
 </h2>
-<h3 id="配置llm">
-  配置LLM
-  <a class="anchor" href="#%e9%85%8d%e7%bd%aellm">#</a>
-</h3>
-<ol>
-<li>进入菜单“助理管理”，选择系统内置的DEMO助理“来闲聊”</li>
-<li>点击“修改信息”，选择“大模型配置”，填入自己申请的大模型服务信息，包括“Model Name”、“Base URL”以及&quot;API Key&quot;</li>
-<li>点击“确定”，保存助理大模型配置</li>
-</ol>
-<figure><img src="/img/supersonic_quickstart_llm.png#center">
-</figure>
-
-<h3 id="问题对话">
-  问题对话
-  <a class="anchor" href="#%e9%97%ae%e9%a2%98%e5%af%b9%e8%af%9d">#</a>
-</h3>
 <ol>
 <li>进入菜单&quot;问答对话&quot;，选择智能助理“来闲聊”</li>
 <li>随便输入文字，如何收到回复，则代表大模型连接成功</li>
@@ -568,13 +538,12 @@ https://github.com/alex-shpak/hugo-book
 <figure><img src="/img/supersonic_quickstart_chat2.png#center">
 </figure>
 
-<h2 id="测试text2sql">
-  测试Text2SQL
-  <a class="anchor" href="#%e6%b5%8b%e8%af%95text2sql">#</a>
+<h2 id="问数对话">
+  问数对话
+  <a class="anchor" href="#%e9%97%ae%e6%95%b0%e5%af%b9%e8%af%9d">#</a>
 </h2>
 <ol>
-<li>进入菜单“助理管理”，选择系统内置的DEMO助理“算指标”，配置LLM（与上节相同）</li>
-<li>进入菜单“问答对话”，选择智能助理“算指标”</li>
+<li>进入菜单“问答对话”，选择智能助理“超音数分析助手”</li>
 <li>点击“新对话”，输入问题“近半个月sales部门访问量最高的用户是谁”</li>
 <li>点击&quot;LLM解析S2SQL&quot;可以查看大模型生成的SQL</li>
 </ol>
@@ -623,13 +592,8 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#启动系统">启动系统</a></li>
-    <li><a href="#测试llm连通性">测试LLM连通性</a>
-      <ul>
-        <li><a href="#配置llm">配置LLM</a></li>
-        <li><a href="#问题对话">问题对话</a></li>
-      </ul>
-    </li>
-    <li><a href="#测试text2sql">测试Text2SQL</a></li>
+    <li><a href="#闲聊对话">闲聊对话</a></li>
+    <li><a href="#问数对话">问数对话</a></li>
   </ul>
 </nav>
 
