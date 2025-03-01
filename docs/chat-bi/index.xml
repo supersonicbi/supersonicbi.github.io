@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chat BI on SuperSonic</title>
+    <title>Chat BI on SuperSonic(0.9.10)</title>
     <link>https://supersonicbi.github.io/docs/chat-bi/</link>
-    <description>Recent content in Chat BI on SuperSonic</description>
+    <description>Recent content in Chat BI on SuperSonic(0.9.10)</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://supersonicbi.github.io/docs/chat-bi/index.xml" rel="self" type="application/rss+xml" />

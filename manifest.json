@@ -1,6 +1,6 @@
 {
-  "name": "SuperSonic",
-  "short_name": "SuperSonic",
+  "name": "SuperSonic(0.9.10)",
+  "short_name": "SuperSonic(0.9.10)",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

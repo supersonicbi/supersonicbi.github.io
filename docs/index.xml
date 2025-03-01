@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docs on SuperSonic</title>
+    <title>Docs on SuperSonic(0.9.10)</title>
     <link>https://supersonicbi.github.io/docs/</link>
-    <description>Recent content in Docs on SuperSonic</description>
+    <description>Recent content in Docs on SuperSonic(0.9.10)</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://supersonicbi.github.io/docs/index.xml" rel="self" type="application/rss+xml" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>系统部署 on SuperSonic</title>
+    <title>系统部署 on SuperSonic(0.9.10)</title>
     <link>https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/</link>
-    <description>Recent content in 系统部署 on SuperSonic</description>
+    <description>Recent content in 系统部署 on SuperSonic(0.9.10)</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
