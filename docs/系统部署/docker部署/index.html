@@ -32,7 +32,7 @@ Cannot connect to the Docker daemon at unix:///Users/lexluo/.docker/run/docker.s
   下载docker-compose.xml文件
   #
 
-wget https://github.com/tencentmusic/supersonic/blob/master/docker/docker-compose.yml
+wget https://github.com/supersonicbi/supersonic-website/releases/download/0.9.10/docker-compose.yml
 
   启动docker-compose
   #
@@ -79,7 +79,7 @@ sudo systemctl restart docker
 Docker Compose：v2.26.1&#43;
 如果报如下错，说明docker没有启动：
 Cannot connect to the Docker daemon at unix:///Users/lexluo/.docker/run/docker.sock. Is the docker daemon running?
-启动部署 # 下载docker-compose.xml文件 # wget https://github.com/tencentmusic/supersonic/blob/master/docker/docker-compose.yml 启动docker-compose # docker-compose -f docker-compose.yml up -d 正常会启动运行两个容器：
+启动部署 # 下载docker-compose.xml文件 # wget https://github.com/supersonicbi/supersonic-website/releases/download/0.9.10/docker-compose.yml 启动docker-compose # docker-compose -f docker-compose.yml up -d 正常会启动运行两个容器：
 supersonic_postgres: 存储SuperSonic元数据，以及采用pgvector插件存储Embedding向量
 supersonic_standalone: 启动SuperSonic前后端服务
 注意 镜像下载慢，可配置国内镜像源，许多国内的云服务提供商提供了Docker镜像加速服务。你可以配置Docker使用这些镜像源来加速下载。 以阿里云为例：
@@ -96,7 +96,7 @@ sudo systemctl restart docker 运维操作 # 1 查看进程运行状况：">
 <link rel="canonical" href="https://supersonicbi.github.io/docs/%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/docker%E9%83%A8%E7%BD%B2/">
 <link rel="stylesheet" href="/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css" integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.5acae62360f3ddb8626aaaa0c574a74232999dc842b61e721bf09dd59c902b00.js" integrity="sha256-WsrmI2Dz3bhiaqqgxXSnQjKZnchCth5yG/Cd1ZyQKwA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4ab87f0211433eac56b72f9dba671f67b28101d975fe550a2e847f8e426b9912.js" integrity="sha256-Srh/AhFDPqxWty&#43;dumcfZ7KBAdl1/lUKLoR/jkJrmRI=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -580,7 +580,7 @@ Docker Compose：v2.26.1+</p>
   下载docker-compose.xml文件
   <a class="anchor" href="#%e4%b8%8b%e8%bd%bddocker-composexml%e6%96%87%e4%bb%b6">#</a>
 </h3>
-<pre tabindex="0"><code>wget https://github.com/tencentmusic/supersonic/blob/master/docker/docker-compose.yml
+<pre tabindex="0"><code>wget https://github.com/supersonicbi/supersonic-website/releases/download/0.9.10/docker-compose.yml
 </code></pre><h3 id="启动docker-compose">
   启动docker-compose
   <a class="anchor" href="#%e5%90%af%e5%8a%a8docker-compose">#</a>
